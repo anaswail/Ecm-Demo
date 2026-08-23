@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Features from "./components/Features";
+// import Features from "./components/Features";
 import Modules from "./components/Modules";
 
 const App = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const [lang, setLang] = useState<"ar" | "en">("en");
   const [mood, setMood] = useState<"dark" | "light">("dark");

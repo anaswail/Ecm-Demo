@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
-const NavLink = ({ text, link }: { text: string; link: string }) => {
+const NavLink = ({ text }: { text: string; link: string }) => {
   const { t } = useTranslation();
   return (
     <motion.a
