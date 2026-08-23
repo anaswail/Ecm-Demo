@@ -1,0 +1,16 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "pricing": "Pricing",
+    "customers": "Customers",
+    "English": "English",
+    "Arabic": "Arabic"
+  },
+  "hero": {
+    "version": "Version 1.0.0 Release",
+    "desc": "Empowering the Next Era of Digital Transformation. Orchestrate structured documents, automated workflows, and heavy media pipelines at enterprise scale.",
+    "trial": "Initial Free Trial",
+    "demo": "Request Architecture Demo"
+  }
+}

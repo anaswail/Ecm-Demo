@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.ar-font {
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+
+.en-font {
+  font-family: "Unbounded", sans-serif;
+}
+
+@theme {
+  /* ======= Colors ======= */
+  --color-primary: #ff2e2e;
+
+  --color-green: #34c759;
+  --color-blue: #007aff;
+  --color-red: #ff2e2e;
+  --color-yellow: #ff9500;
+
+  --color-bg-primary: #0d0d11;
+  --color-bg-main: #050505;
+
+  /* ======= Sizes ======= */
+}
+
+html,
+body,
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1px;
+}
