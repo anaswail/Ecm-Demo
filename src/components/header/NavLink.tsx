@@ -1,13 +1,13 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
-const NavLink = ({ text }: { text: string; link: string }) => {
+const NavLink = ({ text, link }: { text: string; link: string }) => {
   const { t } = useTranslation();
   return (
     <motion.a
       initial="initial"
       whileHover="hovered"
-      href=""
+      href={link}
       className="relative block overflow-hidden whitespace-nowrap"
     >
       <motion.span

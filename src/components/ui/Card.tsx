@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useAppContext } from "../../context/AppContext";
 
 interface ICardProps {
   color: string;
@@ -47,9 +48,10 @@ const Card = ({
   isActive,
 }: ICardProps) => {
   const styles = colorStyles[color as keyof typeof colorStyles];
+  const { lang } = useAppContext();
   return (
     <motion.div
-      className={`${isActive ? "fixed top-1/2 left-1/2 -translate-1/2 w-3/4 h-80 " : "relative w-70 h-35 "}  overflow-hidden bg-bg-primary  p-5 rounded-lg border ${styles.border} flex flex-col justify-between shadow-lg shadow-${color}/20`}
+      className={`${isActive ? "fixed top-1/2 left-1/2 -translate-1/2 w-3/4 h-80 " : "relative w-92 h-42 "}  overflow-hidden bg-bg-primary  p-5 rounded-lg border ${styles.border} flex flex-col justify-between shadow-lg shadow-${color}/20`}
     >
       {/* background icon — pushed behind content */}
       <img
@@ -74,10 +76,14 @@ const Card = ({
         )}
       </div>
 
-      <h1 className="relative z-10 text-white text-[10px] font-bold tracking-wider">
+      <h1
+        className={`relative z-10 text-white ${lang === "en" ? "text-[14px]" : "text-md"} font-bold tracking-wider`}
+      >
         {title}
       </h1>
-      <p className="relative z-10 text-gray-400 text-md text-[8px] tracking-wider leading-3.5">
+      <p
+        className={`relative z-10 text-gray-400 ${lang === "en" ? "text-[10px] leading-5" : "text-sm leading-6"}  tracking-wider  w-80`}
+      >
         {desc}
       </p>
     </motion.div>

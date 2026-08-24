@@ -7,6 +7,8 @@ import {
   type Feature,
 } from "../constants/AboutData";
 import FeatureModal from "./feature/FeatureModal";
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "../context/AppContext";
 
 const cardAnimation = {
   initial: { y: 60, opacity: 0 },
@@ -15,7 +17,9 @@ const cardAnimation = {
 
 const About = () => {
   const [activeFeature, setActiveFeature] = useState<Feature | null>(null);
+  const { t } = useTranslation();
   const titleId = useId();
+  const { lang } = useAppContext();
 
   // Escape-to-close + scroll lock, scoped to whichever feature is open
   useEffect(() => {
@@ -36,11 +40,18 @@ const About = () => {
   }, [activeFeature]);
 
   return (
-    <div className="relative overflow-hidden min-h-screen px-6 md:px-20 flex flex-col md:flex-row justify-between items-center gap-12 py-24">
+    <div
+      id="about"
+      className="relative overflow-hidden min-h-screen px-5 sm:px-8 md:px-20 flex flex-col md:flex-row justify-between items-center gap-10 sm:gap-12 py-16 sm:py-24"
+    >
       {/* Decorative radial blobs — green/yellow to read as a distinct
           section from the hero's blue/red pairing */}
-      <div className="pointer-events-none absolute top-0 -left-40 z-0 w-125 h-125 rounded-full bg-radial from-green/10 from-0% to-black/0 to-70%" />
-      <div className="pointer-events-none absolute bottom-0 -right-40 z-0 w-150 h-150 rounded-full bg-radial from-yellow/10 from-0% to-black/0 to-70%" />
+      <div
+        className={`pointer-events-none absolute  ${lang === "en" ? "top-0 -left-40" : "bottom-0 -right-40"}  z-0 w-80 sm:w-125 h-80 sm:h-125 rounded-full bg-radial from-green/10 from-0% to-black/0 to-70%`}
+      />
+      <div
+        className={`pointer-events-none absolute ${lang !== "en" ? "top-0 -left-40" : "bottom-0 -right-40"} z-0 w-90 sm:w-150 h-90 sm:h-150 rounded-full bg-radial from-yellow/10 from-0% to-black/0 to-70%`}
+      />
 
       {/* Floating system-icon badges */}
       {decorations.map((decoration, idx) => {
@@ -68,30 +79,41 @@ const About = () => {
               },
             }}
             style={{ willChange: "transform" }}
-            className={`pointer-events-none absolute ${decoration.position} z-0 hidden sm:flex items-center justify-center border ${styles.border} ${styles.bg} rounded-md p-2`}
+            className={`pointer-events-none absolute ${decoration.position} z-0 hidden lg:flex items-center justify-center border ${styles.border} ${styles.bg} rounded-md p-2`}
           >
             <img src={decoration.icon} alt="" className="w-6 h-6" />
           </motion.div>
         );
       })}
 
-      <div className="relative text-content z-10">
-        <h1 className="text-4xl font-bold dark:text-white">
-          What is <span className="text-red">ECM+</span>
+      <div className="relative text-content z-10 w-full md:w-auto">
+        <h1
+          className={`text-3xl sm:text-4xl font-bold text-black dark:text-white text-center ${
+            lang === "en" ? "md:text-left" : "md:text-right"
+          }`}
+        >
+          {t("about.title")} <span className="text-red">ECM+</span>
         </h1>
+
         <div className="relative mt-8">
-          <div className="bg-linear-to-b from-red to-black/0 w-0.5 h-full absolute top-0 left-0" />
-          <p className="text-lg text-gray-300 max-w-140 ml-6 leading-8">
-            ECM+ is an integrated Enterprise Content Management system that
-            centralizes documents, content, meetings, and business processes in
-            one platform, helping organizations streamline workflows, improve
-            collaboration, and manage information efficiently.
+          <div
+            className={`bg-linear-to-b from-red to-black/0 w-0.5 h-full absolute top-0 ${
+              lang === "en" ? "left-0" : "right-0"
+            }`}
+          />
+
+          <p
+            className={`text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-full sm:max-w-140 leading-7 sm:leading-8 ${
+              lang === "en" ? "ml-6" : "mr-6"
+            }`}
+          >
+            {t("about.desc")}
           </p>
         </div>
       </div>
 
       <motion.div
-        className="relative z-10 grid grid-cols-2 gap-3"
+        className="relative z-10 grid grid-cols-1 min-[420px]:grid-cols-2 gap-3 w-full md:w-auto"
         initial="initial"
         whileInView="moved"
         viewport={{ once: true, amount: 0.2 }}
@@ -108,25 +130,27 @@ const About = () => {
               whileHover={{ y: -2 }}
               onClick={() => setActiveFeature(feature)}
               aria-haspopup="dialog"
-              className={`group cursor-pointer relative w-68 h-40 rounded-md border border-white/5 bg-bg-primary/50 overflow-hidden text-left transition-colors hover:border-white/10 focus-visible:outline-none focus-visible:ring-2 ${styles.ring}`}
+              className={`group cursor-pointer relative w-full md:w-68 h-auto min-h-32 sm:min-h-36 md:h-40 rounded-md border border-black/5 dark:border-white/5 bg-gray-50 dark:bg-bg-primary/50 overflow-hidden text-left transition-colors hover:border-black/10 dark:hover:border-white/10 focus-visible:outline-none focus-visible:ring-2 ${styles.ring}`}
             >
               <div
-                className={`absolute inset-0 bg-radial ${styles.glow} from-0% to-90% to-black/0 opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+                className={`absolute inset-0 bg-radial ${styles.glow} from-0% to-90% to-black/0 opacity-20 transition-opacity duration-300 group-hover:opacity-100`}
               />
-              <div className="relative h-full p-5 flex flex-col justify-between">
+              <div className="relative h-full p-4 sm:p-5 flex flex-col justify-between gap-6">
                 <span
                   className={`inline-flex w-fit items-center border ${styles.border} ${styles.bg} ${styles.text} text-xs font-semibold px-2 py-1 rounded-sm`}
                 >
                   {feature.featureShortName}
                 </span>
-                <span className="text-sm text-gray-300 pr-16">
-                  {feature.featureName}
+                <span
+                  className={`${lang === "en" ? "text-sm" : "text-md "} font-semibold  text-gray-700 dark:text-gray-300 pr-12 sm:pr-14 md:pr-16 line-clamp-2`}
+                >
+                  {t(feature.featureName)}
                 </span>
               </div>
               <img
                 src={feature.icon}
                 alt=""
-                className="w-16 h-16 absolute right-4 bottom-4 opacity-80 transition-transform duration-300 "
+                className="w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 absolute right-3 sm:right-4 bottom-3 sm:bottom-4 opacity-80 transition-transform duration-300"
               />
             </motion.button>
           );

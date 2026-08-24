@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { colorStyles, type Feature } from "../../constants/AboutData";
+import { useTranslation } from "react-i18next";
 
 // Each entry is authored as "Title: description" — split once for a bold
 // label plus a muted line underneath, instead of one run-on sentence.
@@ -21,7 +22,11 @@ const FeatureModal = ({
   titleId: string;
   onClose: () => void;
 }) => {
+  const { t } = useTranslation();
   const styles = colorStyles[feature.color];
+  const featureDesc = t(feature.featureDesc, {
+    returnObjects: true,
+  }) as string[];
 
   return (
     <motion.div
@@ -46,7 +51,7 @@ const FeatureModal = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 12 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl border ${styles.border}/30 bg-bg-main p-8`}
+        className={`relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl border ${styles.border}/30 bg-white dark:bg-bg-main p-6 sm:p-8`}
       >
         <div
           className={`pointer-events-none absolute inset-0 -z-10 bg-radial ${styles.glow} from-0% to-70% to-black/0`}
@@ -56,7 +61,7 @@ const FeatureModal = ({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-5 right-5 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
@@ -71,12 +76,16 @@ const FeatureModal = ({
         <div className="flex items-center gap-4 mb-8 pr-8">
           {feature.LucidaIcon ? (
             <span
-              className={`flex h-9 w-9 items-center justify-center rounded-md border ${styles.border} ${styles.bg} ${styles.text}`}
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border ${styles.border} ${styles.bg} ${styles.text}`}
             >
               {feature.LucidaIcon}
             </span>
           ) : (
-            <img src={feature.icon} alt="" className="w-12 h-12" />
+            <img
+              src={feature.icon}
+              alt=""
+              className="w-10 h-10 sm:w-12 sm:h-12 shrink-0"
+            />
           )}
           <div>
             <span className={`text-xs font-semibold ${styles.text}`}>
@@ -84,15 +93,15 @@ const FeatureModal = ({
             </span>
             <h2
               id={titleId}
-              className="text-xl font-bold text-white leading-tight"
+              className="text-lg sm:text-xl font-bold text-black dark:text-white leading-tight"
             >
-              {feature.featureName}
+              {t(feature.featureName)}
             </h2>
           </div>
         </div>
 
         <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
-          {feature.featureDesc.map((entry) => {
+          {featureDesc.map((entry) => {
             const { title, desc } = splitEntry(entry);
             return (
               <li key={entry} className="flex gap-3">
@@ -116,11 +125,11 @@ const FeatureModal = ({
                   </svg>
                 </span>
                 <div>
-                  <p className="text-sm font-medium text-white leading-5">
+                  <p className="text-sm font-medium text-black dark:text-white leading-5">
                     {title}
                   </p>
                   {desc && (
-                    <p className="text-xs text-gray-400 leading-5 mt-0.5">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-5 mt-0.5">
                       {desc}
                     </p>
                   )}

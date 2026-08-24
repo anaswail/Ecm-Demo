@@ -9,8 +9,8 @@ export const features = [
   {
     feature: "DMS",
     icon: dms,
-    title: "Document Management System",
-    desc: "Manage documents and correspondence in one place with our DMS.",
+    title: "hero.features.dms.title",
+    desc: "hero.features.dms.desc",
     color: "green",
     position: "top-5 -right-40 ",
     nodesPosition: { x: 300, y: 150 },
@@ -18,8 +18,8 @@ export const features = [
   {
     feature: "MMS",
     icon: mms,
-    title: "Meeting Management System",
-    desc: "Meeting Management System for planning, documenting, and tracking meetings.",
+    title: "hero.features.mms.title",
+    desc: "hero.features.mms.desc",
     color: "yellow",
     position: "top-5 -left-30 ",
     nodesPosition: { x: -300, y: 150 },
@@ -27,8 +27,8 @@ export const features = [
   {
     feature: "BPM",
     icon: bpm,
-    title: "Business Process Management",
-    desc: "Streamline and optimize your business processes with our BPM feature.",
+    title: "hero.features.bpm.title",
+    desc: "hero.features.bpm.desc",
     color: "blue",
     position: "bottom-5 -right-20 ",
     nodesPosition: { x: 300, y: -150 },
@@ -36,8 +36,8 @@ export const features = [
   {
     feature: "CMS",
     icon: cms,
-    title: "Content Management System",
-    desc: "Create, manage, and publish organizational content with our CMS..",
+    title: "hero.features.cms.title",
+    desc: "hero.features.cms.desc",
     color: "red",
     position: "bottom-5 -left-20 ",
     nodesPosition: { x: -300, y: -150 },

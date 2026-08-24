@@ -2,15 +2,511 @@
   "header": {
     "home": "Home",
     "about": "About",
-    "pricing": "Pricing",
+    "modules": "System Modules",
     "customers": "Customers",
     "English": "English",
     "Arabic": "Arabic"
   },
+
   "hero": {
     "version": "Version 1.0.0 Release",
     "desc": "Empowering the Next Era of Digital Transformation. Orchestrate structured documents, automated workflows, and heavy media pipelines at enterprise scale.",
     "trial": "Initial Free Trial",
-    "demo": "Request Architecture Demo"
+    "demo": "Request Architecture Demo",
+
+    "features": {
+      "dms": {
+        "title": "Document Management System",
+        "desc": "Manage documents and correspondence in one place with our DMS."
+      },
+      "mms": {
+        "title": "Meeting Management System",
+        "desc": "Plan, document, and track meetings efficiently with our MMS."
+      },
+      "bpm": {
+        "title": "Business Process Management",
+        "desc": "Automate, streamline, and monitor your business processes with BPM."
+      },
+      "cms": {
+        "title": "Correspondence Management System",
+        "desc": "Manage, route, track, and organize organizational correspondence with CMS."
+      }
+    }
+  },
+
+  "about": {
+    "title": "What is",
+    "desc": "ECM+ is an integrated Enterprise Content Management system that centralizes documents, content, meetings, and business processes in one platform, helping organizations streamline workflows, improve collaboration, and manage information efficiently.",
+
+    "features": {
+      "dms": {
+        "featureName": "Document Management System",
+        "featureDesc": [
+          "Document Management: Create, upload, organize, and manage documents.",
+          "Document Types: Define document types with configurable information and fields.",
+          "File Management: Upload files, use templates, or create and edit documents within the system.",
+          "Version Control: Track changes, view previous versions, and restore older versions.",
+          "Document Sharing: Share documents internally or externally with controlled access.",
+          "Document Relations: Link documents with related correspondence, meetings, and processes.",
+          "Email Integration: Add files received through email directly to documents.",
+          "Search & Filtering: Find documents quickly using metadata, types, keywords, and filters.",
+          "Notes & Reminders: Add notes, reminders, and follow-up information.",
+          "Security & Permissions: Protect documents with flexible access controls and permissions.",
+          "Approval & Archiving: Manage document approvals and archive completed documents."
+        ]
+      },
+
+      "cms": {
+        "featureName": "Correspondence Management System",
+        "featureDesc": [
+          "Correspondence Registration: Register incoming, outgoing, internal, and external correspondence.",
+          "Correspondence Types: Create configurable correspondence types with dynamic fields.",
+          "Routing & Distribution: Route correspondence to departments, employees, groups, or committees.",
+          "Response Management: Create, manage, and link responses to related correspondence.",
+          "Attachments: Add documents, templates, and email attachments to correspondence.",
+          "Tracking: Track correspondence status, actions, and processing history.",
+          "Notes & Reminders: Add notes, priorities, deadlines, and follow-up reminders.",
+          "Search & Filtering: Quickly find correspondence using advanced search and filters.",
+          "Security & Permissions: Control access based on roles and responsibilities.",
+          "Reports & Dashboard: Monitor correspondence activity, workload, and performance."
+        ]
+      },
+
+      "mms": {
+        "featureName": "Meeting Management System",
+        "featureDesc": [
+          "Meeting Creation: Create new meetings or link them to existing meeting series.",
+          "Meeting Details: Manage subjects, descriptions, dates, times, formats, and time zones.",
+          "Room & Online Meetings: Manage physical, online, and hybrid meetings.",
+          "Attendee Management: Add organizers, employees, groups, committees, and external participants.",
+          "Agenda Management: Create agendas, assign time slots, and designate minute takers.",
+          "Attachments: Add and manage meeting-related documents and files.",
+          "Task Management: Assign tasks, set priorities and deadlines, and track progress.",
+          "Invitations: Send and manage meeting invitations.",
+          "Voting: Create polls, voting options, and control eligible voters.",
+          "Attendance: Record and manage meeting attendance.",
+          "Meeting Reports: Generate, edit, and export detailed meeting reports.",
+          "Meeting Chat: Communicate through a dedicated meeting conversation.",
+          "Meeting Tracking: View, search, filter, and monitor all meetings."
+        ]
+      },
+
+      "bpm": {
+        "featureName": "Business Process Management",
+        "featureDesc": [
+          "Process Design: Design and configure business processes and workflows.",
+          "Workflow Automation: Automate tasks and process steps based on predefined rules.",
+          "Task Management: Assign, prioritize, track, and manage workflow tasks.",
+          "Approvals: Create multi-level review and approval workflows.",
+          "Business Rules: Define conditions and rules to control process flow.",
+          "Task Assignment: Assign activities to employees, groups, departments, or roles.",
+          "Notifications: Send automatic notifications, reminders, and deadline alerts.",
+          "Document Integration: Connect documents and correspondence to business processes.",
+          "Process Tracking: Monitor process status and track every workflow activity.",
+          "Audit Trail: Maintain a complete history of actions, decisions, and approvals.",
+          "Reports & Analytics: Monitor process performance, workload, delays, and completion rates."
+        ]
+      }
+    }
+  },
+
+  "features": {
+    "dms": {
+      "module": "Document Management System",
+      "moduleDesc": "Archive, organize, and control access to every document your organization holds",
+      "archiveDocuments": {
+        "featureName": "Archive Documents",
+        "featureShortDesc": "Manage, search, and securely access archived documents.",
+        "featureDesc": [
+          "Archived Documents: View and manage all archived documents.",
+          "Search & Filters: Quickly find documents using advanced search and filtering options.",
+          "Document Details: View document information, metadata, and related records.",
+          "Preview: Preview documents and their attachments directly within the system.",
+          "Version History: View previous versions and restore an earlier version when needed.",
+          "Document Relations: Access documents and correspondence related to the archived document.",
+          "Workflow & Procedures: Track procedures and workflows associated with the document.",
+          "Sharing: Share documents internally or externally based on access permissions.",
+          "Download & Export: Download or export documents when permitted.",
+          "Notes & Reminders: Add and manage notes and reminders related to documents.",
+          "Security & Permissions: Control document access and protect sensitive information.",
+          "Restore: Return archived documents to active document management.",
+          "Delete: Permanently delete documents according to permissions and retention policies."
+        ]
+      },
+
+      "archivedDocumentsExplorer": {
+        "featureName": "Archived Documents Explorer",
+        "featureShortDesc": "Browse, organize, and manage documents through folders.",
+        "featureDesc": [
+          "Folder Management: Create, rename, move, and delete folders.",
+          "Document Organization: Organize documents within folders and subfolders.",
+          "Folder Navigation: Browse folders and access their contents easily.",
+          "File Management: Upload, move, copy, and manage files within folders.",
+          "Sharing: Share folders and their contents with authorized users.",
+          "Access Control: Manage permissions for folders and their contents.",
+          "Search: Search for documents and folders within the explorer.",
+          "Preview: Preview supported documents and files directly from the explorer."
+        ]
+      },
+
+      "search": {
+        "featureName": "Search",
+        "featureShortDesc": "Find documents quickly using powerful search and filters.",
+        "featureDesc": [
+          "Global Search: Search across documents and archived content.",
+          "Keyword Search: Find documents using keywords and phrases.",
+          "Advanced Filters: Filter results by type, date, status, classification, and other fields.",
+          "Metadata Search: Search using document metadata and custom fields.",
+          "Saved Searches: Save frequently used search criteria for quick access.",
+          "Search Results: View relevant documents with key information and metadata.",
+          "Sorting: Sort results by date, name, type, relevance, and other criteria."
+        ]
+      },
+
+      "documentTypes": {
+        "featureName": "Document Types",
+        "featureShortDesc": "Create and configure document types and their required information.",
+        "featureDesc": [
+          "Type Management: Create, edit, and manage document types.",
+          "Custom Fields: Define fields and information required for each type.",
+          "Type Classification: Organize documents according to predefined categories.",
+          "Field Configuration: Configure field types, requirements, and validation.",
+          "Templates: Associate document templates with specific document types.",
+          "Permissions: Control access to document types and their configurations.",
+          "Type Status: Enable or disable document types when needed."
+        ]
+      },
+
+      "aclPolicies": {
+        "featureName": "ACL Policies",
+        "featureShortDesc": "Control document access through flexible permission policies.",
+        "featureDesc": [
+          "Access Policies: Create and manage document access policies.",
+          "User Permissions: Grant or restrict access for specific users.",
+          "Group Permissions: Assign permissions to groups, departments, or roles.",
+          "Permission Levels: Control actions such as viewing, editing, sharing, downloading, and deleting.",
+          "Inheritance: Apply permissions across folders and their contents.",
+          "Access Restrictions: Restrict sensitive documents to authorized users.",
+          "Policy Management: Update and manage access policies as organizational requirements change."
+        ]
+      },
+
+      "retentionRules": {
+        "featureName": "Retention Rules",
+        "featureShortDesc": "Define how long documents are retained and when they are archived or disposed.",
+        "featureDesc": [
+          "Retention Policies: Create and manage document retention rules.",
+          "Retention Periods: Define how long documents should be retained.",
+          "Document Types: Apply retention rules to specific document types or categories.",
+          "Automatic Archiving: Automatically archive documents based on defined rules.",
+          "Expiration Management: Identify documents approaching or reaching their retention limit.",
+          "Disposal Rules: Define actions for documents after their retention period.",
+          "Compliance: Support organizational and regulatory document retention requirements."
+        ]
+      },
+
+      "sharedDocuments": {
+        "featureName": "Shared Documents",
+        "featureShortDesc": "Access and manage documents shared with users and teams.",
+        "featureDesc": [
+          "Shared Documents: View documents shared with you or your teams.",
+          "Document Sharing: Share documents with authorized users and groups.",
+          "Access Control: Define permissions for shared documents.",
+          "Shared Folders: Share folders and their contents with selected users.",
+          "Collaboration: Allow authorized users to work with shared documents.",
+          "Activity Tracking: Track sharing and document activities.",
+          "Remove Access: Revoke access to previously shared documents."
+        ]
+      },
+
+      "recycleBin": {
+        "featureName": "Recycle Bin",
+        "featureShortDesc": "Manage deleted documents and restore them when needed.",
+        "featureDesc": [
+          "Deleted Documents: View documents and files moved to the recycle bin.",
+          "Restore: Restore deleted documents to their original location.",
+          "Permanent Delete: Permanently remove documents when authorized.",
+          "Search & Filters: Find deleted documents using search and filtering options.",
+          "Deletion Details: View information about when and by whom a document was deleted.",
+          "Bulk Actions: Restore or permanently delete multiple documents.",
+          "Access Control: Restrict recycle bin actions based on user permissions."
+        ]
+      }
+    },
+    "cms": {
+      "module": "Correspondence Management System",
+      "moduleDesc": "Manage, organize, and track incoming and outgoing correspondence through an integrated correspondence management system.",
+
+      "settings": {
+        "featureName": "Correspondence Settings",
+        "featureShortDesc": "Manage the basic settings and data used by the correspondence system.",
+        "featureDesc": [
+          "Correspondence Types: Create and manage correspondence types and their required fields and information.",
+          "Correspondence Statuses: Create and manage correspondence statuses used throughout the system.",
+          "Confidentiality Levels: Add and manage confidentiality levels for correspondence.",
+          "Priority Levels: Add and manage correspondence priority levels.",
+          "Tags: Create and manage tags used to classify and organize correspondence.",
+          "Receiving Methods: Define and manage the methods used to receive correspondence."
+        ]
+      },
+
+      "externalEntities": {
+        "featureName": "External Entities",
+        "featureShortDesc": "Manage external entities used for sending and receiving correspondence.",
+        "featureDesc": [
+          "Add External Entity: Create and add external entities that the organization communicates with.",
+          "Basic Information: Store the entity name, description, address, and image.",
+          "Contacts: Add and manage contacts associated with each external entity.",
+          "Entity Management: View, edit, and manage external entity information."
+        ]
+      },
+
+      "correspondenceInbox": {
+        "featureName": "Correspondence Inbox",
+        "featureShortDesc": "Manage incoming, outgoing, draft, and completed correspondence.",
+        "featureDesc": [
+          "Incoming Correspondence: View and manage incoming correspondence and follow up on related actions.",
+          "Outgoing Correspondence: View and manage correspondence that has been sent.",
+          "Drafts: Save and manage correspondence that has not been completed or sent.",
+          "Completed Correspondence: Access correspondence for which all required actions have been completed.",
+          "Correspondence Actions: Perform available actions on correspondence based on its status and user permissions."
+        ]
+      },
+
+      "addCorrespondence": {
+        "featureName": "Add Correspondence",
+        "featureShortDesc": "Create a new correspondence and enter all related information and attachments.",
+        "featureDesc": [
+          "Basic Information: Enter the basic information of the correspondence.",
+          "Correspondence Type Information: Enter the information and fields specific to the selected correspondence type.",
+          "Attachments: Add files and documents related to the correspondence.",
+          "Email Attachments: Add files and attachments received through email."
+        ]
+      }
+    },
+    "mms": {
+      "module": "Meeting Management System",
+      "moduleDesc": "Manage meetings, committees, tasks, and all related activities through an integrated meeting management platform.",
+
+      "performanceIndicators": {
+        "featureName": "Performance Indicators",
+        "featureShortDesc": "Monitor meeting and task performance through clear statistics and indicators.",
+        "featureDesc": [
+          "Meeting Statistics: View personal meeting statistics and overall meeting statistics.",
+          "Total Meetings: View the total number of meetings.",
+          "Meeting Status: Monitor upcoming, completed, draft, cancelled, and rescheduled meetings.",
+          "Task Inbox: View total, pending, in-progress, completed, and overdue tasks.",
+          "Weekly Meetings: View meetings scheduled during the current week.",
+          "Recent Meetings: Access recently created or completed meetings.",
+          "Calendar: View and manage meetings through the calendar.",
+          "Scheduling: Schedule meetings by selecting suitable dates and times."
+        ]
+      },
+
+      "settings": {
+        "featureName": "Meeting Settings",
+        "featureShortDesc": "Manage buildings, meeting rooms, and related meeting series.",
+        "featureDesc": [
+          "Add Building: Add buildings where meetings can be held.",
+          "Add Room: Add meeting rooms, link each room to its building, and enter its details.",
+          "Room Details: Define room information, location within the building, and capacity.",
+          "Related Meeting Series: Create and manage meeting series to link related meetings."
+        ]
+      },
+
+      "committees": {
+        "featureName": "Committees",
+        "featureShortDesc": "Create and manage committees and their members for meeting participation.",
+        "featureDesc": [
+          "Create Committee: Create a new committee and add its name, description, and members.",
+          "Committee Members: Add and manage committee members.",
+          "Committee List: View available committees when selecting meeting participants.",
+          "Invite Committee: Select an entire committee and add it to the meeting attendee list."
+        ]
+      },
+
+      "meetings": {
+        "featureName": "Meetings",
+        "featureShortDesc": "Create, manage, and monitor meetings and all related activities.",
+        "featureDesc": [
+          "Create Meeting: Create a new meeting or link it to another meeting within a related meeting series.",
+          "Basic Information: Enter the meeting subject, description, date, start time, end time, meeting type, and time zone.",
+          "Meeting Type: Define whether the meeting is physical or online.",
+          "Physical Meetings: Select an available room and view its location within the building and capacity.",
+          "Online Meetings: Select a meeting platform and automatically create a meeting link or add one manually.",
+          "Organizer: The meeting creator is automatically assigned as the organizer, with the option to change the organizer.",
+          "Attendees: Add employees, employee groups, committee members, or external participants.",
+          "Agenda: Add meeting agenda items, assign presenters, and define the duration of each item.",
+          "Attachments: Add and manage meeting-related files with editing capabilities.",
+          "Tasks: Add tasks related to the meeting and define task details, assignee, priority, and due date.",
+          "Task Management: Delete created tasks, view task details, and update the status of the user's own tasks.",
+          "Meeting Invitations: Send meeting invitations to participants through the system.",
+          "Voting: Create a vote, add its name and description, define voting options, and select eligible voters.",
+          "Attendance Confirmation: Confirm participant attendance after the meeting.",
+          "Meeting Report: Create a meeting report and add details and outcomes from the meeting.",
+          "Attendance Signatures: Add signatures from selected participants to confirm their attendance.",
+          "Report Export: Export the meeting report as a PDF file.",
+          "Report Editing: Add and edit information within the meeting report.",
+          "Meeting Chat: Provide a dedicated conversation for meeting participants while keeping the conversation as part of the meeting record.",
+          "Meeting Tracking: View all meetings, access their details, and filter them based on meeting information."
+        ]
+      },
+
+      "taskInbox": {
+        "featureName": "Task Inbox",
+        "featureShortDesc": "Track user-related tasks and manage their status.",
+        "featureDesc": [
+          "Task List: View all tasks related to meetings.",
+          "Task Status: View tasks that have not started, are in progress, or are completed.",
+          "Status Updates: Users can update the status of their own tasks only.",
+          "Task Permissions: Users can view all tasks but cannot modify the status of tasks assigned to other users."
+        ]
+      }
+    },
+    "bpm": {
+      "module": "Business Process Management",
+      "moduleDesc": "Design, automate, and monitor business processes and workflows across the organization.",
+
+      "processManagement": {
+        "featureName": "Process Management",
+        "featureShortDesc": "Create, manage, and monitor business processes and workflows.",
+        "featureDesc": [
+          "Process Creation: Create and configure business processes and workflows.",
+          "Process Configuration: Define process data, settings, and business rules.",
+          "Process Assignment: Assign processes to users, groups, departments, or roles.",
+          "Process Tracking: Monitor the status and progress of each process.",
+          "Process Management: Manage and update processes according to user permissions."
+        ]
+      },
+
+      "workflowDesigner": {
+        "featureName": "Workflow Designer",
+        "featureShortDesc": "Design and configure workflows using a visual interface.",
+        "featureDesc": [
+          "Visual Design: Build workflows using a visual design interface.",
+          "Workflow Steps: Add tasks, approvals, decisions, and process stages.",
+          "Step Connections: Define transitions and paths between workflow steps.",
+          "Conditions: Define conditions that control the process path.",
+          "Workflow Rules: Define rules that control workflow execution.",
+          "Validation: Validate workflows before activating them."
+        ]
+      },
+
+      "tasks": {
+        "featureName": "Tasks",
+        "featureShortDesc": "Manage and track tasks generated by business processes.",
+        "featureDesc": [
+          "Task Creation: Create tasks associated with process activities.",
+          "Task Assignment: Assign tasks to users, groups, or departments.",
+          "Task Details: Define task descriptions, instructions, and required actions.",
+          "Priority: Set the priority of each task.",
+          "Due Dates: Define deadlines for task completion.",
+          "Task Status: Track pending, in-progress, completed, and overdue tasks.",
+          "Task Actions: Perform available actions according to user permissions.",
+          "Task History: View actions and changes made to each task."
+        ]
+      },
+
+      "approvals": {
+        "featureName": "Approvals",
+        "featureShortDesc": "Manage review and approval steps within business processes.",
+        "featureDesc": [
+          "Approval Steps: Add approval stages to business processes.",
+          "Approver Assignment: Assign approval steps to users, groups, or roles.",
+          "Multi-Level Approvals: Configure multiple approval levels.",
+          "Approve & Reject: Allow authorized users to approve or reject requests.",
+          "Return for Revision: Return requests for correction or completion.",
+          "Approval History: Maintain a history of approval and rejection decisions and responsible users."
+        ]
+      },
+
+      "businessRules": {
+        "featureName": "Business Rules",
+        "featureShortDesc": "Define rules and conditions that control process behavior.",
+        "featureDesc": [
+          "Rule Creation: Create and manage business rules.",
+          "Conditions: Define conditions based on process data.",
+          "Conditional Routing: Automatically route processes based on defined conditions.",
+          "Actions: Execute specific actions when conditions are met.",
+          "Rule Management: Enable, disable, and update business rules.",
+          "Rule Validation: Validate rules before applying them."
+        ]
+      },
+
+      "notifications": {
+        "featureName": "Notifications",
+        "featureShortDesc": "Keep users informed about tasks, actions, and process changes.",
+        "featureDesc": [
+          "Task Notifications: Notify users when a new task is assigned to them.",
+          "Status Notifications: Notify users when the process status changes.",
+          "Approval Notifications: Notify responsible users about pending approval requests.",
+          "Reminders: Send reminders for upcoming tasks and deadlines.",
+          "Overdue Alerts: Notify users about overdue tasks and processes.",
+          "Notification Settings: Define when notifications should be triggered."
+        ]
+      },
+
+      "processDocuments": {
+        "featureName": "Process Documents",
+        "featureShortDesc": "Manage documents associated with business processes and workflows.",
+        "featureDesc": [
+          "Document Attachments: Add documents and files to process activities.",
+          "Document Access: Access related documents directly from the process.",
+          "Document Creation: Create documents as part of a process.",
+          "Document Integration: Link processes with documents and correspondence managed through DMS and CMS.",
+          "Document Tracking: Track documents and related activities throughout the process.",
+          "Access Control: Control access to process-related documents."
+        ]
+      },
+
+      "processMonitoring": {
+        "featureName": "Process Monitoring",
+        "featureShortDesc": "Monitor processes, tasks, and workflow execution stages.",
+        "featureDesc": [
+          "Active Processes: View processes that are currently running.",
+          "Process Status: Monitor the current status of each process.",
+          "Task Monitoring: View tasks associated with processes and their statuses.",
+          "Process Progress: Monitor process progress across different stages.",
+          "Delay Detection: Identify delayed or blocked processes and tasks.",
+          "Process Timeline: View the sequence of actions and activities performed during the process."
+        ]
+      },
+
+      "auditTrail": {
+        "featureName": "Process Audit Trail",
+        "featureShortDesc": "Maintain a complete history of actions and decisions performed during processes.",
+        "featureDesc": [
+          "Activity History: Record actions performed during process execution.",
+          "User Actions: Record actions performed by users.",
+          "Status Changes: Record process and task status changes.",
+          "Approvals & Decisions: Record approval, rejection, and related decisions.",
+          "Timestamps: Record when each action was performed.",
+          "Process History: Maintain the complete history of process activities and actions."
+        ]
+      },
+
+      "processDashboard": {
+        "featureName": "Process Dashboard",
+        "featureShortDesc": "Monitor process performance, tasks, and organizational workload.",
+        "featureDesc": [
+          "Process Statistics: View process statistics and overall activity.",
+          "Active Processes: Monitor currently running processes.",
+          "Task Overview: View pending, in-progress, completed, and overdue tasks.",
+          "Performance Metrics: Monitor process execution times and completion rates.",
+          "Workload: Monitor task distribution across users and departments.",
+          "Reports & Analytics: Analyze process performance, delays, and bottlenecks."
+        ]
+      }
+    }
+  },
+  "customers": {
+    "badge": "Trusted by",
+    "title": "ECM+ reliant institutions",
+    "customerAlt": "Customer {{number}}"
+  },
+  "footer": {
+    "desc": "Centralize your organization's documents, meetings, and workflows in one connected platform.",
+    "contact": "Get in touch",
+    "rights": "All rights reserved."
   }
 }
