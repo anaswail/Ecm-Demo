@@ -1,9 +1,11 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Slider from "react-slick";
+import * as Slick from "react-slick";
 import { motion } from "motion/react";
 import { colorStyles } from "../constants/AboutData";
+
+const Slider = (Slick as any).default?.default ?? (Slick as any).default;
 
 import customer1 from "../assets/customer1.webp";
 import customer2 from "../assets/customer2.webp";
