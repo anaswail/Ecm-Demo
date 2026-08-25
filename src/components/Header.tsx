@@ -19,15 +19,9 @@ const navLinksItems = [
   { text: "customers", link: "#customers" },
 ];
 
-const Header = ({
-  setMood,
-  mood,
-}: {
-  setMood: Dispatch<SetStateAction<"dark" | "light">>;
-  mood: "dark" | "light";
-}) => {
+const Header = () => {
   const { t } = useTranslation();
-  const { lang, setLang } = useAppContext();
+  const { lang, setLang, mood, setMood } = useAppContext();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleChangeLanguage = () => {

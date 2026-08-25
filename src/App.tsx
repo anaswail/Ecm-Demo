@@ -11,13 +11,11 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const { i18n } = useTranslation();
-  const { lang, setLang } = useAppContext();
+  const { lang, setLang, mood, setMood } = useAppContext();
 
   const defaultLanguage = (localStorage.getItem("language") ?? "en") as
     | "ar"
     | "en";
-
-  const [mood, setMood] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
     i18n.changeLanguage(defaultLanguage);
@@ -35,7 +33,7 @@ const App = () => {
       } min-h-screen w-full overflow-x-hidden bg-[#f8f9fa] dark:bg-bg-main transition-colors duration-300`}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <Header mood={mood} setMood={setMood} />
+      <Header />
       <Hero />
       <About />
       {/* <Features /> */}

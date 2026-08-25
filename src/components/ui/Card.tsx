@@ -51,7 +51,7 @@ const Card = ({
   const { lang } = useAppContext();
   return (
     <motion.div
-      className={`${isActive ? "fixed top-1/2 left-1/2 -translate-1/2 w-3/4 h-80 " : "relative w-92 h-42 "}  overflow-hidden bg-bg-primary  p-5 rounded-lg border ${styles.border} flex flex-col justify-between shadow-lg shadow-${color}/20`}
+      className={`${isActive ? "fixed top-1/2 left-1/2 -translate-1/2 w-3/4 h-80 " : "relative w-92 h-42 "}  overflow-hidden bg-gray-50 dark:bg-bg-primary  p-5 rounded-lg border ${styles.border} flex flex-col justify-between shadow-lg shadow-${color}/20`}
     >
       {/* background icon — pushed behind content */}
       <img
@@ -77,12 +77,12 @@ const Card = ({
       </div>
 
       <h1
-        className={`relative z-10 text-white ${lang === "en" ? "text-[14px]" : "text-md"} font-bold tracking-wider`}
+        className={`relative z-10 text-black dark:text-white ${lang === "en" ? "text-[14px]" : "text-md"} font-bold tracking-wider`}
       >
         {title}
       </h1>
       <p
-        className={`relative z-10 text-gray-400 ${lang === "en" ? "text-[10px] leading-5" : "text-sm leading-6"}  tracking-wider  w-80`}
+        className={`relative z-10 text-gray-600 dark:text-gray-400 ${lang === "en" ? "text-xs leading-5" : "text-sm leading-6"}  tracking-wider  w-80`}
       >
         {desc}
       </p>

@@ -5,6 +5,8 @@ import Button from "./ui/Button";
 
 import ecmAR from "../assets/ecmAR.webp";
 import ecmEN from "../assets/ecmEN.webp";
+import ecmARLight from "../assets/ecmARLight.webp";
+import ecmENLight from "../assets/ecmENLight.webp";
 import Card from "./ui/Card";
 import {
   decorationColors,
@@ -15,7 +17,7 @@ import { useAppContext } from "../context/AppContext";
 
 const Hero = () => {
   const { t } = useTranslation();
-  const { lang } = useAppContext();
+  const { lang, mood } = useAppContext();
 
   return (
     <div
@@ -47,7 +49,7 @@ const Hero = () => {
           ECM<span className="text-red">+</span>
         </h1>
         <p
-          className={`dark:text-gray-400 text-gray-600 text-center text-sm sm:text-md w-full sm:w-3/4 ${lang === "en" ? "md:w-1/2 leading-6" : "md-3/4 font-semibold leading-8"}   tracking-wider`}
+          className={`dark:text-gray-400 text-gray-600 text-center text-sm sm:text-md w-full sm:w-3/4 ${lang === "en" ? "md:w-1/2 leading-6" : "md-3/4 font-semibold leading-8"}   tracking-wide`}
         >
           {t("hero.desc")}
         </p>
@@ -105,11 +107,18 @@ const Hero = () => {
           </motion.div>
         ))}
         {lang === "en" ? (
-          <img src={ecmEN} alt="ECM+" className="w-full rounded-md" />
+          <img
+            src={mood === "light" ? ecmENLight : ecmEN}
+            alt="ECM+"
+            className="w-full rounded-md"
+          />
         ) : (
-          <img src={ecmAR} alt="ECM+" className="w-full rounded-md" />
+          <img
+            src={mood === "light" ? ecmARLight : ecmAR}
+            alt="ECM+"
+            className="w-full rounded-md"
+          />
         )}
-        <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b bg-black/50 rounded-md"></div>
       </motion.div>
 
       {/* Decorations */}
