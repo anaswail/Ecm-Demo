@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const { i18n } = useTranslation();
-  const { lang, setLang, mood, setMood } = useAppContext();
+  const { lang, setLang, mood } = useAppContext();
 
   const defaultLanguage = (localStorage.getItem("language") ?? "en") as
     | "ar"
