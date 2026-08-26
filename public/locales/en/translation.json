@@ -4,6 +4,7 @@
     "about": "About",
     "modules": "System Modules",
     "customers": "Customers",
+    "contact": "Contact Us",
     "English": "English",
     "Arabic": "Arabic"
   },
@@ -150,7 +151,7 @@
       },
 
       "search": {
-        "featureName": "Search",
+        "featureName": "ECM+ Search",
         "featureShortDesc": "Find documents quickly using powerful search and filters.",
         "featureDesc": [
           "Global Search: Search across documents and archived content.",
@@ -503,6 +504,29 @@
     "badge": "Trusted by",
     "title": "ECM+ reliant institutions",
     "customerAlt": "Customer {{number}}"
+  },
+  "contact": {
+    "badge": "Get in touch",
+    "title": "Talk to our team",
+    "desc": "Send us your company's details and we'll get back to you with pricing and next steps.",
+    "companyName": "Company name",
+    "companyNamePlaceholder": "Acme Inc.",
+    "companyEmail": "Company email",
+    "companyEmailPlaceholder": "you@company.com",
+    "contactName": "Your name",
+    "contactNamePlaceholder": "Jane Doe",
+    "phone": "Phone (optional)",
+    "phonePlaceholder": "+20 1xx xxx xxxx",
+    "message": "How can we help?",
+    "messagePlaceholder": "Tell us a bit about your organization and what you're looking for...",
+    "submit": "Send message",
+    "success": "Thanks — we'll be in touch shortly.",
+    "error": "Something went wrong. Please check the form and try again.",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Enter a valid email address",
+      "messageTooShort": "Please write at least 10 characters"
+    }
   },
   "footer": {
     "desc": "Centralize your organization's documents, meetings, and workflows in one connected platform.",

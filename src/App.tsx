@@ -8,6 +8,7 @@ import Modules from "./components/Modules";
 import { useAppContext } from "./context/AppContext";
 import Customers from "./components/Customers";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 const App = () => {
   const { i18n } = useTranslation();
@@ -39,6 +40,7 @@ const App = () => {
       {/* <Features /> */}
       <Modules />
       <Customers />
+      <Contact />
       <Footer />
     </div>
   );

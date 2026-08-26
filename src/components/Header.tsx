@@ -17,6 +17,7 @@ const navLinksItems = [
   { text: "about", link: "#about" },
   { text: "modules", link: "#modules" },
   { text: "customers", link: "#customers" },
+  { text: "contact", link: "#contact" },
 ];
 
 const Header = () => {
