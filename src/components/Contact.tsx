@@ -10,7 +10,7 @@ import {
   featuresDecorationIcons,
 } from "../constants/HeroData";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 type Status = "idle" | "loading" | "success" | "error";
 
