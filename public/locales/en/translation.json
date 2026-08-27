@@ -110,7 +110,6 @@
       }
     }
   },
-
   "features": {
     "dms": {
       "module": "Document Management System",
@@ -364,138 +363,95 @@
         ]
       }
     },
+
     "bpm": {
       "module": "Business Process Management",
-      "moduleDesc": "Design, automate, and monitor business processes and workflows across the organization.",
+      "moduleDesc": "A system for managing and automating corporate processes, from designing and defining processes and forms, through publishing and running them, to assigning tasks and monitoring execution.",
 
-      "processManagement": {
-        "featureName": "Process Management",
-        "featureShortDesc": "Create, manage, and monitor business processes and workflows.",
+      "inbox": {
+        "featureName": "Inbox",
+        "featureShortDesc": "Manage assigned tasks and complete business process activities from one workspace.",
         "featureDesc": [
-          "Process Creation: Create and configure business processes and workflows.",
-          "Process Configuration: Define process data, settings, and business rules.",
-          "Process Assignment: Assign processes to users, groups, departments, or roles.",
-          "Process Tracking: Monitor the status and progress of each process.",
-          "Process Management: Manage and update processes according to user permissions."
+          "My Tasks: View tasks currently assigned to the signed-in user.",
+          "Follow Up: Monitor tasks delegated to other employees while continuing to follow their progress.",
+          "Completed Tasks: View tasks that have already been completed.",
+          "Task Forms: Open the exact form configured for each process step.",
+          "Task Actions: Complete, reject, delegate, or return tasks according to the available process actions.",
+          "Shared Queue: Claim unassigned tasks from a shared work queue.",
+          "Search & Filters: Find tasks using free-text search and filters such as process, date range, originator, and participant.",
+          "Task Status: Track tasks through states such as assigned, being worked, completed, delegated, escalated, rejected, and returned."
+        ]
+      },
+      "services": {
+        "featureName": "Services",
+        "featureShortDesc": "Start business processes from a catalog containing only the services available to the current user.",
+        "featureDesc": [
+          "Service Catalog: Display the processes that the current user is authorized to start.",
+          "Published Processes: Show each process using its latest published version.",
+          "Start Form: Open the process-specific form before creating a new case.",
+          "Attachments: Upload required files before the case is created.",
+          "Case Creation: Start a process case using its process key.",
+          "First Task Assignment: The workflow engine applies the first step's assignment rule and sends the resulting task to the appropriate Inbox.",
+          "Authorization: Process availability is determined by server-side authorization."
+        ]
+      },
+      "definitions": {
+        "featureName": "Definitions",
+        "featureShortDesc": "Manage process definitions, versions, lifecycle status, and publication from the administration catalog.",
+        "featureDesc": [
+          "Process Definitions: Manage all available process definitions.",
+          "Version Management: Maintain multiple versions of a process definition.",
+          "Draft: Keep processes in a draft state while they are being designed or modified.",
+          "Published: Publish a process version so it becomes available for starting new cases.",
+          "Retired: Retire processes that should remain available for records but should no longer be offered to users.",
+          "Current Version: Define the version that new cases will use.",
+          "Restore: Restore a retired process when it should become available again.",
+          "Running Cases: Existing cases continue executing the version they started with, even when a newer version is published."
+        ]
+      },
+      "studio": {
+        "featureName": "Studio",
+        "featureShortDesc": "Design, configure, simulate, validate, and deploy business processes using a visual process designer.",
+        "featureDesc": [
+          "Visual Designer: Draw business processes on a visual canvas without writing code.",
+          "Process Elements: Configure start events, end events, timer events, boundary events, user tasks, gateways, and automated steps.",
+          "Step Configuration: Configure forms, assignment rules, deadlines, escalation, bilingual summaries, and notifications for each step.",
+          "Assignment Rules: Assign steps to employees, groups, organisational units, job titles, managers, the request originator, or captured process values.",
+          "Automated Steps: Configure email, WhatsApp, PDF generation, external services, database queries, and repository archiving.",
+          "Branching: Configure exclusive, parallel, and inclusive process gateways.",
+          "Simulation: Run a process through the diagram before deployment and use the real forms configured for its steps.",
+          "Validation: Detect blocking errors and warnings before a process is deployed.",
+          "Deployment: Convert the configured process into an executable workflow contract and publish it as a version.",
+          "Re-opening: Open an existing published definition in the editor, modify it, and deploy the changes as a new version.",
+          "Deadlines & Escalation: Configure step-specific permitted durations and escalation targets.",
+          "Bilingual Design: Maintain English and Arabic names, descriptions, case titles, and step summaries."
+        ]
+      },
+      "templates": {
+        "featureName": "Templates",
+        "featureShortDesc": "Create reusable form schemas that can be shared across business process definitions.",
+        "featureDesc": [
+          "Form Builder: Design reusable forms visually without hand-written code.",
+          "Shared Schema: Use one schema model for task forms, notification bodies, and generated PDFs.",
+          "Field Types: Support text, number, date, dropdown, rating, table, signature, file upload, attachment preview, employee picker, dynamic text, and other fields.",
+          "Dynamic Data: Populate fields from service calls or database queries when the form is filled.",
+          "Reusable Templates: Save schemas as reusable assets that can be shared by multiple process definitions.",
+          "Runtime Rendering: Use the same form renderer for simulations, process start forms, and Inbox task forms."
         ]
       },
 
-      "workflowDesigner": {
-        "featureName": "Workflow Designer",
-        "featureShortDesc": "Design and configure workflows using a visual interface.",
+      "monitoring": {
+        "featureName": "Monitoring",
+        "featureShortDesc": "Monitor running process cases, execution progress, task ownership, history, and administrative actions.",
         "featureDesc": [
-          "Visual Design: Build workflows using a visual design interface.",
-          "Workflow Steps: Add tasks, approvals, decisions, and process stages.",
-          "Step Connections: Define transitions and paths between workflow steps.",
-          "Conditions: Define conditions that control the process path.",
-          "Workflow Rules: Define rules that control workflow execution.",
-          "Validation: Validate workflows before activating them."
-        ]
-      },
-
-      "tasks": {
-        "featureName": "Tasks",
-        "featureShortDesc": "Manage and track tasks generated by business processes.",
-        "featureDesc": [
-          "Task Creation: Create tasks associated with process activities.",
-          "Task Assignment: Assign tasks to users, groups, or departments.",
-          "Task Details: Define task descriptions, instructions, and required actions.",
-          "Priority: Set the priority of each task.",
-          "Due Dates: Define deadlines for task completion.",
-          "Task Status: Track pending, in-progress, completed, and overdue tasks.",
-          "Task Actions: Perform available actions according to user permissions.",
-          "Task History: View actions and changes made to each task."
-        ]
-      },
-
-      "approvals": {
-        "featureName": "Approvals",
-        "featureShortDesc": "Manage review and approval steps within business processes.",
-        "featureDesc": [
-          "Approval Steps: Add approval stages to business processes.",
-          "Approver Assignment: Assign approval steps to users, groups, or roles.",
-          "Multi-Level Approvals: Configure multiple approval levels.",
-          "Approve & Reject: Allow authorized users to approve or reject requests.",
-          "Return for Revision: Return requests for correction or completion.",
-          "Approval History: Maintain a history of approval and rejection decisions and responsible users."
-        ]
-      },
-
-      "businessRules": {
-        "featureName": "Business Rules",
-        "featureShortDesc": "Define rules and conditions that control process behavior.",
-        "featureDesc": [
-          "Rule Creation: Create and manage business rules.",
-          "Conditions: Define conditions based on process data.",
-          "Conditional Routing: Automatically route processes based on defined conditions.",
-          "Actions: Execute specific actions when conditions are met.",
-          "Rule Management: Enable, disable, and update business rules.",
-          "Rule Validation: Validate rules before applying them."
-        ]
-      },
-
-      "notifications": {
-        "featureName": "Notifications",
-        "featureShortDesc": "Keep users informed about tasks, actions, and process changes.",
-        "featureDesc": [
-          "Task Notifications: Notify users when a new task is assigned to them.",
-          "Status Notifications: Notify users when the process status changes.",
-          "Approval Notifications: Notify responsible users about pending approval requests.",
-          "Reminders: Send reminders for upcoming tasks and deadlines.",
-          "Overdue Alerts: Notify users about overdue tasks and processes.",
-          "Notification Settings: Define when notifications should be triggered."
-        ]
-      },
-
-      "processDocuments": {
-        "featureName": "Process Documents",
-        "featureShortDesc": "Manage documents associated with business processes and workflows.",
-        "featureDesc": [
-          "Document Attachments: Add documents and files to process activities.",
-          "Document Access: Access related documents directly from the process.",
-          "Document Creation: Create documents as part of a process.",
-          "Document Integration: Link processes with documents and correspondence managed through DMS and CMS.",
-          "Document Tracking: Track documents and related activities throughout the process.",
-          "Access Control: Control access to process-related documents."
-        ]
-      },
-
-      "processMonitoring": {
-        "featureName": "Process Monitoring",
-        "featureShortDesc": "Monitor processes, tasks, and workflow execution stages.",
-        "featureDesc": [
-          "Active Processes: View processes that are currently running.",
-          "Process Status: Monitor the current status of each process.",
-          "Task Monitoring: View tasks associated with processes and their statuses.",
-          "Process Progress: Monitor process progress across different stages.",
-          "Delay Detection: Identify delayed or blocked processes and tasks.",
-          "Process Timeline: View the sequence of actions and activities performed during the process."
-        ]
-      },
-
-      "auditTrail": {
-        "featureName": "Process Audit Trail",
-        "featureShortDesc": "Maintain a complete history of actions and decisions performed during processes.",
-        "featureDesc": [
-          "Activity History: Record actions performed during process execution.",
-          "User Actions: Record actions performed by users.",
-          "Status Changes: Record process and task status changes.",
-          "Approvals & Decisions: Record approval, rejection, and related decisions.",
-          "Timestamps: Record when each action was performed.",
-          "Process History: Maintain the complete history of process activities and actions."
-        ]
-      },
-
-      "processDashboard": {
-        "featureName": "Process Dashboard",
-        "featureShortDesc": "Monitor process performance, tasks, and organizational workload.",
-        "featureDesc": [
-          "Process Statistics: View process statistics and overall activity.",
-          "Active Processes: Monitor currently running processes.",
-          "Task Overview: View pending, in-progress, completed, and overdue tasks.",
-          "Performance Metrics: Monitor process execution times and completion rates.",
-          "Workload: Monitor task distribution across users and departments.",
-          "Reports & Analytics: Analyze process performance, delays, and bottlenecks."
+          "Graphical Monitoring: View the case's process diagram together with its execution trace.",
+          "Execution Status: Identify activities that have already run, the current activity, and the person responsible for each task.",
+          "Detailed History: View the assignee, state, timing, and sequence of every activity.",
+          "Case Tracking: Follow a running case from the task where it is already being worked.",
+          "Suspend & Resume: Administrators can suspend and resume running cases according to engine state rules.",
+          "Delete Case: Administrators can delete running cases when permitted by the engine.",
+          "Start Form History: Re-open the original submitted start form in read-only mode.",
+          "Auditability: Preserve task actions, decisions, assignees, timing, and reasons throughout process execution."
         ]
       }
     }

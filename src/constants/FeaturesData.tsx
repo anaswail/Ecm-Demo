@@ -15,6 +15,7 @@ import {
   HistoryIcon,
   InboxIcon,
   LayoutDashboardIcon,
+  LayoutListIcon,
   ListChecksIcon,
   SearchIcon,
   SettingsIcon,
@@ -188,91 +189,55 @@ export const MMSData: Feature[] = [
 export const BPMData: Feature[] = [
   {
     featureShortName: "BPM",
-    featureName: "features.bpm.processManagement.featureName",
-    featureShortDesc: "features.bpm.processManagement.featureShortDesc",
-    featureDesc: "features.bpm.processManagement.featureDesc",
+    featureName: "features.bpm.inbox.featureName",
+    featureShortDesc: "features.bpm.inbox.featureShortDesc",
+    featureDesc: "features.bpm.inbox.featureDesc",
     color: "blue",
-    LucidaIcon: <WorkflowIcon />,
+    LucidaIcon: <InboxIcon />,
   },
 
   {
     featureShortName: "BPM",
-    featureName: "features.bpm.workflowDesigner.featureName",
-    featureShortDesc: "features.bpm.workflowDesigner.featureShortDesc",
-    featureDesc: "features.bpm.workflowDesigner.featureDesc",
+    featureName: "features.bpm.services.featureName",
+    featureShortDesc: "features.bpm.services.featureShortDesc",
+    featureDesc: "features.bpm.services.featureDesc",
+    color: "blue",
+    LucidaIcon: <LayoutListIcon />,
+  },
+
+  {
+    featureShortName: "BPM",
+    featureName: "features.bpm.definitions.featureName",
+    featureShortDesc: "features.bpm.definitions.featureShortDesc",
+    featureDesc: "features.bpm.definitions.featureDesc",
     color: "blue",
     LucidaIcon: <GitBranchIcon />,
   },
 
   {
     featureShortName: "BPM",
-    featureName: "features.bpm.tasks.featureName",
-    featureShortDesc: "features.bpm.tasks.featureShortDesc",
-    featureDesc: "features.bpm.tasks.featureDesc",
+    featureName: "features.bpm.studio.featureName",
+    featureShortDesc: "features.bpm.studio.featureShortDesc",
+    featureDesc: "features.bpm.studio.featureDesc",
     color: "blue",
-    LucidaIcon: <ListChecksIcon />,
+    LucidaIcon: <WorkflowIcon />,
   },
 
   {
     featureShortName: "BPM",
-    featureName: "features.bpm.approvals.featureName",
-    featureShortDesc: "features.bpm.approvals.featureShortDesc",
-    featureDesc: "features.bpm.approvals.featureDesc",
-    color: "blue",
-    LucidaIcon: <BadgeCheckIcon />,
-  },
-
-  {
-    featureShortName: "BPM",
-    featureName: "features.bpm.businessRules.featureName",
-    featureShortDesc: "features.bpm.businessRules.featureShortDesc",
-    featureDesc: "features.bpm.businessRules.featureDesc",
-    color: "blue",
-    LucidaIcon: <GitForkIcon />,
-  },
-
-  {
-    featureShortName: "BPM",
-    featureName: "features.bpm.notifications.featureName",
-    featureShortDesc: "features.bpm.notifications.featureShortDesc",
-    featureDesc: "features.bpm.notifications.featureDesc",
-    color: "blue",
-    LucidaIcon: <BellIcon />,
-  },
-
-  {
-    featureShortName: "BPM",
-    featureName: "features.bpm.processDocuments.featureName",
-    featureShortDesc: "features.bpm.processDocuments.featureShortDesc",
-    featureDesc: "features.bpm.processDocuments.featureDesc",
+    featureName: "features.bpm.templates.featureName",
+    featureShortDesc: "features.bpm.templates.featureShortDesc",
+    featureDesc: "features.bpm.templates.featureDesc",
     color: "blue",
     LucidaIcon: <FileStackIcon />,
   },
 
   {
     featureShortName: "BPM",
-    featureName: "features.bpm.processMonitoring.featureName",
-    featureShortDesc: "features.bpm.processMonitoring.featureShortDesc",
-    featureDesc: "features.bpm.processMonitoring.featureDesc",
+    featureName: "features.bpm.monitoring.featureName",
+    featureShortDesc: "features.bpm.monitoring.featureShortDesc",
+    featureDesc: "features.bpm.monitoring.featureDesc",
     color: "blue",
     LucidaIcon: <ActivityIcon />,
-  },
-
-  {
-    featureShortName: "BPM",
-    featureName: "features.bpm.auditTrail.featureName",
-    featureShortDesc: "features.bpm.auditTrail.featureShortDesc",
-    featureDesc: "features.bpm.auditTrail.featureDesc",
-    color: "blue",
-    LucidaIcon: <HistoryIcon />,
-  },
-
-  {
-    featureShortName: "BPM",
-    featureName: "features.bpm.processDashboard.featureName",
-    featureShortDesc: "features.bpm.processDashboard.featureShortDesc",
-    featureDesc: "features.bpm.processDashboard.featureDesc",
-    color: "blue",
-    LucidaIcon: <ChartNoAxesCombinedIcon />,
   },
 ];
