@@ -73,7 +73,7 @@ const FeatureModal = ({
           </svg>
         </button>
 
-        <div className="flex items-center gap-4 mb-8 pr-8">
+        <div className="flex items-start gap-4 mb-8 pr-8">
           {feature.LucidaIcon ? (
             <span
               className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border ${styles.border} ${styles.bg} ${styles.text}`}
@@ -97,6 +97,11 @@ const FeatureModal = ({
             >
               {t(feature.featureName)}
             </h2>
+            {feature.featureShortDesc && (
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-6 mt-3">
+                {t(feature.featureShortDesc)}
+              </p>
+            )}
           </div>
         </div>
 

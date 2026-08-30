@@ -376,17 +376,17 @@
           "Follow Up: Monitor tasks delegated to other employees while continuing to follow their progress.",
           "Completed Tasks: View tasks that have already been completed.",
           "Task Forms: Open the exact form configured for each process step.",
-          "Task Actions: Complete, reject, delegate, or return tasks according to the available process actions.",
+          "Task Actions: Five distinct actions — assign (delegate) a task to another employee, reject a delegation you received, withdraw a delegation you made, reject the task itself, or return it one step in the process.",
           "Shared Queue: Claim unassigned tasks from a shared work queue.",
           "Search & Filters: Find tasks using free-text search and filters such as process, date range, originator, and participant.",
-          "Task Status: Track tasks through states such as assigned, being worked, completed, delegated, escalated, rejected, and returned."
+          "Task Status: Track tasks through states such as in the queue, assigned, being worked, completed, delegated, escalated, rejected, and sent back a step."
         ]
       },
       "services": {
         "featureName": "Services",
         "featureShortDesc": "Start business processes from a catalog containing only the services available to the current user.",
         "featureDesc": [
-          "Service Catalog: Display the processes that the current user is authorized to start.",
+          "Service Catalog: Display the processes that the current user is authorized to start; an empty catalog tells the user no process has been granted to them.",
           "Published Processes: Show each process using its latest published version.",
           "Start Form: Open the process-specific form before creating a new case.",
           "Attachments: Upload required files before the case is created.",
@@ -405,7 +405,7 @@
           "Published: Publish a process version so it becomes available for starting new cases.",
           "Retired: Retire processes that should remain available for records but should no longer be offered to users.",
           "Current Version: Define the version that new cases will use.",
-          "Restore: Restore a retired process when it should become available again.",
+          "Restore: Restore a retired process when it should become available again — retiring or restoring applies to the process as a whole, not a single version.",
           "Running Cases: Existing cases continue executing the version they started with, even when a newer version is published."
         ]
       },
@@ -416,14 +416,15 @@
           "Visual Designer: Draw business processes on a visual canvas without writing code.",
           "Process Elements: Configure start events, end events, timer events, boundary events, user tasks, gateways, and automated steps.",
           "Step Configuration: Configure forms, assignment rules, deadlines, escalation, bilingual summaries, and notifications for each step.",
-          "Assignment Rules: Assign steps to employees, groups, organisational units, job titles, managers, the request originator, or captured process values.",
+          "Assignment Rules: Assign steps using one of nine rule types — specific employee, work group, organisational unit, job title, direct manager, department manager, manager of a named unit, originator of the request, or a captured process value — with exactly one reference filled per rule.",
           "Automated Steps: Configure email, WhatsApp, PDF generation, external services, database queries, and repository archiving.",
           "Branching: Configure exclusive, parallel, and inclusive process gateways.",
-          "Simulation: Run a process through the diagram before deployment and use the real forms configured for its steps.",
-          "Validation: Detect blocking errors and warnings before a process is deployed.",
+          "Simulation: Run a token through the diagram before deployment, prompting for the initial assignee and variables and opening each step's real form.",
+          "Validation: Detect blocking errors, which refuse the deploy, and warnings, which do not, before a process is deployed.",
           "Deployment: Convert the configured process into an executable workflow contract and publish it as a version.",
+          "Business-Logic Pipeline: Turn the canvas into an engine-ready contract through validation, diagram emission, placeholder rewriting, condition compilation, variable cataloging, contract assembly, and version publishing — every step has an exact inverse, which is what makes a published process editable.",
           "Re-opening: Open an existing published definition in the editor, modify it, and deploy the changes as a new version.",
-          "Deadlines & Escalation: Configure step-specific permitted durations and escalation targets.",
+          "Deadlines & Escalation: Configure step-specific permitted durations and escalation targets, which can be resolved dynamically from a value captured earlier in the process.",
           "Bilingual Design: Maintain English and Arabic names, descriptions, case titles, and step summaries."
         ]
       },
@@ -439,7 +440,6 @@
           "Runtime Rendering: Use the same form renderer for simulations, process start forms, and Inbox task forms."
         ]
       },
-
       "monitoring": {
         "featureName": "Monitoring",
         "featureShortDesc": "Monitor running process cases, execution progress, task ownership, history, and administrative actions.",
@@ -448,8 +448,8 @@
           "Execution Status: Identify activities that have already run, the current activity, and the person responsible for each task.",
           "Detailed History: View the assignee, state, timing, and sequence of every activity.",
           "Case Tracking: Follow a running case from the task where it is already being worked.",
-          "Suspend & Resume: Administrators can suspend and resume running cases according to engine state rules.",
-          "Delete Case: Administrators can delete running cases when permitted by the engine.",
+          "Suspend & Resume: Administrators can suspend and resume running cases according to engine state rules, recording a reason for the action.",
+          "Delete Case: Administrators can delete running cases when permitted by the engine, recording a reason for the action.",
           "Start Form History: Re-open the original submitted start form in read-only mode.",
           "Auditability: Preserve task actions, decisions, assignees, timing, and reasons throughout process execution."
         ]
