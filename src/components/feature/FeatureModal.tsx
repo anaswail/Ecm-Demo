@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { colorStyles, type Feature } from "../../constants/AboutData";
+import { type Feature } from "../../constants/AboutData";
 import { useTranslation } from "react-i18next";
 
 // Each entry is authored as "Title: description" — split once for a bold
@@ -23,7 +23,6 @@ const FeatureModal = ({
   onClose: () => void;
 }) => {
   const { t } = useTranslation();
-  const styles = colorStyles[feature.color];
   const featureDesc = t(feature.featureDesc, {
     returnObjects: true,
   }) as string[];
@@ -51,11 +50,9 @@ const FeatureModal = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 12 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl border ${styles.border}/30 bg-white dark:bg-bg-main p-6 sm:p-8`}
+        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-xl border border-primary/30 bg-white dark:bg-bg-main p-6 sm:p-8"
       >
-        <div
-          className={`pointer-events-none absolute inset-0 -z-10 bg-radial ${styles.glow} from-0% to-70% to-black/0`}
-        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-radial from-primary/10 from-0% to-70% to-black/0" />
 
         <button
           type="button"
@@ -75,9 +72,7 @@ const FeatureModal = ({
 
         <div className="flex items-start gap-4 mb-8 pr-8">
           {feature.LucidaIcon ? (
-            <span
-              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md border ${styles.border} ${styles.bg} ${styles.text}`}
-            >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/10 text-primary">
               {feature.LucidaIcon}
             </span>
           ) : (
@@ -88,7 +83,7 @@ const FeatureModal = ({
             />
           )}
           <div>
-            <span className={`text-xs font-semibold ${styles.text}`}>
+            <span className="text-xs font-semibold text-primary">
               {feature.featureShortName}
             </span>
             <h2
@@ -110,15 +105,13 @@ const FeatureModal = ({
             const { title, desc } = splitEntry(entry);
             return (
               <li key={entry} className="flex gap-3">
-                <span
-                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border ${styles.border} ${styles.bg}`}
-                >
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/10">
                   <svg
                     width="14"
                     height="14"
                     viewBox="0 0 20 20"
                     fill="none"
-                    className={styles.text}
+                    className="text-primary"
                   >
                     <path
                       d="M4 10.5l4 4 8-9"

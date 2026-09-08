@@ -5,10 +5,7 @@ import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { Loader2, CheckCircle2, AlertCircle, Send } from "lucide-react";
 
-import {
-  decorationColors,
-  featuresDecorationIcons,
-} from "../constants/HeroData";
+import { featuresDecorationIcons } from "../constants/HeroData";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -81,6 +78,8 @@ const Contact = () => {
     }
   };
 
+  // red/green here are semantic (validation error / success), not brand
+  // color — kept separate from the single accent used for everything else.
   const inputClasses = (hasError?: boolean) =>
     `w-full rounded-md border ${
       hasError
@@ -93,9 +92,9 @@ const Contact = () => {
       id="contact"
       className="relative overflow-hidden py-16 sm:py-24 px-5 sm:px-8 md:px-12"
     >
-      {/* Decorations — same red/blue pair used site-wide */}
-      <div className="pointer-events-none absolute top-0 -left-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/10 from-0% to-black/0 to-70%" />
-      <div className="pointer-events-none absolute bottom-0 -right-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-blue/10 from-0% to-blue/0 to-70%" />
+      {/* Decorations — same single accent used site-wide */}
+      <div className="pointer-events-none absolute top-0 -left-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/10 from-0% to-primary/0 to-70%" />
+      <div className="pointer-events-none absolute bottom-0 -right-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/5 from-0% to-primary/0 to-70%" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -209,7 +208,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="cursor-pointer bg-primary uppercase py-3 px-6 rounded-md drop-shadow-primary/20 drop-shadow-lg text-white text-xs flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+            className="cursor-pointer bg-primary hover:bg-primary/90 transition-colors duration-200 uppercase py-3 px-6 rounded-md shadow-sm text-white text-xs flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mt-2"
           >
             {status === "loading" ? (
               <Loader2 size={16} className="animate-spin" />
@@ -245,26 +244,6 @@ const Contact = () => {
           </AnimatePresence>
         </form>
       </motion.div>
-      {featuresDecorationIcons.map((feature, idx) => (
-        <motion.div
-          animate={{
-            x: [0, 14, -10, 8, -6, 0],
-            y: [0, -18, 6, -12, 4, 0],
-            rotate: [0, 3, -2, 2, -1, 0],
-          }}
-          transition={{
-            duration: 14 + idx * 1.5,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-            delay: idx * 0.7,
-          }}
-          key={idx}
-          className={`hidden lg:flex pointer-events-none opacity-80 ${decorationColors[feature.color]?.bg || "bg-gray/10"} absolute ${feature.position} border ${decorationColors[feature.color]?.border || "border-gray"} rounded-md p-3 items-center justify-center`}
-        >
-          <img src={feature.icon} alt="icon" className="w-8 h-8" />
-        </motion.div>
-      ))}
     </section>
   );
 };
