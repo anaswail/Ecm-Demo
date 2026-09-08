@@ -11,35 +11,7 @@ interface ICardProps {
   isActive?: boolean;
 }
 
-const colorStyles = {
-  green: {
-    border: "border-green/20",
-    bg: "bg-green/10",
-    text: "text-green",
-    shadow: "drop-shadow-green/20",
-  },
-  yellow: {
-    border: "border-yellow/20",
-    bg: "bg-yellow/10",
-    text: "text-yellow",
-    shadow: "drop-shadow-yellow/20",
-  },
-  blue: {
-    border: "border-blue/20",
-    bg: "bg-blue/10",
-    text: "text-blue",
-    shadow: "drop-shadow-blue/20",
-  },
-  red: {
-    border: "border-red/20",
-    bg: "bg-red/10",
-    text: "text-red",
-    shadow: "drop-shadow-red/20",
-  },
-};
-
 const Card = ({
-  color,
   icon,
   title,
   desc,
@@ -47,24 +19,25 @@ const Card = ({
   feature,
   isActive,
 }: ICardProps) => {
-  const styles = colorStyles[color as keyof typeof colorStyles];
   const { lang } = useAppContext();
   return (
     <motion.div
-      className={`${isActive ? "fixed top-1/2 left-1/2 -translate-1/2 w-3/4 h-80 " : "relative w-92 h-42 "}  overflow-hidden bg-gray-50 dark:bg-bg-primary  p-5 rounded-lg border ${styles.border} flex flex-col justify-between shadow-lg shadow-${color}/20`}
+      className={`${
+        isActive
+          ? "fixed top-1/2 left-1/2 -translate-1/2 w-[90%] max-w-md h-auto min-h-64"
+          : "relative w-full h-full min-h-44 sm:min-h-48"
+      } overflow-hidden bg-gray-50 dark:bg-bg-primary p-5 rounded-lg border border-gray-200 dark:border-gray-800 flex flex-col justify-between gap-3 shadow-sm`}
     >
       {/* background icon — pushed behind content */}
       <img
         src={icon}
         alt={`${title} icon`}
-        className="absolute left-1/2 top-1/2 -translate-1/2 w-16 h-16 opacity-25 pointer-events-none z-0"
+        className="absolute left-1/2 top-1/2 -translate-1/2 w-16 h-16 opacity-10 pointer-events-none z-0"
       />
 
       {/* content — lifted above background icon */}
       <div className="relative z-10 feature-name flex justify-between items-center">
-        <h2
-          className={`border ${styles.border} ${styles.bg} ${styles.text} font-semibold text-xs px-2 py-1 rounded-sm`}
-        >
+        <h2 className="border border-primary/20 bg-primary/10 text-primary font-semibold text-xs px-2 py-1 rounded-sm">
           {feature}
         </h2>
         {isAFeature && (
@@ -82,7 +55,7 @@ const Card = ({
         {title}
       </h1>
       <p
-        className={`relative z-10 text-gray-600 dark:text-gray-400 ${lang === "en" ? "text-xs leading-5" : "text-sm leading-6"}  tracking-wider  w-80`}
+        className={`relative z-10 text-gray-600 dark:text-gray-400 ${lang === "en" ? "text-xs leading-5" : "text-sm leading-6"} tracking-wider w-full`}
       >
         {desc}
       </p>

@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import * as Slick from "react-slick";
 import { motion } from "motion/react";
-import { colorStyles } from "../constants/AboutData";
 
 const Slider = (Slick as any).default?.default ?? (Slick as any).default;
 
@@ -62,7 +61,6 @@ const customers = [
 
 const Customers = () => {
   const { t } = useTranslation();
-  const styles = colorStyles.red;
 
   var settings = {
     dots: false,
@@ -73,6 +71,7 @@ const Customers = () => {
     speed: 2000,
     autoplaySpeed: 0,
     cssEase: "linear",
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -104,10 +103,8 @@ const Customers = () => {
       id="customers"
       className="relative overflow-hidden py-14 sm:py-20 px-5 sm:px-8 md:px-20"
     >
-      {/* Ambient glow, consistent with the module section */}
-      <div
-        className={`pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-90 sm:w-150 h-45 sm:h-75 rounded-full bg-radial ${styles.glow} from-0% to-black/0 to-70%`}
-      />
+      {/* Ambient glow, consistent with every other section */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-90 sm:w-150 h-45 sm:h-75 rounded-full bg-radial from-primary/10 from-0% to-primary/0 to-70%" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -116,7 +113,7 @@ const Customers = () => {
         transition={{ duration: 0.6 }}
         className="relative z-10 text-center mb-10 sm:mb-12"
       >
-        <span className={`text-xs font-semibold ${styles.text}`}>
+        <span className="text-xs font-semibold text-primary">
           {t("customers.badge")}
         </span>
 

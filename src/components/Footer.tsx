@@ -19,9 +19,9 @@ const Footer = () => {
     <footer className="relative overflow-hidden pt-16 sm:pt-20 pb-8 px-5 sm:px-8 md:px-12">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-800 to-transparent" />
 
-      {/* Decorations — same red/blue pair used site-wide */}
-      <div className="pointer-events-none absolute bottom-0 -left-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/10 from-0% to-black/0 to-70%" />
-      <div className="pointer-events-none absolute -top-40 -right-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-blue/10 from-0% to-blue/0 to-70%" />
+      {/* Decorations — same single accent used site-wide */}
+      <div className="pointer-events-none absolute bottom-0 -left-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/10 from-0% to-primary/0 to-70%" />
+      <div className="pointer-events-none absolute -top-40 -right-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/5 from-0% to-primary/0 to-70%" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="flex flex-col gap-5 max-w-sm">
             <div className="logo en-font flex items-center gap-2">
-              <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md drop-shadow-lg drop-shadow-primary/30">
+              <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md shadow-sm">
                 <Plus size={12} strokeWidth={5} color="white" />
               </span>
               <h2 className="font-bold text-2xl dark:text-white text-black">

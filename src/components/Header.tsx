@@ -70,7 +70,7 @@ const Header = () => {
       } top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12`}
     >
       <div className="logo en-font flex items-center gap-2 shrink-0" dir="ltr">
-        <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md drop-shadow-lg drop-shadow-primary/30">
+        <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md shadow-sm">
           <Plus size={12} strokeWidth={5} color="white" />
         </span>
         <h2 className="font-bold text-xl sm:text-2xl dark:text-white text-black">
@@ -89,7 +89,7 @@ const Header = () => {
       <div className="controllers hidden md:flex items-center gap-5">
         <Button
           onClickEvent={handleChangeLanguage}
-          className="flex items-center gap-2 text-primary bg-primary/5 dark:bg-primary/2 rounded-md py-2 px-4 text-sm hover:bg-primary/10 hover:text-white transition-all duration-300 cursor-pointer"
+          className="flex items-center gap-2 text-primary bg-primary/5 dark:bg-primary/5 rounded-md py-2 px-4 text-sm border border-primary/20 hover:bg-primary hover:text-white hover:border-primary transition-colors duration-200 cursor-pointer"
         >
           <Languages size={20} />
           {lang === "ar" ? t("header.English") : t("header.Arabic")}
@@ -98,9 +98,9 @@ const Header = () => {
           onClickEvent={() =>
             setMood((prev) => (prev === "dark" ? "light" : "dark"))
           }
-          className="rounded-full inset-shadow-primary/70 bg-primary/10 p-1 cursor-pointer hover:bg-primary/50 transition-all text-primary hover:text-white"
+          className="rounded-full border border-primary/20 bg-primary/5 p-1.5 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
         >
-          {mood === "dark" ? <Sun /> : <Moon />}
+          {mood === "dark" ? <Sun size={18} /> : <Moon size={18} />}
         </Button>
       </div>
 
@@ -137,7 +137,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <Button
                 onClickEvent={handleChangeLanguage}
-                className="flex items-center gap-2 text-primary bg-primary/5 rounded-md py-2 px-4 text-sm hover:bg-primary/10 hover:text-white transition-all duration-300 cursor-pointer"
+                className="flex items-center gap-2 text-primary bg-primary/5 rounded-md py-2 px-4 text-sm border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 <Languages size={18} />
                 {lang === "ar" ? t("header.English") : t("header.Arabic")}
@@ -146,7 +146,7 @@ const Header = () => {
                 onClickEvent={() =>
                   setMood((prev) => (prev === "dark" ? "light" : "dark"))
                 }
-                className="rounded-full bg-primary/10 p-2 cursor-pointer hover:bg-primary/50 transition-all text-primary hover:text-white"
+                className="rounded-full border border-primary/20 bg-primary/5 p-2 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
               >
                 {mood === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </Button>

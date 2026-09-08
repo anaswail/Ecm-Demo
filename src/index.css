@@ -15,12 +15,7 @@
 
 @theme {
   /* ======= Colors ======= */
-  --color-primary: #ff2e2e;
-
-  --color-green: #34c759;
-  --color-blue: #007aff;
-  --color-red: #ff2e2e;
-  --color-yellow: #ff9500;
+  --color-primary: #2563eb; /* professional blue — single accent */
 
   --color-bg-primary: #0d0d11;
   --color-bg-main: #050505;
