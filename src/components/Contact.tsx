@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { Loader2, CheckCircle2, AlertCircle, Send } from "lucide-react";
 
-import { featuresDecorationIcons } from "../constants/HeroData";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
