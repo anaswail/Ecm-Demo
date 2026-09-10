@@ -14,11 +14,48 @@
 }
 
 @theme {
-  /* ======= Colors ======= */
-  --color-primary: #2563eb; /* professional blue — single accent */
+  --color-primary: var(--primary);
 
-  --color-bg-primary: #0d0d11;
-  --color-bg-main: #050505;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-main: var(--bg-main);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-border: var(--border);
+
+  /* modules */
+  --color-bpm: #2563eb;
+  --color-dms: #16a34a;
+  --color-cms: #dc2626;
+  --color-mms: #d97706;
+}
+
+:root {
+  /* Light */
+  --primary: #0f172a;
+  --secondary: #475569;
+
+  --bg-primary: #ffffff;
+  --bg-main: #f8fafc;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+
+  --border: #f0e2e2;
+}
+
+.dark {
+  /* Dark */
+  --primary: #3b82f6;
+
+  --bg-primary: #0d0d11;
+  --bg-main: #050505;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  --border: #27272a;
 }
 
 html,

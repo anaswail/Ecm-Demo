@@ -3,8 +3,26 @@
     "home": "Home",
     "about": "About",
     "modules": "System Modules",
+    "modulesList": {
+      "dms": {
+        "name": "DMS",
+        "desc": "Document Management System"
+      },
+      "cms": {
+        "name": "CMS",
+        "desc": "Correspondence Management System"
+      },
+      "mms": {
+        "name": "MMS",
+        "desc": "Meeting Management System"
+      },
+      "bpm": {
+        "name": "BPM",
+        "desc": "Business Process Management"
+      }
+    },
     "customers": "Customers",
-    "contact": "Contact Us",
+    "platform": "Platform",
     "English": "English",
     "Arabic": "Arabic"
   },

@@ -4,7 +4,7 @@ import {
   decorations,
   featuresCards,
   type Feature,
-} from "../constants/AboutData";
+} from "../data/home/AboutData";
 import FeatureModal from "./feature/FeatureModal";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../context/AppContext";

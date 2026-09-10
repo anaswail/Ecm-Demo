@@ -7,7 +7,7 @@ import {
   decorationColors,
   featuresDecorationIcons,
   features,
-} from "../constants/HeroData";
+} from "../data/home/HeroData";
 import { useAppContext } from "../context/AppContext";
 
 const cardVariants = {

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { Mail, Plus } from "lucide-react";
 
-import NavLink from "./header/NavLink";
+import NavLink from "../navbar/NavLink";
 
 // Same four items as Header — the footer nav should never drift from it.
 const navLinksItems = [

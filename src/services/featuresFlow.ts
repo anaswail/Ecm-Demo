@@ -4,7 +4,7 @@ import {
   type Edge,
   type Node,
 } from "@xyflow/react";
-import { features } from "../constants/HeroData";
+import { features } from "../data/home/HeroData";
 import textCustomNode from "../components/flow/TextCustomNode";
 import featureCustomNode from "../components/flow/FeatureCustomNode";
 
