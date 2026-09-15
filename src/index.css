@@ -1,6 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
@@ -14,11 +12,54 @@
 }
 
 @theme {
-  /* ======= Colors ======= */
-  --color-primary: #2563eb; /* professional blue — single accent */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
 
-  --color-bg-primary: #0d0d11;
-  --color-bg-main: #050505;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-main: var(--bg-main);
+
+  /* Renamed from text-primary/text-secondary to avoid colliding with the
+     auto-generated `text-primary` utility (which resolves to gold via
+     --color-primary above). Use text-ink / text-ink-muted in components. */
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+
+  --color-border: var(--border);
+}
+
+:root {
+  --primary: #b89b5e;
+  --primary-hover: #a3874e;
+  /* Text color to use ON TOP of the primary gold fill (buttons, tags-on-gold).
+     Dark ink reads better than white on this gold — do not use white here. */
+  --on-primary: #16150f;
+  /* Reserved for diagrams and data/status highlights only — never buttons or nav. */
+  --accent: #3f5a54;
+
+  --bg-primary: #ffffff;
+  --bg-main: #faf9f5;
+
+  --ink: #16150f;
+  --ink-muted: #6e6c63;
+
+  --border: #e7e3d8;
+}
+
+.dark {
+  --primary: #b89b5e;
+  --primary-hover: #c7ab72;
+  --on-primary: #16150f;
+  --accent: #6a9c92;
+
+  --bg-primary: #0d0d0d;
+  --bg-main: #050505;
+
+  --ink: #f5f5f5;
+  --ink-muted: #aaa49a;
+
+  --border: #2a2824;
 }
 
 html,
@@ -31,6 +72,6 @@ body,
 
 ::selection {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
   padding: 1px;
 }

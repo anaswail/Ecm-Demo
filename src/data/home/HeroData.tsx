@@ -1,7 +1,7 @@
-import mms from "../assets/mms.webp";
-import dms from "../assets/dms.webp";
-import bpm from "../assets/bpm.webp";
-import cms from "../assets/cms.webp";
+import mms from "../../assets/mms.webp";
+import dms from "../../assets/dms.webp";
+import bpm from "../../assets/bpm.webp";
+import cms from "../../assets/cms.webp";
 
 type DecorationColor = "green" | "yellow" | "blue" | "red";
 

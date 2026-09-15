@@ -3,17 +3,48 @@
     "home": "Home",
     "about": "About",
     "modules": "System Modules",
+    "modulesList": {
+      "dms": {
+        "name": "DMS",
+        "desc": "Document Management System"
+      },
+      "cms": {
+        "name": "CMS",
+        "desc": "Correspondence Management System"
+      },
+      "mms": {
+        "name": "MMS",
+        "desc": "Meeting Management System"
+      },
+      "bpm": {
+        "name": "BPM",
+        "desc": "Business Process Management"
+      }
+    },
     "customers": "Customers",
-    "contact": "Contact Us",
+    "platform": "Platform",
+    "resources": "Resources",
+    "resourcesList": {
+      "blog": {
+        "name": "Blog",
+        "desc": "Read our latest articles and insights"
+      },
+      "faq": {
+        "name": "FAQ",
+        "desc": "Find answers to frequently asked questions"
+      }
+    },
+
+    "contact": "Contact",
     "English": "English",
     "Arabic": "Arabic"
   },
 
   "hero": {
-    "version": "Version 1.0.0 Release",
-    "desc": "Empowering the Next Era of Digital Transformation. Orchestrate structured documents, automated workflows, and heavy media pipelines at enterprise scale.",
-    "trial": "Initial Free Trial",
-    "demo": "Request Architecture Demo",
+    "title": "Transform the way your organization works.",
+    "desc": "ECM+ brings documents, meetings, business processes, and digital content together in one connected enterprise platform",
+    "primary": "Explore ECM+",
+    "secondary": "Request Architecture Demo",
 
     "features": {
       "dms": {
@@ -33,6 +64,77 @@
         "desc": "Manage, route, track, and organize organizational correspondence with CMS."
       }
     }
+  },
+
+  "problem": {
+    "eyebrow": "The Challenge",
+    "title": "Your information is everywhere it shouldn't be.",
+    "desc": "Documents live in one system, meetings in another, and approvals sit in someone's inbox. Processes rely on manual follow-ups, and decisions get buried in email threads. The more an organization grows, the harder it gets to know where anything actually lives.",
+    "quote": "Built for organizations where complexity is part of the workflow.",
+    "tags": {
+      "enterprise": "Enterprise",
+      "government": "Government",
+      "informationIntensive": "Information-Intensive"
+    }
+  },
+
+  "solution": {
+    "eyebrow": "The Platform",
+    "title": "One platform. Four connected modules.",
+    "desc": "ECM+ brings documents, correspondence, meetings, and business processes into a single system — each module stands on its own, but the value comes from how they connect.",
+    "moduleLink": "Learn more",
+    "modules": {
+      "dms": {
+        "tag": "DMS",
+        "title": "Document Management System",
+        "desc": "Archive, organize, and govern access to every document your organization holds."
+      },
+      "cms": {
+        "tag": "CMS",
+        "title": "Correspondence Management System",
+        "desc": "Track incoming and outgoing correspondence with external entities end to end."
+      },
+      "mms": {
+        "tag": "MMS",
+        "title": "Meetings Management System",
+        "desc": "Plan, run, and follow up on meetings, committees, and the tasks they create."
+      },
+      "bpm": {
+        "tag": "BPM",
+        "title": "Business Process Management",
+        "desc": "Design and automate approval workflows, with full visibility into every step."
+      }
+    }
+  },
+  "stats": {
+    "countries": "Countries with active deployments",
+    "projects": "Successful projects delivered",
+    "waste": "In operational waste avoided",
+    "documents": "Documents managed"
+  },
+
+  "testimonials": {
+    "eyebrow": "Customers",
+    "title": "What clients say",
+    "prev": "Previous testimonial",
+    "next": "Next testimonial",
+    "items": {
+      "itDirector": {
+        "quote": "The ECM system has transformed our operations. We now handle documents more efficiently, ensuring timely decisions and enhanced security. The level of transparency and compliance we've achieved is remarkable.",
+        "role": "Director of IT"
+      },
+      "vodafoneQatar": {
+        "quote": "Our ECM solution has streamlined our document handling processes, greatly enhancing efficiency and security. The automated workflows have also reduced our reliance on manual tasks, saving us time and reducing errors.",
+        "role": "CIO, Vodafone Qatar"
+      }
+    }
+  },
+
+  "cta": {
+    "title": "See how it works with your own documents.",
+    "desc": "We'll walk through your actual approval flows and show where ECM+ fits — not a generic demo.",
+    "primary": "Request a demo",
+    "secondary": "Explore the platform"
   },
 
   "about": {
@@ -485,8 +587,33 @@
     }
   },
   "footer": {
-    "desc": "Centralize your organization's documents, meetings, and workflows in one connected platform.",
+    "desc": "An enterprise content management platform bringing documents, correspondence, meetings, and business processes into one connected system.",
     "contact": "Get in touch",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "columns": {
+      "platform": "Platform",
+      "company": "Company",
+      "resources": "Resources"
+    },
+    "links": {
+      "platform": "Overview",
+      "dms": "Document Management",
+      "cms": "Correspondence Management",
+      "mms": "Meetings Management",
+      "bpm": "Business Process Management",
+      "about": "About",
+      "customers": "Customers",
+      "contact": "Contact",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "newsletter": {
+      "title": "Stay updated",
+      "desc": "Occasional updates on new modules and releases.",
+      "placeholder": "Your email address",
+      "action": "Subscribe"
+    }
   }
 }

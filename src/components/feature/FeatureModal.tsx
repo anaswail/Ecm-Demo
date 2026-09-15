@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { type Feature } from "../../constants/AboutData";
+import { type Feature } from "../../data/home/AboutData";
 import { useTranslation } from "react-i18next";
 
 // Each entry is authored as "Title: description" — split once for a bold

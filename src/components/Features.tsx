@@ -1,7 +1,7 @@
 import { ReactFlow } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { motion } from "motion/react";
-import { colorStyles, decorations } from "../constants/AboutData";
+import { colorStyles, decorations } from "../data/home/AboutData";
 import { useFeaturesFlow } from "../services/featuresFlow";
 
 const Features = () => {

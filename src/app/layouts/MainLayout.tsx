@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-// import Features from "./components/Features";
-import Modules from "./components/Modules";
-import { useAppContext } from "./context/AppContext";
-import Customers from "./components/Customers";
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
+import { useAppContext } from "../../context/AppContext";
 
-const App = () => {
+import { Outlet } from "react-router-dom";
+import Header from "../../components/navbar/Header";
+import Footer from "../../components/footer/Footer";
+import CtaBanner from "../../components/CTA/CTABannar";
+
+const MainLayout = () => {
   const { i18n } = useTranslation();
   const { lang, setLang, mood } = useAppContext();
 
@@ -31,19 +28,17 @@ const App = () => {
     <div
       className={`${lang === "ar" ? "ar-font" : "en-font"} ${
         mood === "dark" ? "dark" : ""
-      } min-h-screen w-full overflow-x-hidden bg-[#f8f9fa] dark:bg-bg-main transition-colors duration-300`}
+      } min-h-screen w-full overflow-x-hidden bg-bg-primary dark:bg-bg-main transition-colors duration-300 `}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       <Header />
-      <Hero />
-      <About />
-      {/* <Features /> */}
-      <Modules />
-      <Customers />
-      <Contact />
+      <div className=" mt-20">
+        <Outlet />
+      </div>
+      <CtaBanner />
       <Footer />
     </div>
   );
 };
 
-export default App;
+export default MainLayout;

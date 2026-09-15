@@ -6,8 +6,8 @@ import {
   MailIcon,
   WorkflowIcon,
 } from "lucide-react";
-import { decorations, type Feature } from "../constants/AboutData";
-import { DMSData, MMSData, BPMData, CMSData } from "../constants/FeaturesData";
+import { decorations, type Feature } from "../data/home/AboutData";
+import { DMSData, MMSData, BPMData, CMSData } from "../data/home/FeaturesData";
 
 import FeatureModal from "./feature/FeatureModal";
 import { useTranslation } from "react-i18next";
