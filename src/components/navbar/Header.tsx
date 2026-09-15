@@ -1,4 +1,4 @@
-import { ChevronDown, Languages, Menu, Moon, Plus, Sun, X } from "lucide-react";
+import { ChevronDown, Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
@@ -11,22 +11,34 @@ import {
 import i18n from "../../i18n";
 import { useAppContext } from "../../context/AppContext";
 import Button from "../ui/Button";
+import ecmLogo from "../../assets/ecm-logo.png";
 
 const navLinksItems = [
-  { key: "home", path: "/" },
   { key: "about", path: "/about" },
+  {
+    key: "platform",
+    path: "/platform",
+  },
   {
     key: "modules",
     path: "/modules",
     children: [
-      { key: "dms", path: "/modules/dms" },
-      { key: "mms", path: "/modules/mms" },
-      { key: "cms", path: "/modules/cms" },
-      { key: "bpm", path: "/modules/bpm" },
+      { key: "modulesList.dms", path: "/modules/dms" },
+      { key: "modulesList.mms", path: "/modules/mms" },
+      { key: "modulesList.cms", path: "/modules/cms" },
+      { key: "modulesList.bpm", path: "/modules/bpm" },
     ],
   },
-  { key: "platform", path: "/platform" },
   { key: "customers", path: "/customers" },
+  {
+    key: "resources",
+    path: "/resources",
+    children: [
+      { key: "resourcesList.blog", path: "/resources/blog" },
+      { key: "resourcesList.faq", path: "/resources/faq" },
+    ],
+  },
+  { key: "contact", path: "/contact" },
 ];
 
 const ACRONYMS = ["dms", "mms", "cms", "bpm"];
@@ -39,7 +51,6 @@ const Header = () => {
   const { t } = useTranslation();
   const { lang, setLang, mood, setMood } = useAppContext();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [modulesOpen, setModulesOpen] = useState(false);
   const location = useLocation();
 
   const handleChangeLanguage = () => {
@@ -71,7 +82,6 @@ const Header = () => {
     if (direction > 0) {
       setHidden(true);
       setMenuOpen(false);
-      setModulesOpen(false);
     } else if (direction < 0) {
       setHidden(false);
     }
@@ -90,26 +100,15 @@ const Header = () => {
       animate={{ y: hidden ? "-100%" : "0%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={`z-40 w-full ${
-        isOnTop
-          ? "absolute"
-          : "bg-bg-primary/70 dark:bg-bg-main/40 backdrop-blur-xl border-b border-border fixed"
+        isOnTop ? "absolute" : "bg-white border-b border-border fixed"
       } top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12`}
     >
       <div className="flex items-center gap-3 shrink-0">
-        <div className="logo en-font flex items-center gap-2" dir="ltr">
-          <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md shadow-sm">
-            <Plus size={12} strokeWidth={5} color="white" />
-          </span>
-          <h2 className="font-bold text-xl sm:text-2xl text-text-primary">
-            ECM<span className="text-primary font-extrabold">+</span>
-          </h2>
-        </div>
-
+        <Link to="/" className=" flex items-center justify-center w-20  ">
+          <img src={ecmLogo} alt="ECM Logo" />
+        </Link>
         {showPathIndicator && (
-          <div
-            className="hidden sm:flex items-center gap-1.5 text-xs text-text-secondary en-font"
-            dir="ltr"
-          >
+          <div className="hidden sm:flex items-center gap-1.5 text-xs text-text-secondary mx-3">
             <Link
               to="/"
               className="hover:text-primary transition-colors duration-200"
@@ -129,61 +128,47 @@ const Header = () => {
       <ul className="nav-links hidden md:flex items-center gap-10">
         {navLinksItems.map((item) =>
           item.children ? (
-            <li
-              key={item.key}
-              className="relative"
-              onMouseEnter={() => setModulesOpen(true)}
-              onMouseLeave={() => setModulesOpen(false)}
-            >
+            <li key={item.key} className="relative group">
               <Link
                 to={item.path}
-                className={`flex items-center gap-1 text-[14px] transition-colors duration-200 ${
+                className={`flex items-center gap-1 text-[14px] transition-colors duration-200 font-medium ${
                   isActive(item.path)
-                    ? "text-primary font-medium"
-                    : "text-text-primary hover:text-primary"
+                    ? "text-primary "
+                    : "text-secondary group-hover:text-primary"
                 }`}
               >
                 {t(`header.${item.key}`)}
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 ${
-                    modulesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 group-hover:rotate-180 duration-500" 
+                  `}
                 />
               </Link>
 
-              <AnimatePresence>
-                {modulesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64"
-                  >
-                    <div className="bg-bg-primary border border-border rounded-lg shadow-lg p-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.key}
-                          to={child.path}
-                          className={`block rounded-md px-3 py-2 transition-colors duration-200 ${
-                            isActive(child.path)
-                              ? "bg-primary/5 text-primary"
-                              : "hover:bg-primary/5"
-                          }`}
-                        >
-                          <span className="block text-[14px] font-medium text-text-primary">
-                            {t(`header.modulesList.${child.key}.name`)}
-                          </span>
-                          <span className="block text-xs text-text-secondary mt-0.5">
-                            {t(`header.modulesList.${child.key}.desc`)}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div
+                className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 hidden group-hover:block z-50 duration-200`}
+              >
+                <div className="bg-bg-primary border border-border rounded-lg shadow-lg p-2">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.key}
+                      to={child.path}
+                      className={`block rounded-md px-3 py-2 transition-colors duration-200 ${
+                        isActive(child.path)
+                          ? "bg-primary/5 text-primary"
+                          : "hover:bg-primary/5"
+                      }`}
+                    >
+                      <span className="block text-[14px] font-medium text-text-primary">
+                        {t(`header.${child.key}.name`)}
+                      </span>
+                      <span className="block text-xs text-text-secondary mt-0.5">
+                        {t(`header.${child.key}.desc`)}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </li>
           ) : (
             <li key={item.key}>
@@ -204,20 +189,21 @@ const Header = () => {
 
       <div className="controllers hidden md:flex items-center gap-5">
         <Button
-          onClickEvent={handleChangeLanguage}
-          className="flex items-center gap-2 text-primary bg-primary/5 rounded-md py-2 px-4 text-sm border border-primary/20 hover:bg-primary hover:text-white hover:border-primary transition-colors duration-200 cursor-pointer"
+          onClick={handleChangeLanguage}
+          size="sm"
+          className="flex items-center gap-2 text-primary bg-primary/5 hover:text-white border border-primary/20 rounded-md py-2 px-4 text-sm  cursor-pointer"
         >
           <Languages size={20} />
           {lang === "ar" ? t("header.English") : t("header.Arabic")}
         </Button>
-        <Button
-          onClickEvent={() =>
+        {/* <Button
+          onClick={() =>
             setMood((prev) => (prev === "dark" ? "light" : "dark"))
           }
-          className="rounded-full border border-primary/20 bg-primary/5 p-1.5 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
+          className="rounded-full p-0.5 border border-primary/20 bg-primary/5 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
         >
           {mood === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-        </Button>
+        </Button> */}
       </div>
 
       {/* Mobile toggle */}
@@ -278,14 +264,14 @@ const Header = () => {
             </ul>
             <div className="flex items-center gap-4">
               <Button
-                onClickEvent={handleChangeLanguage}
+                onClick={handleChangeLanguage}
                 className="flex items-center gap-2 text-primary bg-primary/5 rounded-md py-2 px-4 text-sm border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 <Languages size={18} />
                 {lang === "ar" ? t("header.English") : t("header.Arabic")}
               </Button>
               <Button
-                onClickEvent={() =>
+                onClick={() =>
                   setMood((prev) => (prev === "dark" ? "light" : "dark"))
                 }
                 className="rounded-full border border-primary/20 bg-primary/5 p-2 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"

@@ -5,6 +5,7 @@ import { useAppContext } from "../../context/AppContext";
 import { Outlet } from "react-router-dom";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/footer/Footer";
+import CtaBanner from "../../components/CTA/CTABannar";
 
 const MainLayout = () => {
   const { i18n } = useTranslation();
@@ -27,13 +28,14 @@ const MainLayout = () => {
     <div
       className={`${lang === "ar" ? "ar-font" : "en-font"} ${
         mood === "dark" ? "dark" : ""
-      } min-h-screen w-full overflow-x-hidden bg-[#f8f9fa] dark:bg-bg-main transition-colors duration-300 `}
+      } min-h-screen w-full overflow-x-hidden bg-bg-primary dark:bg-bg-main transition-colors duration-300 `}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       <Header />
-      <div className="h-screen bg-red-700 mt-20">
+      <div className=" mt-20">
         <Outlet />
       </div>
+      <CtaBanner />
       <Footer />
     </div>
   );

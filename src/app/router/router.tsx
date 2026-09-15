@@ -8,6 +8,9 @@ import MainLayout from "../layouts/MainLayout";
 import PlatformPage from "../../pages/platform/PlatformPage";
 import DMSPage from "../../pages/dms/DMSPage";
 import CMSPage from "../../pages/cms/CMSPage";
+import BlogPage from "../../pages/blog/BlogPage";
+import FAQPage from "../../pages/faq/FAQPage";
+import ContactPage from "../../pages/contact/ContactPage";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +49,27 @@ export const router = createBrowserRouter([
             element: <BPMPage />,
           },
         ],
+      },
+      {
+        path: "resources",
+        children: [
+          {
+            index: true,
+            element: <Navigate to="blog" replace />,
+          },
+          {
+            path: "blog",
+            element: <BlogPage />,
+          },
+          {
+            path: "faq",
+            element: <FAQPage />,
+          },
+        ],
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
       },
       {
         path: "platform",

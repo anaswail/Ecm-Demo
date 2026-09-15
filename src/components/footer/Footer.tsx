@@ -1,76 +1,132 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Mail, Plus } from "lucide-react";
 
-import NavLink from "../navbar/NavLink";
-
-// Same four items as Header — the footer nav should never drift from it.
-const navLinksItems = [
-  { text: "home", link: "#home" },
-  { text: "about", link: "#about" },
-  { text: "modules", link: "#modules" },
-  { text: "customers", link: "#customers" },
-];
+import { useAppContext } from "../../context/AppContext";
+import Button from "../ui/Button";
+import { footerColumns, legalLinks } from "../../data/footer/FooterData";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { lang } = useAppContext();
+  const langClass = lang !== "en" ? "ar-font" : "en-font";
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    // Wire to the newsletter endpoint once available.
+    if (!email) return;
+    setEmail("");
+  };
 
   return (
-    <footer className="relative overflow-hidden pt-16 sm:pt-20 pb-8 px-5 sm:px-8 md:px-12">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-800 to-transparent" />
-
-      {/* Decorations — same single accent used site-wide */}
-      <div className="pointer-events-none absolute bottom-0 -left-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/10 from-0% to-primary/0 to-70%" />
-      <div className="pointer-events-none absolute -top-40 -right-40 z-0 w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-radial from-primary/5 from-0% to-primary/0 to-70%" />
-
+    <footer className="w-full border-t border-border bg-bg-primary px-5 pb-8 pt-16 sm:pt-20">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-6xl mx-auto flex flex-col gap-10 sm:gap-12"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="mx-auto flex max-w-6xl flex-col gap-12"
       >
-        <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-6">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)] md:gap-8">
           {/* Brand */}
-          <div className="flex flex-col gap-5 max-w-sm">
-            <div className="logo en-font flex items-center gap-2">
-              <span className="bg-primary flex items-center justify-center w-7 h-7 rounded-md shadow-sm">
-                <Plus size={12} strokeWidth={5} color="white" />
+          <div className="flex max-w-sm flex-col gap-5">
+            <Link to="/" className="en-font flex w-fit items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
+                <Plus size={12} strokeWidth={5} className="text-on-primary" />
               </span>
-              <h2 className="font-bold text-2xl dark:text-white text-black">
-                ECM<span className="text-primary font-extrabold">+</span>
-              </h2>
-            </div>
-            <p className="dark:text-gray-400 text-gray-600 text-sm tracking-wider leading-6">
+              <span className="text-2xl font-bold text-ink">
+                ECM<span className="font-extrabold text-primary">+</span>
+              </span>
+            </Link>
+
+            <p
+              className={`text-sm leading-relaxed text-ink-muted ${langClass}`}
+            >
               {t("footer.desc")}
             </p>
-            <motion.a
-              href="mailto:"
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center gap-2 w-fit text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors duration-300"
+
+            <a
+              href="mailto:info@ecmpluss.com"
+              className={`flex w-fit items-center gap-2 text-sm text-ink-muted transition-colors duration-150 hover:text-primary-hover ${langClass}`}
             >
               <Mail size={16} />
               {t("footer.contact")}
-            </motion.a>
+            </a>
           </div>
 
-          {/* Nav — identical items/links to Header, same NavLink component
-              so the hover animation matches exactly */}
-          <ul className="flex flex-row flex-wrap md:flex-col gap-x-8 gap-y-4 dark:text-gray-300 text-black">
-            {navLinksItems.map((item, idx) => (
-              <li className="text-sm" key={idx}>
-                <NavLink text={`header.${item.text}`} link={item.link} />
-              </li>
-            ))}
-          </ul>
+          {/* Sitemap columns */}
+          {footerColumns.map((column) => (
+            <div key={column.titleKey} className="flex flex-col gap-4">
+              <h3 className={`text-[13px] font-semibold text-ink ${langClass}`}>
+                {t(column.titleKey)}
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      to={link.href}
+                      className={`text-sm text-ink-muted transition-colors duration-150 hover:text-ink ${langClass}`}
+                    >
+                      {t(link.labelKey)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Newsletter */}
+        <div className="flex flex-col gap-4 border-t border-border pt-10 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-1">
+            <h3 className={`text-[15px] font-semibold text-ink ${langClass}`}>
+              {t("footer.newsletter.title")}
+            </h3>
+            <p className={`text-sm text-ink-muted ${langClass}`}>
+              {t("footer.newsletter.desc")}
+            </p>
+          </div>
+
+          <div className="flex w-full max-w-md gap-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t("footer.newsletter.placeholder")}
+              aria-label={t("footer.newsletter.placeholder")}
+              className={`w-full rounded-md border border-border bg-bg-main px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none ${langClass}`}
+            />
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleSubscribe}
+              className={`shrink-0 ${langClass}`}
+            >
+              {t("footer.newsletter.action")}
+            </Button>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-t-gray-200 dark:border-t-gray-800">
-          <p className="text-xs text-gray-500 text-center md:text-start">
+        <div className="flex flex-col items-center gap-4 border-t border-border pt-6 md:flex-row md:justify-between">
+          <p className={`text-xs text-ink-muted ${langClass}`}>
             © {new Date().getFullYear()} ECM+. {t("footer.rights")}
           </p>
+
+          <ul className="flex items-center gap-6">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  to={link.href}
+                  className={`text-xs text-ink-muted transition-colors duration-150 hover:text-ink ${langClass}`}
+                >
+                  {t(link.labelKey)}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </motion.div>
     </footer>
