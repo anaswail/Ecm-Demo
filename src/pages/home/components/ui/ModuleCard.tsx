@@ -7,7 +7,6 @@ import type { ModuleItem } from "../../../../data/home/ModulesData";
 
 interface ModuleCardProps {
   module: ModuleItem;
-  /** Hides the right-hand hairline divider on the last card in a row. */
   isLast?: boolean;
 }
 
@@ -25,9 +24,7 @@ const ModuleCard = ({ module, isLast = false }: ModuleCardProps) => {
           : `border-b border-border md:border-b-0 ${lang === "ar" ? "md:border-l" : " md:border-r"}`
       }`}
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-ink">
-        <Icon size={18} strokeWidth={1.75} />
-      </span>
+      <img src={Icon} alt="" className="w-12 h-12" />
 
       <div
         className={`text-[13px] font-medium text-primary-hover ${langClass}`}
