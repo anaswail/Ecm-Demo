@@ -10,7 +10,7 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<"ar" | "en">("en");
+  const [lang, setLang] = useState<"ar" | "en">("ar");
   const [mood, setMood] = useState<"light" | "dark">("light");
 
   return (

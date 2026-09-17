@@ -20,8 +20,6 @@ const fadeUp = {
   },
 };
 
-// Sitewide conversion banner — rendered once in the shared layout, directly
-// above the Footer, so every page ends with the same path to /contact.
 const CtaBanner = ({
   titleKey = "cta.title",
   descKey = "cta.desc",
@@ -41,13 +39,13 @@ const CtaBanner = ({
       >
         <div className="flex flex-col gap-3">
           <h2
-            className={`max-w-lg text-[28px] font-semibold leading-tight tracking-tight text-ink sm:text-[32px] ${langClass}`}
+            className={`max-w-lg text-[28px] font-semibold tracking-tight text-ink sm:text-[32px] ${lang === "ar" ? "leading-relaxed" : "leading-tight "} ${langClass}`}
           >
             {t(titleKey)}
           </h2>
           {descKey && (
             <p
-              className={`max-w-lg text-[16px] leading-relaxed text-ink-muted ${langClass}`}
+              className={`max-w-lg text-[16px] text-ink-muted ${lang === "ar" ? "leading-7" : "leading-relaxed"} ${langClass}`}
             >
               {t(descKey)}
             </p>

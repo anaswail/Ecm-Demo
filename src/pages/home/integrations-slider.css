@@ -1,0 +1,41 @@
+/* react-slick overrides for the integrations strip — restyled to match
+   tokens instead of slick-theme.css, and to actually behave like a
+   continuous marquee (see Integrations.tsx settings: autoplaySpeed: 0,
+   linear easing) rather than slick's default step-and-pause carousel. */
+
+.integrations-slider {
+  position: relative;
+}
+
+.integrations-slider .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.integrations-slider .slick-slide {
+  display: flex !important;
+  height: auto;
+}
+
+.integrations-slider .slick-slide > div {
+  display: flex;
+  margin-inline: 8px;
+}
+
+/* Edge fade via alpha mask, not a background gradient */
+.integrations-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}

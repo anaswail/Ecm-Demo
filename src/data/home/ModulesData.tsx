@@ -9,35 +9,33 @@ export interface ModuleItem {
   href: string;
 }
 
-// The four ECM+ modules, in the same order used across the sitemap
-// (Platform hub, nav, footer) — keep this order consistent everywhere.
 export const modules: ModuleItem[] = [
   {
     icon: FileStack,
-    tagKey: "solution.modules.dms.tag",
-    titleKey: "solution.modules.dms.title",
-    descKey: "solution.modules.dms.desc",
+    tagKey: "home.solution.modules.dms.tag",
+    titleKey: "home.solution.modules.dms.title",
+    descKey: "home.solution.modules.dms.desc",
     href: "/modules/dms",
   },
   {
     icon: Mail,
-    tagKey: "solution.modules.cms.tag",
-    titleKey: "solution.modules.cms.title",
-    descKey: "solution.modules.cms.desc",
+    tagKey: "home.solution.modules.cms.tag",
+    titleKey: "home.solution.modules.cms.title",
+    descKey: "home.solution.modules.cms.desc",
     href: "/modules/cms",
   },
   {
     icon: CalendarClock,
-    tagKey: "solution.modules.mms.tag",
-    titleKey: "solution.modules.mms.title",
-    descKey: "solution.modules.mms.desc",
+    tagKey: "home.solution.modules.mms.tag",
+    titleKey: "home.solution.modules.mms.title",
+    descKey: "home.solution.modules.mms.desc",
     href: "/modules/mms",
   },
   {
     icon: Workflow,
-    tagKey: "solution.modules.bpm.tag",
-    titleKey: "solution.modules.bpm.title",
-    descKey: "solution.modules.bpm.desc",
+    tagKey: "home.solution.modules.bpm.tag",
+    titleKey: "home.solution.modules.bpm.title",
+    descKey: "home.solution.modules.bpm.desc",
     href: "/modules/bpm",
   },
 ];

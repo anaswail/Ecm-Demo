@@ -1,0 +1,61 @@
+/* Restyles react-slick's default chrome to match the design tokens instead
+   of editing the vendor slick-theme.css. */
+
+.testimonial-slider {
+  position: relative;
+}
+
+.testimonial-slider .slick-dots {
+  bottom: -40px;
+}
+.testimonial-slider .slick-dots li button:before {
+  font-size: 8px;
+  color: var(--color-border);
+  opacity: 1;
+}
+.testimonial-slider .slick-dots li.slick-active button:before {
+  color: var(--color-primary);
+}
+
+/* Equal-height cards regardless of quote length */
+.testimonial-slider .slick-track {
+  display: flex !important;
+}
+.testimonial-slider .slick-slide {
+  height: auto !important;
+  display: flex !important;
+}
+.testimonial-slider .slick-slide > div {
+  display: flex;
+  width: 100%;
+  padding-inline: 12px;
+}
+.testimonial-slider .slick-list {
+  margin-inline: -12px;
+  padding-bottom: 8px;
+}
+
+/* Custom prev/next — keep slick's default vertical-center side placement,
+   just neutralize its inline sizing/opacity defaults so our own button
+   styling (border-border, ghost hover) takes over cleanly. */
+.testimonial-slider .slick-prev,
+.testimonial-slider .slick-next {
+  z-index: 10;
+  width: auto;
+  height: auto;
+  opacity: 1;
+}
+.testimonial-slider .slick-prev {
+  left: -14px;
+}
+.testimonial-slider .slick-next {
+  right: -14px;
+}
+@media (max-width: 1080px) {
+  .testimonial-slider .slick-prev {
+    left: 4px;
+  }
+  .testimonial-slider .slick-next {
+    right: 4px;
+  }
+}
