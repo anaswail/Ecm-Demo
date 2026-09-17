@@ -83,7 +83,7 @@ const Hero = ({
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-ink/45" />
+          <div className="absolute inset-0 bg-ink/60" />
           <div
             className="absolute inset-0"
             style={{
@@ -163,6 +163,7 @@ const Hero = ({
                 variant="primary"
                 href={primaryCta.href}
                 onClick={primaryCta.onClick}
+                className={`${onImage ? "text-white" : ""}`}
               >
                 {t(primaryCta.labelKey)}
               </Button>
@@ -172,6 +173,7 @@ const Hero = ({
                 variant="secondary"
                 href={secondaryCta.href}
                 onClick={secondaryCta.onClick}
+                className={`${onImage ? "text-white bg-white/5  hover:bg-primary hover:border-primary " : ""}`}
               >
                 {t(secondaryCta.labelKey)}
               </Button>
@@ -194,14 +196,14 @@ const Hero = ({
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
           aria-label={t("common.scrollDown", "Scroll down")}
-          className={`absolute cursor-pointer bottom-2 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full transition-colors duration-150 ${
-            onImage ? "text-inverse hover:bg-inverse/10" : ""
+          className={`group absolute cursor-pointer left-1/2  z-10 flex -translate-x-1/2 items-center justify-center transition-colors duration-150 ${
+            onImage ? " bottom-20" : "bottom-2 "
           }`}
         >
           <motion.span
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="text-primary "
+            className="text-primary group-hover:text-white "
           >
             <ChevronDown size={18} />
             <ChevronDown size={18} />

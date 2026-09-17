@@ -1,13 +1,5 @@
-import {
-  ChevronDown,
-  Contact,
-  Languages,
-  Menu,
-  Moon,
-  Sun,
-  X,
-} from "lucide-react";
-import { useState } from "react";
+import { ChevronDown, Contact, Languages, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
@@ -16,12 +8,12 @@ import { useAppContext } from "../../context/AppContext";
 import Button from "../ui/Button";
 import ecmLogo from "../../assets/ecm-logo.png";
 
-const navLinksItems = [
+type NavChild = { key: string; path: string };
+type NavItem = { key: string; path: string; children?: NavChild[] };
+
+const navLinksItems: NavItem[] = [
   { key: "about", path: "/about" },
-  {
-    key: "platform",
-    path: "/platform",
-  },
+  { key: "platform", path: "/platform" },
   {
     key: "modules",
     path: "/modules",
@@ -51,18 +43,29 @@ const formatSegment = (seg: string) =>
 
 const Header = () => {
   const { t } = useTranslation();
-  const { lang, setLang, mood, setMood } = useAppContext();
+  const { lang, setLang } = useAppContext();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
+  // Close the whole mobile menu whenever the route changes
+  useEffect(() => {
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+  }, [location.pathname]);
+
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const handleChangeLanguage = () => {
-    if (lang === "en") {
-      i18n.changeLanguage("ar");
-      setLang("ar");
-    } else {
-      i18n.changeLanguage("en");
-      setLang("en");
-    }
+    const next = lang === "en" ? "ar" : "en";
+    i18n.changeLanguage(next);
+    setLang(next);
   };
 
   const isActive = (path: string) =>
@@ -70,16 +73,21 @@ const Header = () => {
       ? location.pathname === "/"
       : location.pathname.startsWith(path);
 
+  const toggleSubmenu = (key: string) =>
+    setOpenSubmenu((prev) => (prev === key ? null : key));
+
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+  };
+
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const showPathIndicator = pathSegments.length > 0;
 
   return (
-    <motion.header
-      className={`z-40 w-full bg-white border-b border-border fixed
-       top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12`}
-    >
+    <motion.header className="z-40 w-full bg-white border-b border-border fixed top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12">
       <div className="flex items-center gap-3 shrink-0">
-        <Link to="/" className=" flex items-center justify-center w-20  ">
+        <Link to="/" className="flex items-center justify-center w-20">
           <img src={ecmLogo} alt="ECM Logo" />
         </Link>
         {showPathIndicator && (
@@ -100,29 +108,27 @@ const Header = () => {
         )}
       </div>
 
-      <ul className="nav-links hidden md:flex items-center gap-10">
+      {/* Desktop nav */}
+      <ul className="nav-links hidden lg:flex items-center gap-10">
         {navLinksItems.map((item) =>
           item.children ? (
             <li key={item.key} className="relative group">
               <Link
                 to={item.path}
-                className={`flex items-center gap-1 text-[14px] transition-colors duration-200 font-medium ${
+                className={`flex items-center gap-1 text-[14px] font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? "text-primary "
+                    ? "text-primary"
                     : "text-secondary group-hover:text-primary"
                 }`}
               >
                 {t(`header.${item.key}`)}
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 group-hover:rotate-180 duration-500" 
-                  `}
+                  className="transition-transform duration-300 group-hover:rotate-180"
                 />
               </Link>
 
-              <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 hidden group-hover:block z-50 duration-200`}
-              >
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 hidden group-hover:block z-50">
                 <div className="bg-bg-primary border border-border rounded-lg shadow-lg p-2">
                   {item.children.map((child) => (
                     <Link
@@ -166,7 +172,7 @@ const Header = () => {
         <Button
           href="/contact"
           variant="primary"
-          className="flex items-center gap-2 cursor-pointer text-ink-muted "
+          className="flex items-center gap-2 cursor-pointer text-ink-muted"
           size="sm"
         >
           <Contact size={20} />
@@ -175,26 +181,20 @@ const Header = () => {
         <Button
           onClick={handleChangeLanguage}
           size="sm"
-          className="flex items-center gap-2 text-primary bg-primary/5 hover:text-white border border-primary/20 rounded-md py-2 px-4 text-sm  cursor-pointer"
+          className="flex items-center gap-2 text-primary bg-primary/5 hover:text-black border border-primary/20 rounded-md py-2 px-4 text-sm cursor-pointer"
         >
           <Languages size={20} />
           {lang === "ar" ? t("header.English") : t("header.Arabic")}
         </Button>
-        {/* <Button
-          onClick={() =>
-            setMood((prev) => (prev === "dark" ? "light" : "dark"))
-          }
-          className="rounded-full p-0.5 border border-primary/20 bg-primary/5 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
-        >
-          {mood === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-        </Button> */}
       </div>
 
       {/* Mobile toggle */}
       <button
         onClick={() => setMenuOpen((prev) => !prev)}
-        className="md:hidden flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-primary"
+        className="lg:hidden flex items-center justify-center w-9 h-9 rounded-md border border-border text-text-primary"
         aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+        aria-controls="mobile-nav"
       >
         {menuOpen ? <X size={18} /> : <Menu size={18} />}
       </button>
@@ -202,51 +202,118 @@ const Header = () => {
       {/* Mobile dropdown */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
+          <motion.nav
+            id="mobile-nav"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 w-full bg-bg-primary border-b border-border flex flex-col gap-6 px-5 py-6"
+            className="lg:hidden absolute top-full left-0 w-full bg-bg-primary border-b border-border flex flex-col gap-6 px-5 py-6 max-h-[calc(100vh-72px)] overflow-y-auto"
           >
-            <ul className="flex flex-col gap-4">
-              {navLinksItems.map((item) => (
-                <li key={item.key}>
-                  <Link
-                    to={item.path}
-                    onClick={() => setMenuOpen(false)}
-                    className={`text-[14px] block ${
-                      isActive(item.path)
-                        ? "text-primary font-medium"
-                        : "text-text-primary"
-                    }`}
+            <ul className="flex flex-col gap-1">
+              {navLinksItems.map((item) => {
+                const isOpen = openSubmenu === item.key;
+
+                if (!item.children) {
+                  return (
+                    <li key={item.key}>
+                      <Link
+                        to={item.path}
+                        onClick={closeMobileMenu}
+                        className={`block py-3 text-[15px] ${
+                          isActive(item.path)
+                            ? "text-primary font-medium"
+                            : "text-text-primary"
+                        }`}
+                      >
+                        {t(`header.${item.key}`)}
+                      </Link>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li
+                    key={item.key}
+                    className="border-b border-border/60 last:border-0"
                   >
-                    {t(`header.${item.key}`)}
-                  </Link>
-                  {item.children && (
-                    <ul className="flex flex-col gap-3 mt-3 ps-4 border-s border-border">
-                      {item.children.map((child) => (
-                        <li key={child.key}>
-                          <Link
-                            to={child.path}
-                            onClick={() => setMenuOpen(false)}
-                            className="block"
-                          >
-                            <span className="block text-[14px] font-medium text-text-primary">
-                              {t(`header.modulesList.${child.key}.name`)}
-                            </span>
-                            <span className="block text-xs text-text-secondary mt-0.5">
-                              {t(`header.modulesList.${child.key}.desc`)}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
+                    <button
+                      type="button"
+                      onClick={() => toggleSubmenu(item.key)}
+                      aria-expanded={isOpen}
+                      aria-controls={`submenu-${item.key}`}
+                      className={`w-full flex items-center justify-between py-3 text-[15px] text-start ${
+                        isActive(item.path) || isOpen
+                          ? "text-primary font-medium"
+                          : "text-text-primary"
+                      }`}
+                    >
+                      {t(`header.${item.key}`)}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.ul
+                          id={`submenu-${item.key}`}
+                          key="submenu"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: "easeInOut" }}
+                          className="overflow-hidden flex flex-col ps-4 border-s border-border"
+                        >
+                          {item.children.map((child) => (
+                            <li key={child.key}>
+                              <Link
+                                to={child.path}
+                                onClick={closeMobileMenu}
+                                className={`block py-2.5 rounded-md ${
+                                  isActive(child.path) ? "text-primary" : ""
+                                }`}
+                              >
+                                <span className="block text-[14px] font-medium text-text-primary">
+                                  {t(`header.${child.key}.name`)}
+                                </span>
+                                <span className="block text-xs text-text-secondary mt-0.5">
+                                  {t(`header.${child.key}.desc`)}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                          <li className="pb-2">
+                            <Link
+                              to={item.path}
+                              onClick={closeMobileMenu}
+                              className="block py-2 text-xs text-primary"
+                            >
+                              {t(`header.${item.key}`)} →
+                            </Link>
+                          </li>
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              })}
             </ul>
+
             <div className="flex items-center gap-4">
+              <Button
+                href="/contact"
+                variant="primary"
+                onClick={closeMobileMenu}
+                className="flex items-center gap-2 cursor-pointer text-ink-muted"
+                size="sm"
+              >
+                <Contact size={20} />
+                {t("header.contact")}
+              </Button>
               <Button
                 onClick={handleChangeLanguage}
                 className="flex items-center gap-2 text-primary bg-primary/5 rounded-md py-2 px-4 text-sm border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200 cursor-pointer"
@@ -254,16 +321,8 @@ const Header = () => {
                 <Languages size={18} />
                 {lang === "ar" ? t("header.English") : t("header.Arabic")}
               </Button>
-              <Button
-                onClick={() =>
-                  setMood((prev) => (prev === "dark" ? "light" : "dark"))
-                }
-                className="rounded-full border border-primary/20 bg-primary/5 p-2 cursor-pointer hover:bg-primary hover:text-white transition-colors duration-200 text-primary"
-              >
-                {mood === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </Button>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </motion.header>

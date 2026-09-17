@@ -3,7 +3,7 @@ import Modules from "./components/sections/Modules";
 import Stats from "./components/sections/Stats";
 import Testimonials from "./components/sections/Testimonials";
 import About from "./components/sections/About";
-// import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/hero.png";
 import Integrations from "./components/sections/Integrations";
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
         descKey="home.hero.desc"
         primaryCta={{ labelKey: "home.hero.primary", href: "/platform" }}
         secondaryCta={{ labelKey: "home.hero.secondary", href: "/contact" }}
-        // backgroundImage={heroImage}
+        backgroundImage={heroImage}
       />
       <About />
       <Modules />

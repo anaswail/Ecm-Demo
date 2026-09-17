@@ -23,7 +23,7 @@ const About = () => {
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
   return (
-    <section className="w-full bg-bg-main px-5 py-10 sm:py-12 sm:mt-12 ">
+    <section className="w-full bg-bg-main px-5 py-10 sm:py-12 ">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-2 md:gap-8">
         {/* Left: the challenge */}
         <motion.div

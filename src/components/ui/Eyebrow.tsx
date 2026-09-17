@@ -7,7 +7,7 @@ const Eyebrow = ({ text }: { text: string }) => {
   const langClass = lang !== "en" ? "ar-font" : "en-font";
   return (
     <span
-      className={`text-xs font-medium uppercase tracking-wide text-primary-hover flex items-center gap-2 ${langClass}`}
+      className={`text-md font-medium uppercase tracking-wide text-primary-hover flex items-center gap-2 ${langClass}`}
     >
       {t(`${text}`)}
       <div className="w-14 h-0.5 bg-primary"></div>
