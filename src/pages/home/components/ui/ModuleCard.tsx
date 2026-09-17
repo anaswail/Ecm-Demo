@@ -20,7 +20,9 @@ const ModuleCard = ({ module, isLast = false }: ModuleCardProps) => {
   return (
     <div
       className={`flex flex-col justify-between h-80 bg-bg-primary p-8 transition-colors duration-150 hover:bg-bg-main ${
-        isLast ? "" : "border-b border-border md:border-b-0 md:border-r"
+        isLast
+          ? ""
+          : `border-b border-border md:border-b-0 ${lang === "ar" ? "md:border-l" : " md:border-r"}`
       }`}
     >
       <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-ink">
@@ -40,7 +42,7 @@ const ModuleCard = ({ module, isLast = false }: ModuleCardProps) => {
       </h3>
 
       <p
-        className={`text-[14.5px] leading-relaxed text-ink-muted ${langClass}`}
+        className={`text-[14.5px] text-ink-muted ${lang === "ar" ? "leading-7" : "leading-relaxed "} ${langClass}`}
       >
         {t(module.descKey)}
       </p>
@@ -49,14 +51,8 @@ const ModuleCard = ({ module, isLast = false }: ModuleCardProps) => {
         to={module.href}
         className={`mt-1 inline-flex items-center gap-1.5 text-[14px] font-medium text-ink transition-colors duration-150 hover:text-primary-hover ${langClass}`}
       >
-        {t("solution.moduleLink")}
-        {
-            lang === "ar" ? (
-                <ArrowLeft size={14} />
-            ) : (
-                <ArrowRight size={14} />
-            )
-        }
+        {t("home.solution.moduleLink")}
+        {lang === "ar" ? <ArrowLeft size={14} /> : <ArrowRight size={14} />}
       </Link>
     </div>
   );

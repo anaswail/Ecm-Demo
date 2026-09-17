@@ -1,13 +1,16 @@
-import { ChevronDown, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import {
+  ChevronDown,
+  Contact,
+  Languages,
+  Menu,
+  Moon,
+  Sun,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import i18n from "../../i18n";
 import { useAppContext } from "../../context/AppContext";
 import Button from "../ui/Button";
@@ -38,7 +41,6 @@ const navLinksItems = [
       { key: "resourcesList.faq", path: "/resources/faq" },
     ],
   },
-  { key: "contact", path: "/contact" },
 ];
 
 const ACRONYMS = ["dms", "mms", "cms", "bpm"];
@@ -63,30 +65,6 @@ const Header = () => {
     }
   };
 
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
-  const [isOnTop, setIsOnTop] = useState(true);
-
-  useMotionValueEvent(scrollY, "change", (current) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    const direction = current - previous;
-
-    if (current < 300) {
-      setHidden(false);
-      setIsOnTop(true);
-      return;
-    }
-
-    setIsOnTop(false);
-
-    if (direction > 0) {
-      setHidden(true);
-      setMenuOpen(false);
-    } else if (direction < 0) {
-      setHidden(false);
-    }
-  });
-
   const isActive = (path: string) =>
     path === "/"
       ? location.pathname === "/"
@@ -97,11 +75,8 @@ const Header = () => {
 
   return (
     <motion.header
-      animate={{ y: hidden ? "-100%" : "0%" }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`z-40 w-full ${
-        isOnTop ? "absolute" : "bg-white border-b border-border fixed"
-      } top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12`}
+      className={`z-40 w-full bg-white border-b border-border fixed
+       top-0 left-0 flex justify-between items-center py-4 sm:py-5 px-5 sm:px-8 md:px-12`}
     >
       <div className="flex items-center gap-3 shrink-0">
         <Link to="/" className=" flex items-center justify-center w-20  ">
@@ -188,6 +163,15 @@ const Header = () => {
       </ul>
 
       <div className="controllers hidden md:flex items-center gap-5">
+        <Button
+          href="/contact"
+          variant="primary"
+          className="flex items-center gap-2 cursor-pointer text-ink-muted "
+          size="sm"
+        >
+          <Contact size={20} />
+          {t("header.contact")}
+        </Button>
         <Button
           onClick={handleChangeLanguage}
           size="sm"

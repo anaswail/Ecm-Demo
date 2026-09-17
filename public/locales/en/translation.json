@@ -40,92 +40,122 @@
     "Arabic": "Arabic"
   },
 
-  "hero": {
-    "title": "Transform the way your organization works.",
-    "desc": "ECM+ brings documents, meetings, business processes, and digital content together in one connected enterprise platform",
-    "primary": "Explore ECM+",
-    "secondary": "Request Architecture Demo",
+  "home": {
+    "hero": {
+      "title": {
+        "mainTitle": "Transform the way your",
+        "accentWord": " organization works"
+      },
+      "desc": "ECM+ brings documents, meetings, business processes, and digital content together in one connected enterprise platform",
+      "primary": "Explore ECM+",
+      "secondary": "Request Architecture Demo"
+    },
 
-    "features": {
+    "about": {
+      "eyebrow": "About Us",
+      "title": "We are here to manage your contents with experience.",
+      "desc": "At ECM+ Company, we are passionate about transforming the way industries manage energy. Our innovative solutions are designed to enhance efficiency and promote sustainability. By reducing energy costs and minimizing environmental impact, we empower businesses to thrive in a greener future. Together, let’s light the path to a more sustainable world.",
+      "quote": "Built for organizations where complexity is part of the workflow",
+      "tags": {
+        "enterprise": "Enterprise",
+        "government": "Government",
+        "informationIntensive": "Information-Intensive"
+      }
+    },
+
+    "solution": {
+      "eyebrow": "The Platform",
+      "title": "One platform. Four connected modules.",
+      "desc": "ECM+ brings documents, correspondence, meetings, and business processes into a single system — each module stands on its own, but the value comes from how they connect.",
+      "moduleLink": "Learn more",
+      "modules": {
+        "dms": {
+          "tag": "DMS",
+          "title": "Document Management System",
+          "desc": "Archive, organize, and govern access to every document your organization holds."
+        },
+        "cms": {
+          "tag": "CMS",
+          "title": "Correspondence Management System",
+          "desc": "Track incoming and outgoing correspondence with external entities end to end."
+        },
+        "mms": {
+          "tag": "MMS",
+          "title": "Meetings Management System",
+          "desc": "Plan, run, and follow up on meetings, committees, and the tasks they create."
+        },
+        "bpm": {
+          "tag": "BPM",
+          "title": "Business Process Management",
+          "desc": "Design and automate approval workflows, with full visibility into every step."
+        }
+      }
+    },
+    "integrations": {
+      "eyebrow": "Integrations",
+      "title": "Works with the tools your teams already use"
+    },
+    "stats": {
+      "countries": "Countries with active deployments",
+      "projects": "Successful projects delivered",
+      "waste": "In operational waste avoided",
+      "documents": "Documents managed"
+    },
+
+    "testimonials": {
+      "eyebrow": "Customers",
+      "title": "What clients say",
+      "prev": "Previous testimonial",
+      "next": "Next testimonial",
+      "items": {
+        "itDirector": {
+          "quote": "The ECM system has transformed our operations. We now handle documents more efficiently, ensuring timely decisions and enhanced security. The level of transparency and compliance we've achieved is remarkable.",
+          "role": "Director of IT"
+        },
+        "vodafoneQatar": {
+          "quote": "Our ECM solution has streamlined our document handling processes, greatly enhancing efficiency and security. The automated workflows have also reduced our reliance on manual tasks, saving us time and reducing errors.",
+          "role": "CIO, Vodafone Qatar"
+        },
+        "qatarCancerSociety": {
+          "quote": "The ECM system has been a game-changer for us. We can now access patient records quickly and securely, ensuring we provide the best care possible while maintaining compliance with regulations",
+          "role": "CEO, Qatar cancer society"
+        },
+        "arabPetroleumPipelines": {
+          "quote": "The ECM solution has significantly improved our document management processes. We now have better control over our production documents, leading to fewer errors and higher efficiency",
+          "role": "Operation Manager, Arab petroleum pipelines co-SUMED, Saudi"
+        },
+        "alDawaaPharmacies": {
+          "quote": "Our ECM system has streamlined the management of medicine records and inter-departmental document exchange. It's a vital tool that has enhanced our operational efficiency and security",
+          "role": "General Manager, al dawaa pharmacies, Saudi"
+        }
+      }
+    }
+  },
+
+  "platform": {
+    "hero": {
+      "eyebrow": "The Platform",
+      "title": "One platform — Four connected systems",
+      "desc": "ECM+ brings documents, correspondence, meetings, and business processes together in one connected platform — giving organizations a unified way to manage information, work, and decisions",
+      "primary": "Explore Modules",
+      "secondary": "Request Architecture Demo"
+    },
+    "modules": {
       "dms": {
         "title": "Document Management System",
         "desc": "Manage documents and correspondence in one place with our DMS."
       },
-      "mms": {
-        "title": "Meeting Management System",
-        "desc": "Plan, document, and track meetings efficiently with our MMS."
-      },
-      "bpm": {
-        "title": "Business Process Management",
-        "desc": "Automate, streamline, and monitor your business processes with BPM."
-      },
       "cms": {
-        "title": "Correspondence Management System",
-        "desc": "Manage, route, track, and organize organizational correspondence with CMS."
-      }
-    }
-  },
-
-  "problem": {
-    "eyebrow": "The Challenge",
-    "title": "Your information is everywhere it shouldn't be.",
-    "desc": "Documents live in one system, meetings in another, and approvals sit in someone's inbox. Processes rely on manual follow-ups, and decisions get buried in email threads. The more an organization grows, the harder it gets to know where anything actually lives.",
-    "quote": "Built for organizations where complexity is part of the workflow.",
-    "tags": {
-      "enterprise": "Enterprise",
-      "government": "Government",
-      "informationIntensive": "Information-Intensive"
-    }
-  },
-
-  "solution": {
-    "eyebrow": "The Platform",
-    "title": "One platform. Four connected modules.",
-    "desc": "ECM+ brings documents, correspondence, meetings, and business processes into a single system — each module stands on its own, but the value comes from how they connect.",
-    "moduleLink": "Learn more",
-    "modules": {
-      "dms": {
-        "tag": "DMS",
-        "title": "Document Management System",
-        "desc": "Archive, organize, and govern access to every document your organization holds."
-      },
-      "cms": {
-        "tag": "CMS",
         "title": "Correspondence Management System",
         "desc": "Track incoming and outgoing correspondence with external entities end to end."
       },
       "mms": {
-        "tag": "MMS",
-        "title": "Meetings Management System",
+        "title": "Meeting Management System",
         "desc": "Plan, run, and follow up on meetings, committees, and the tasks they create."
       },
       "bpm": {
-        "tag": "BPM",
         "title": "Business Process Management",
         "desc": "Design and automate approval workflows, with full visibility into every step."
-      }
-    }
-  },
-  "stats": {
-    "countries": "Countries with active deployments",
-    "projects": "Successful projects delivered",
-    "waste": "In operational waste avoided",
-    "documents": "Documents managed"
-  },
-
-  "testimonials": {
-    "eyebrow": "Customers",
-    "title": "What clients say",
-    "prev": "Previous testimonial",
-    "next": "Next testimonial",
-    "items": {
-      "itDirector": {
-        "quote": "The ECM system has transformed our operations. We now handle documents more efficiently, ensuring timely decisions and enhanced security. The level of transparency and compliance we've achieved is remarkable.",
-        "role": "Director of IT"
-      },
-      "vodafoneQatar": {
-        "quote": "Our ECM solution has streamlined our document handling processes, greatly enhancing efficiency and security. The automated workflows have also reduced our reliance on manual tasks, saving us time and reducing errors.",
-        "role": "CIO, Vodafone Qatar"
       }
     }
   },

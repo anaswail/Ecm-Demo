@@ -30,16 +30,16 @@ const Modules = () => {
           variants={fadeUp}
           className="mb-14 max-w-2xl"
         >
-          <Eyebrow text="solution.eyebrow" />
+          <Eyebrow text="home.solution.eyebrow" />
           <h2
             className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${langClass}`}
           >
-            {t("solution.title")}
+            {t("home.solution.title")}
           </h2>
           <p
-            className={`mt-4 text-[17px] leading-relaxed text-ink-muted ${langClass}`}
+            className={`mt-4 text-[17px] text-ink-muted ${lang === "ar" ? "leading-8" : "leading-relaxed "} ${langClass}`}
           >
-            {t("solution.desc")}
+            {t("home.solution.desc")}
           </p>
         </motion.div>
 

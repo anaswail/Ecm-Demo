@@ -1,20 +1,27 @@
-import Hero from "./components/sections/Hero";
+import Hero from "../../components/hero/Hero";
 import Modules from "./components/sections/Modules";
-import Problem from "./components/sections/Problem";
 import Stats from "./components/sections/Stats";
 import Testimonials from "./components/sections/Testimonials";
+import About from "./components/sections/About";
+// import heroImage from "../../assets/hero.png";
+import Integrations from "./components/sections/Integrations";
 
 const HomePage = () => {
   return (
     <div>
       <Hero
-        titleKey="hero.title"
-        descKey="hero.desc"
-        primaryCta={{ labelKey: "hero.primary" }}
-        secondaryCta={{ labelKey: "hero.secondary" }}
+        titleKey={{
+          mainTitle: "home.hero.title.mainTitle",
+          accentWord: "home.hero.title.accentWord",
+        }}
+        descKey="home.hero.desc"
+        primaryCta={{ labelKey: "home.hero.primary", href: "/platform" }}
+        secondaryCta={{ labelKey: "home.hero.secondary", href: "/contact" }}
+        // backgroundImage={heroImage}
       />
-      <Problem />
+      <About />
       <Modules />
+      <Integrations />
       <Stats />
       <Testimonials />
     </div>

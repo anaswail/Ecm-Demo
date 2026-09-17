@@ -20,22 +20,19 @@
   --color-bg-primary: var(--bg-primary);
   --color-bg-main: var(--bg-main);
 
-  /* Renamed from text-primary/text-secondary to avoid colliding with the
-     auto-generated `text-primary` utility (which resolves to gold via
-     --color-primary above). Use text-ink / text-ink-muted in components. */
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
 
   --color-border: var(--border);
+
+  --color-inverse: var(--inverse);
+  --color-inverse-muted: var(--inverse-muted);
 }
 
 :root {
   --primary: #b89b5e;
   --primary-hover: #a3874e;
-  /* Text color to use ON TOP of the primary gold fill (buttons, tags-on-gold).
-     Dark ink reads better than white on this gold — do not use white here. */
   --on-primary: #16150f;
-  /* Reserved for diagrams and data/status highlights only — never buttons or nav. */
   --accent: #3f5a54;
 
   --bg-primary: #ffffff;
@@ -45,6 +42,9 @@
   --ink-muted: #6e6c63;
 
   --border: #e7e3d8;
+
+  --inverse: #f7f5f0;
+  --inverse-muted: #d9d5c8;
 }
 
 .dark {
@@ -60,6 +60,9 @@
   --ink-muted: #aaa49a;
 
   --border: #2a2824;
+
+  --inverse: #f7f5f0;
+  --inverse-muted: #d9d5c8;
 }
 
 html,
