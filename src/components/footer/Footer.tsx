@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Mail, Plus } from "lucide-react";
+import { Mail } from "lucide-react";
+import ecm from "../../assets/ecm-logo.png";
 
 import { useAppContext } from "../../context/AppContext";
 import Button from "../ui/Button";
@@ -32,13 +33,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)] md:gap-8">
           {/* Brand */}
           <div className="flex max-w-sm flex-col gap-5">
-            <Link to="/" className="en-font flex w-fit items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
-                <Plus size={12} strokeWidth={5} className="text-on-primary" />
-              </span>
-              <span className="text-2xl font-bold text-ink">
-                ECM<span className="font-extrabold text-primary">+</span>
-              </span>
+            <Link to="/" className=" w-20 ">
+              <img src={ecm} alt="ECM+ Logo" />
             </Link>
 
             <p

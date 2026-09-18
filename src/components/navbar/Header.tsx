@@ -308,10 +308,9 @@ const Header = () => {
                 href="/contact"
                 variant="primary"
                 onClick={closeMobileMenu}
-                className="flex items-center gap-2 cursor-pointer text-ink-muted"
-                size="sm"
+                className="flex items-center gap-2 cursor-pointer text-ink-muted py-2 px-4 text-sm border border-primary "
               >
-                <Contact size={20} />
+                <Contact size={18} />
                 {t("header.contact")}
               </Button>
               <Button
