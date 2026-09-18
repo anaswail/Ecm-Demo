@@ -25,7 +25,7 @@ const IntegrationItem = ({
   icon: React.ComponentType<{ size?: number; className?: string }> | string;
   label: string;
 }) => (
-  <div className="flex shrink-0 items-center gap-2.5 rounded-md border border-border bg-bg-primary px-5 py-3">
+  <div className="flex shrink-0 justify-center items-center gap-2.5 rounded-md border border-border bg-bg-primary px-5 py-3">
     {typeof Icon === "string" ? (
       <img src={Icon} alt={label} className="h-[20px] w-[20px]" />
     ) : (

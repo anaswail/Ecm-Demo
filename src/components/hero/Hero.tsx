@@ -203,7 +203,7 @@ const Hero = ({
           <motion.span
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="text-primary group-hover:text-white "
+            className="text-primary group-hover:text-ink "
           >
             <ChevronDown size={18} />
             <ChevronDown size={18} />

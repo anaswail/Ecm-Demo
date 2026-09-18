@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import "../../testimonials-slider.css";
 
 import { useAppContext } from "../../../../context/AppContext";
@@ -66,7 +67,7 @@ const Testimonials = () => {
     // nextArrow: <NextArrow />,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

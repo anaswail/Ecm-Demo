@@ -15,8 +15,8 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
   return (
-    <div className="flex h-full gap-6 rounded-md border border-border bg-bg-primary p-8">
-      <div className="flex w-1/3 shrink-0 items-center justify-center self-start rounded-md border border-border bg-bg-main p-3">
+    <div className="flex h-full flex-col gap-4 rounded-md border border-border bg-bg-primary p-5 sm:flex-row sm:gap-6 sm:p-8">
+      <div className="flex w-20 shrink-0 items-center justify-center self-start rounded-md border border-border bg-bg-main p-3 sm:w-1/3">
         <img
           src={testimonial.logoSrc}
           alt={testimonial.logoAlt}
@@ -24,10 +24,13 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         />
       </div>
 
-      <div className="flex flex-col gap-4">
-        <p className={`text-[16px] leading-relaxed text-ink ${langClass}`}>
+      <div className="flex min-w-0 flex-1 flex-col gap-4">
+        <p
+          className={`break-words text-[16px] leading-relaxed text-ink ${langClass}`}
+        >
           "{t(testimonial.quoteKey)}"
         </p>
+
         <div className={`text-[14px] text-ink-muted ${langClass}`}>
           {testimonial.name && (
             <span className="font-medium text-ink">{testimonial.name} — </span>

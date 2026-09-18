@@ -157,6 +157,120 @@
         "title": "Business Process Management",
         "desc": "Design and automate approval workflows, with full visibility into every step."
       }
+    },
+    "connected": {
+      "eyebrow": "How it connects",
+      "title": "One process. Four connected systems.",
+      "desc": "A single business request can move across correspondence, documents, workflows, and meetings — without losing context along the way.",
+      "scenario": "Example journey: document review and approval",
+      "note": "This order is one example, not a fixed path. Any module can start a process and any module can be called into one: a committee decision can open a new workflow, a workflow can generate outgoing correspondence, and every step writes back to the same record.",
+      "steps": {
+        "receive": {
+          "title": "Correspondence arrives",
+          "desc": "An incoming letter or request from an external entity is registered, given a reference number, matched to its sender, linked to its attachments, and routed to the responsible department."
+        },
+        "centralize": {
+          "title": "Information is centralized",
+          "desc": "The attachments and supporting files behind that correspondence are stored in one controlled repository — versioned, permissioned, and available to every authorized team."
+        },
+        "review": {
+          "title": "Review and approval begin",
+          "desc": "The request enters its approval path — department review, management sign-off, final approval — with owners, deadlines, and a complete record of who acted and when."
+        },
+        "decide": {
+          "title": "A decision needs a meeting",
+          "desc": "When a matter calls for deliberation, it moves onto a committee or department agenda. The meeting records the decision, the action items, and the teams responsible for them."
+        },
+        "followUp": {
+          "title": "Follow-up returns to the workflow",
+          "desc": "Action items raised in the meeting come back as tracked tasks with owners and due dates, so a decision is not closed until the work behind it is done."
+        },
+        "preserve": {
+          "title": "The final record is preserved",
+          "desc": "The approved document, the decision that produced it, and the full history — correspondence, versions, approvals, minutes — are retained together as one controlled organizational record."
+        }
+      },
+      "roles": {
+        "cms": {
+          "tag": "CMS",
+          "name": "Correspondence",
+          "desc": "Registers and routes everything that arrives from, or goes out to, an external entity."
+        },
+        "dms": {
+          "tag": "DMS",
+          "name": "Documents",
+          "desc": "Holds the documents themselves — versioned, permissioned, and retained as records."
+        },
+        "bpm": {
+          "tag": "BPM",
+          "name": "Processes",
+          "desc": "Moves work between people: routing, assignments, approvals, deadlines, tracking."
+        },
+        "mms": {
+          "tag": "MMS",
+          "name": "Meetings",
+          "desc": "Turns discussion into recorded decisions and assigned follow-up."
+        }
+      }
+    },
+    "moduleDetails": {
+      "heading": {
+        "eyebrow": "System Modules",
+        "title": "Four modules. One connected system.",
+        "desc": "Each module works fully on its own, but the real value is in how they connect — a document isn't just archived, it's the same record moving through correspondence, meetings, and approvals without ever being duplicated."
+      },
+      "dms": {
+        "tag": "DMS",
+        "title": "A controlled home for every document.",
+        "desc": "Centralize, organize, and govern your organization's documents with controlled access, structured retention, and fast retrieval.",
+        "capabilities": {
+          "archiving": "Document archiving",
+          "search": "Search and retrieval",
+          "access": "Access control",
+          "retention": "Retention and records"
+        },
+        "cta": "Explore DMS",
+        "alt": "Folder explorer in the document management system, showing the organization's document tree and file details"
+      },
+      "cms": {
+        "tag": "CMS",
+        "title": "Keep every correspondence traceable.",
+        "desc": "Manage incoming and outgoing correspondence from registration to response, while keeping every document, action, and communication connected.",
+        "capabilities": {
+          "incoming": "Incoming correspondence",
+          "outgoing": "Outgoing correspondence",
+          "tracking": "Correspondence tracking",
+          "signatures": "Digital signatures"
+        },
+        "cta": "Explore CMS",
+        "alt": "Correspondence inbox showing registered incoming letters with reference numbers, senders, and status"
+      },
+      "mms": {
+        "tag": "MMS",
+        "title": "Turn meetings into accountable actions.",
+        "desc": "Plan meetings, organize agendas, capture decisions, and track the actions that follow — all within the same information environment.",
+        "capabilities": {
+          "meetings": "Meeting management",
+          "agenda": "Agenda and topics",
+          "decisions": "Decisions",
+          "actions": "Action items and follow-up"
+        },
+        "cta": "Explore MMS",
+        "alt": "Meeting details screen showing the agenda, attendees, and recorded decisions"
+      },
+      "bpm": {
+        "tag": "BPM",
+        "title": "Turn complex processes into controlled workflows.",
+        "desc": "Design, automate, and monitor business processes with configurable workflows, approvals, task routing, and full visibility at every step.",
+        "capabilities": {
+          "designer": "Visual workflow designer",
+          "forms": "Forms",
+          "routing": "Task routing",
+          "approvals": "Approvals and tracking"
+        },
+        "cta": "Explore BPM",
+        "alt": "Visual workflow designer showing an approval process built from connected steps"
+      }
     }
   },
 
