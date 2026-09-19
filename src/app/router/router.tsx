@@ -1,13 +1,13 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "../../pages/home/HomePage";
 import AboutPage from "../../pages/about/AboutPage";
-import MMSPage from "../../pages/mms/MMSPage";
+import MMSPage from "../../pages/modules/mms/MMSPage";
 import CustomersPage from "../../pages/customers/CustomersPage";
-import BPMPage from "../../pages/bpm/BPMPage";
+import BPMPage from "../../pages/modules/bpm/BPMPage";
 import MainLayout from "../layouts/MainLayout";
 import PlatformPage from "../../pages/platform/PlatformPage";
-import DMSPage from "../../pages/dms/DMSPage";
-import CMSPage from "../../pages/cms/CMSPage";
+import DMSPage from "../../pages/modules/dms/DMSPage";
+import CMSPage from "../../pages/modules/cms/CMSPage";
 import BlogPage from "../../pages/blog/BlogPage";
 import FAQPage from "../../pages/faq/FAQPage";
 import ContactPage from "../../pages/contact/ContactPage";

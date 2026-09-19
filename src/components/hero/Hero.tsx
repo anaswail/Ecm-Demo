@@ -1,4 +1,4 @@
-import { type ReactNode, useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
@@ -24,7 +24,7 @@ interface HeroProps {
   descKey?: string;
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
-  visual?: ReactNode;
+  visual?: string;
   backgroundImage?: string;
   /** Defaults to true when backgroundImage is set (full-height hero), false otherwise. */
   showScrollCue?: boolean;
@@ -183,7 +183,7 @@ const Hero = ({
 
         {visual && (
           <motion.div variants={item} className="mt-8 w-full">
-            {visual}
+            <img src={visual} alt="hello" />
           </motion.div>
         )}
       </motion.div>
@@ -197,7 +197,7 @@ const Hero = ({
           transition={{ delay: 0.6, duration: 0.5 }}
           aria-label={t("common.scrollDown", "Scroll down")}
           className={`group absolute cursor-pointer left-1/2  z-10 flex -translate-x-1/2 items-center justify-center transition-colors duration-150 ${
-            onImage ? " bottom-20" : "bottom-2 "
+            onImage ? " bottom-16" : "bottom-2 "
           }`}
         >
           <motion.span

@@ -356,6 +356,55 @@
       }
     }
   },
+  "modules": {
+    "dms": {
+      "hero": {
+        "eyebrow": "Document Management System (DMS)",
+        "title": {
+          "mainTitle": "Every document. Organized, governed, and within reach."
+        },
+        "desc": "ECM+ DMS provides a secure, centralized environment to capture, organize, find, share, govern, and retain enterprise documents throughout their lifecycle.",
+        "primary": "Explore ECM+",
+        "secondary": "Request Architecture Demo"
+      }
+    },
+
+    "cms": {
+      "hero": {
+        "eyebrow": "Correspondence Management System (CMS)",
+        "title": {
+          "mainTitle": "Every correspondence. Tracked, routed, and accountable."
+        },
+        "desc": "ECM+ CMS centralizes incoming and outgoing correspondence, enabling organizations to register, route, track, and manage communications with full visibility and accountability.",
+        "primary": "Explore ECM+",
+        "secondary": "Request Architecture Demo"
+      }
+    },
+
+    "mms": {
+      "hero": {
+        "eyebrow": "Meeting Management System (MMS)",
+        "title": {
+          "mainTitle": "Every meeting. Structured, documented, and actionable."
+        },
+        "desc": "ECM+ MMS brings meetings into a structured digital workflow, from agendas and participants to minutes, decisions, and follow-up actions.",
+        "primary": "Explore ECM+",
+        "secondary": "Request Architecture Demo"
+      }
+    },
+
+    "bpm": {
+      "hero": {
+        "eyebrow": "Business Process Management (BPM)",
+        "title": {
+          "mainTitle": "Every process. Designed, automated, and in control."
+        },
+        "desc": "ECM+ BPM enables organizations to design, automate, execute, and monitor business processes with structured workflows, approvals, task management, and complete process visibility.",
+        "primary": "Explore ECM+",
+        "secondary": "Request Architecture Demo"
+      }
+    }
+  },
   "features": {
     "dms": {
       "module": "Document Management System",

@@ -3,6 +3,8 @@ import Modules from "../home/components/sections/Modules";
 import ConnectedFlow from "./components/sections/ConnectedFlow";
 import ModulesDetails from "./components/sections/ModulesDetails";
 
+import platformImage from "../../assets/modules/platform.png";
+
 const PlatformPage = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ const PlatformPage = () => {
         descKey="platform.hero.desc"
         primaryCta={{ labelKey: "platform.hero.primary", href: "/platform" }}
         secondaryCta={{ labelKey: "platform.hero.secondary", href: "/contact" }}
+        backgroundImage={platformImage}
       />
       <Modules />
       <ConnectedFlow />
