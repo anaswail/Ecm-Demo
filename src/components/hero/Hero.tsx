@@ -134,7 +134,7 @@ const Hero = ({
 
           <motion.h1
             variants={item}
-            className={`text-[40px] leading-[1.1] font-semibold tracking-tight ${
+            className={`text-[40px] leading-[1.1] font-semibold tracking-tight max-w-3xl ${
               lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"
             } ${onImage ? "text-inverse" : "text-ink"} ${visual ? "md:text-[5xl] sm:text-[4xl]" : " sm:text-5xl md:text-[56px]"} ${langClass}`}
           >
