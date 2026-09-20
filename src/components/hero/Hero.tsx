@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
-import { ChevronDown } from "lucide-react";
 
 import Button from "../ui/Button";
+import ScrollCue from "../ui/ScrollCue";
 import { useAppContext } from "../../context/AppContext";
+import ScreenshotFrame from "../ui/ScreenShotFrame";
 
 interface HeroCta {
   labelKey: string;
@@ -24,9 +25,10 @@ interface HeroProps {
   descKey?: string;
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
+  /** Optional side-by-side screenshot — switches the hero to a two-column layout. */
   visual?: string;
+  visualAltKey?: string;
   backgroundImage?: string;
-  /** Defaults to true when backgroundImage is set (full-height hero), false otherwise. */
   showScrollCue?: boolean;
 }
 
@@ -52,15 +54,18 @@ const Hero = ({
   primaryCta,
   secondaryCta,
   visual,
+  visualAltKey,
   backgroundImage,
-  showScrollCue = true,
+  showScrollCue,
 }: HeroProps) => {
   const { t } = useTranslation();
   const { lang } = useAppContext();
   const langClass = lang !== "en" ? "ar-font" : "en-font";
   const onImage = Boolean(backgroundImage);
+  const hasVisual = Boolean(visual);
   const shouldShowScrollCue = showScrollCue ?? onImage;
   const sectionRef = useRef<HTMLElement>(null);
+  const innerGap = lang === "ar" ? "gap-8" : "gap-6";
 
   const scrollToNext = () => {
     const el = sectionRef.current;
@@ -99,117 +104,121 @@ const Hero = ({
         variants={container}
         initial="hidden"
         animate="visible"
-        className={`relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center ${
-          lang === "ar" ? "gap-8" : "gap-6"
+        className={`relative z-10 mx-auto flex w-full max-w-6xl items-center ${
+          hasVisual
+            ? "flex-col gap-12 md:flex-row md:gap-16"
+            : "max-w-3xl flex-col text-center"
         }`}
       >
-        {eyebrowKey && (
-          <motion.span
-            variants={item}
-            className={`rounded-full border px-4 py-1 text-[13px] font-medium ${
-              onImage
-                ? "border-inverse/25 bg-inverse/10 text-inverse"
-                : "border-border bg-primary/10 text-primary-hover"
-            } ${langClass}`}
-          >
-            {t(eyebrowKey)}
-          </motion.span>
-        )}
-
-        <motion.h1
-          variants={item}
-          className={`text-[40px] leading-[1.1] font-semibold tracking-tight sm:text-5xl md:text-[56px] ${
-            lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"
-          } ${onImage ? "text-inverse" : "text-ink"} ${langClass}`}
+        <div
+          className={`flex flex-col ${innerGap} ${
+            hasVisual
+              ? "w-full text-center md:w-[45%] md:text-start"
+              : "items-center"
+          }`}
         >
-          {t(titleKey.mainTitle)}{" "}
-          <span className="relative text-primary">
-            {t(`${titleKey.accentWord ?? ""}`)}
-            <svg
-              className={`absolute ${lang === "ar" ? "bottom-0" : "-bottom-3"}  left-0 h-3 w-full`}
-              viewBox="0 0 200 20"
-              fill="none"
-              preserveAspectRatio="none"
-              aria-hidden="true"
+          {eyebrowKey && (
+            <motion.span
+              variants={item}
+              className={`w-fit self-center rounded-full border px-4 py-1 text-[13px] font-medium ${
+                hasVisual ? "md:self-start" : ""
+              } ${
+                onImage
+                  ? "border-inverse/25 bg-inverse/10 text-inverse"
+                  : "border-border bg-primary/10 text-primary-hover"
+              } ${langClass}`}
             >
-              <path
-                d="M2 12 C35 4, 70 18, 105 10 S165 5, 198 11"
-                stroke="var(--color-primary)"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
-        </motion.h1>
+              {t(eyebrowKey)}
+            </motion.span>
+          )}
 
-        {descKey && (
-          <motion.p
+          <motion.h1
             variants={item}
-            className={`max-w-2xl text-lg sm:text-[19px] ${
-              lang === "ar" ? "leading-loose" : "leading-normal"
-            } ${onImage ? "text-inverse-muted" : "text-ink"} ${langClass}`}
+            className={`text-[40px] leading-[1.1] font-semibold tracking-tight ${
+              lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"
+            } ${onImage ? "text-inverse" : "text-ink"} ${visual ? "md:text-[5xl] sm:text-[4xl]" : " sm:text-5xl md:text-[56px]"} ${langClass}`}
           >
-            {t(descKey)}
-          </motion.p>
-        )}
-
-        {(primaryCta || secondaryCta) && (
-          <motion.div
-            variants={item}
-            className="mt-2 flex flex-wrap items-center justify-center gap-4"
-          >
-            {primaryCta && (
-              <Button
-                variant="primary"
-                href={primaryCta.href}
-                onClick={primaryCta.onClick}
-                className={`${onImage ? "text-white" : ""}`}
-              >
-                {t(primaryCta.labelKey)}
-              </Button>
+            {t(titleKey.mainTitle)}
+            {titleKey.accentWord && (
+              <>
+                {" "}
+                <span className="relative text-primary">
+                  {t(titleKey.accentWord)}
+                  <svg
+                    className={`absolute ${lang === "ar" ? "bottom-0" : "-bottom-3"} left-0 h-3 w-full`}
+                    viewBox="0 0 200 20"
+                    fill="none"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 12 C35 4, 70 18, 105 10 S165 5, 198 11"
+                      stroke="var(--color-primary)"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </>
             )}
-            {secondaryCta && (
-              <Button
-                variant="secondary"
-                href={secondaryCta.href}
-                onClick={secondaryCta.onClick}
-                className={`${onImage ? "text-white bg-white/5  hover:bg-primary hover:border-primary " : ""}`}
-              >
-                {t(secondaryCta.labelKey)}
-              </Button>
-            )}
-          </motion.div>
-        )}
+          </motion.h1>
 
-        {visual && (
-          <motion.div variants={item} className="mt-8 w-full">
-            <img src={visual} alt="hello" />
+          {descKey && (
+            <motion.p
+              variants={item}
+              className={`max-w-2xl text-lg  ${
+                lang === "ar" ? "leading-loose" : "leading-normal"
+              } ${hasVisual ? "sm:text-[16px]" : "self-center sm:text-[19px]"} ${onImage ? "text-inverse-muted" : "text-ink"} ${langClass}`}
+            >
+              {t(descKey)}
+            </motion.p>
+          )}
+
+          {(primaryCta || secondaryCta) && (
+            <motion.div
+              variants={item}
+              className={`flex flex-wrap items-center ${visual ? "justify-start" : "justify-center mt-2 "} gap-4`}
+            >
+              {primaryCta && (
+                <Button
+                  variant="primary"
+                  href={primaryCta.href}
+                  onClick={primaryCta.onClick}
+                  className={`${onImage ? "text-white" : ""}`}
+                >
+                  {t(primaryCta.labelKey)}
+                </Button>
+              )}
+              {secondaryCta && (
+                <Button
+                  variant="secondary"
+                  href={secondaryCta.href}
+                  onClick={secondaryCta.onClick}
+                  className={`${onImage ? "text-white bg-white/5  hover:bg-primary hover:border-primary " : ""}`}
+                >
+                  {t(secondaryCta.labelKey)}
+                </Button>
+              )}
+            </motion.div>
+          )}
+        </div>
+
+        {hasVisual && (
+          <motion.div variants={item} className="w-full md:w-[52%]">
+            <ScreenshotFrame
+              src={visual as string}
+              alt={visualAltKey ? t(visualAltKey) : ""}
+            />
           </motion.div>
         )}
       </motion.div>
 
       {shouldShowScrollCue && (
-        <motion.button
-          type="button"
+        <ScrollCue
           onClick={scrollToNext}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          aria-label={t("common.scrollDown", "Scroll down")}
-          className={`group absolute cursor-pointer left-1/2  z-10 flex -translate-x-1/2 items-center justify-center transition-colors duration-150 ${
-            onImage ? " bottom-16" : "bottom-2 "
-          }`}
-        >
-          <motion.span
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="text-primary group-hover:text-ink "
-          >
-            <ChevronDown size={18} />
-            <ChevronDown size={18} />
-            <ChevronDown size={18} />
-          </motion.span>
-        </motion.button>
+          invert={onImage}
+          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        />
       )}
     </section>
   );

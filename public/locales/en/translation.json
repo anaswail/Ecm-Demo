@@ -220,7 +220,7 @@
         "desc": "Each module works fully on its own, but the real value is in how they connect — a document isn't just archived, it's the same record moving through correspondence, meetings, and approvals without ever being duplicated."
       },
       "dms": {
-        "tag": "DMS",
+        "tag": "Document Management System (DMS)",
         "title": "A controlled home for every document.",
         "desc": "Centralize, organize, and govern your organization's documents with controlled access, structured retention, and fast retrieval.",
         "capabilities": {
@@ -233,7 +233,7 @@
         "alt": "Folder explorer in the document management system, showing the organization's document tree and file details"
       },
       "cms": {
-        "tag": "CMS",
+        "tag": "Correspondence Management System (CMS)",
         "title": "Keep every correspondence traceable.",
         "desc": "Manage incoming and outgoing correspondence from registration to response, while keeping every document, action, and communication connected.",
         "capabilities": {
@@ -246,7 +246,7 @@
         "alt": "Correspondence inbox showing registered incoming letters with reference numbers, senders, and status"
       },
       "mms": {
-        "tag": "MMS",
+        "tag": "Meetings Management System (MMS)",
         "title": "Turn meetings into accountable actions.",
         "desc": "Plan meetings, organize agendas, capture decisions, and track the actions that follow — all within the same information environment.",
         "capabilities": {
@@ -259,7 +259,7 @@
         "alt": "Meeting details screen showing the agenda, attendees, and recorded decisions"
       },
       "bpm": {
-        "tag": "BPM",
+        "tag": "Business Process Management (BPM)",
         "title": "Turn complex processes into controlled workflows.",
         "desc": "Design, automate, and monitor business processes with configurable workflows, approvals, task routing, and full visibility at every step.",
         "capabilities": {
@@ -366,6 +366,181 @@
         "desc": "ECM+ DMS provides a secure, centralized environment to capture, organize, find, share, govern, and retain enterprise documents throughout their lifecycle.",
         "primary": "Explore ECM+",
         "secondary": "Request Architecture Demo"
+      },
+      "challenges": {
+        "eyebrow": "The Challenge",
+        "title": "Before a document has a system, it has no home.",
+        "desc": "Most organizations don't lack documents — they lack a reliable way to find, control, and keep them.",
+        "items": {
+          "finding": {
+            "title": "Finding a document means asking around",
+            "desc": "Files live on shared drives, personal desktops, and email attachments — finding the right version often means messaging three people before someone remembers where it went."
+          },
+          "access": {
+            "title": "Sensitive files are one click away from anyone",
+            "desc": "Without controlled access, HR records, contracts, and financial documents sit in folders that far more people can open than actually should."
+          },
+          "versions": {
+            "title": "Old versions get mistaken for current ones",
+            "desc": "When a document is edited outside a controlled system, there's no reliable way to know which copy is the one that was actually approved."
+          },
+          "retention": {
+            "title": "Nothing gets kept — or deleted — on purpose",
+            "desc": "Without a retention policy, documents accumulate indefinitely, or disappear when someone leaves the company with the only copy on their laptop."
+          }
+        }
+      },
+      "lifecycle": {
+        "eyebrow": "The Lifecycle",
+        "title": "One lifecycle, from capture to final disposition.",
+        "desc": "ECM+ DMS governs every document through a controlled lifecycle, ensuring information remains organized, accessible, secure, and compliant from creation to disposition.",
+        "items": {
+          "capture": {
+            "title": "Capture & Classify",
+            "desc": "Documents enter the system through upload, scanning, or integration, then are indexed and classified using defined metadata and document types."
+          },
+          "organize": {
+            "title": "Organize & Govern",
+            "desc": "Folder structures, metadata, access policies, and document classifications are applied consistently, giving every document a defined and governed place."
+          },
+          "collaborate": {
+            "title": "Access & Collaborate",
+            "desc": "Authorized users access, review, edit, and share documents under version control, with permissions, changes, and activity fully traceable."
+          },
+          "retain": {
+            "title": "Retain & Dispose",
+            "desc": "Retention schedules and legal holds determine how long information remains available, with controlled disposition when retention requirements are fulfilled."
+          }
+        }
+      },
+      "features": {
+        "eyebrow": "Inside DMS",
+        "title": "Every tab, and exactly what it does",
+        "desc": "A closer look at each part of the document management system, from the everyday archive to the controls that govern it.",
+        "items": {
+          "archive": {
+            "title": "Archive Documents",
+            "desc": "The central hub for every archived document — view, search, preview, and manage them from one place.",
+            "capabilities": {
+              "preview": "Preview documents and attachments without leaving the page",
+              "versions": "Track version history and restore an earlier version",
+              "share": "Share internally or externally with defined permissions",
+              "search": "Search and filter across the full archive"
+            }
+          },
+          "explorer": {
+            "title": "Archived Documents Explorer",
+            "desc": "Browse documents the way you'd browse files — through folders, not just search.",
+            "capabilities": {
+              "folders": "Create, rename, and organize folders and subfolders",
+              "upload": "Upload, move, and copy files directly",
+              "preview": "Preview supported files without leaving the explorer",
+              "access": "Manage folder-level access and sharing"
+            }
+          },
+          "search": {
+            "title": "Search",
+            "desc": "Find any document in seconds with global, keyword, or metadata search.",
+            "capabilities": {
+              "global": "Search across all archived content at once",
+              "filters": "Filter by type, date, status, and classification",
+              "saved": "Save frequent searches for one-click reuse",
+              "sort": "Sort results by relevance, date, or name"
+            }
+          },
+          "types": {
+            "title": "Document Types",
+            "desc": "Define what information every kind of document must carry.",
+            "capabilities": {
+              "custom": "Create custom document types and categories",
+              "fields": "Configure required fields and validation rules",
+              "templates": "Attach templates to specific types",
+              "status": "Enable or disable types as needs change"
+            }
+          },
+          "acl": {
+            "title": "ACL Policies",
+            "desc": "Control exactly who can see, edit, or share each document.",
+            "capabilities": {
+              "byGroup": "Set permissions by user, group, or department",
+              "actions": "Control view, edit, share, and download actions separately",
+              "inheritance": "Apply permissions automatically across folders",
+              "restrict": "Restrict sensitive documents to named individuals"
+            }
+          },
+          "retention": {
+            "title": "Retention Rules",
+            "desc": "Decide how long a document stays, and what happens after.",
+            "capabilities": {
+              "periods": "Set retention periods per document type",
+              "autoArchive": "Automatically archive documents once rules are met",
+              "flags": "Flag documents approaching their retention limit",
+              "disposal": "Apply consistent disposal rules for compliance"
+            }
+          },
+          "shared": {
+            "title": "Shared Documents",
+            "desc": "See everything that's been shared with you, and everything you've shared.",
+            "capabilities": {
+              "view": "View documents and folders shared with you",
+              "share": "Share documents and folders with defined permissions",
+              "tracking": "Track sharing activity over time",
+              "revoke": "Revoke access the moment it's no longer needed"
+            }
+          },
+          "recycle": {
+            "title": "Recycle Bin",
+            "desc": "Nothing disappears by accident.",
+            "capabilities": {
+              "review": "Review documents before they're permanently removed",
+              "restore": "Restore deleted files to their original location",
+              "bulk": "Bulk restore or permanently delete",
+              "permissions": "Access restricted by the same rules as the archive"
+            }
+          }
+        }
+      },
+      "benefits": {
+        "eyebrow": "The Transformation",
+        "title": "What changes once documents have a system",
+        "desc": "The shift isn't just fewer lost files — it's an organization that can answer 'where is it' and 'who touched it' without asking around.",
+        "items": {
+          "retrieval": {
+            "title": "Every document, found in seconds",
+            "desc": "Teams stop losing time hunting for files — one search returns the current, correct version every time."
+          },
+          "security": {
+            "title": "Sensitive information stays sensitive",
+            "desc": "Role-based access means the right people see the right documents, automatically, without anyone having to police it manually."
+          },
+          "compliance": {
+            "title": "Compliance becomes routine, not a project",
+            "desc": "Retention and audit trails run in the background, so a regulatory request is a report, not a scramble."
+          },
+          "singleTruth": {
+            "title": "One version of the truth, always",
+            "desc": "Everyone works from the same current file, with a full history of who changed what and when."
+          }
+        }
+      },
+      "connections": {
+        "eyebrow": "How It Connects",
+        "title": "DMS doesn't work alone",
+        "desc": "A document archived here becomes the same record the rest of the platform relies on — not a copy that has to be kept in sync by hand.",
+        "items": {
+          "cms": {
+            "title": "Feeds every correspondence",
+            "desc": "Attachments in CMS are the same documents governed by DMS's access and retention rules — not a separate, disconnected copy."
+          },
+          "mms": {
+            "title": "Referenced in every meeting",
+            "desc": "Documents attached to a meeting stay linked to their original DMS record, agenda to archive."
+          },
+          "bpm": {
+            "title": "Archived automatically from workflows",
+            "desc": "A BPM process can write its output straight back into DMS as a workflow step — archived and retained without anyone filing it by hand."
+          }
+        }
       }
     },
 
@@ -378,6 +553,139 @@
         "desc": "ECM+ CMS centralizes incoming and outgoing correspondence, enabling organizations to register, route, track, and manage communications with full visibility and accountability.",
         "primary": "Explore ECM+",
         "secondary": "Request Architecture Demo"
+      },
+      "challenges": {
+        "eyebrow": "The Challenge",
+        "title": "A letter without a system becomes a rumor about a letter.",
+        "desc": "Correspondence that isn't tracked formally is only as reliable as whoever last remembered to update a spreadsheet.",
+        "items": {
+          "logging": {
+            "title": "Incoming letters get logged in a spreadsheet — if at all",
+            "desc": "A received letter's status often depends on someone remembering to update a shared file, and that file usually lives on one person's computer."
+          },
+          "status": {
+            "title": "No one can say where a reply actually stands",
+            "desc": "A request sent out for review can sit untouched for weeks with no automatic reminder and no visibility into who's holding it up."
+          },
+          "linking": {
+            "title": "Correspondence and the documents it references live apart",
+            "desc": "A letter approving a contract and the contract itself often end up in two different places, with nothing formally linking them together."
+          },
+          "audit": {
+            "title": "An audit means digging through inboxes",
+            "desc": "When a regulator or auditor asks for a communication history, reconstructing it means searching individual mailboxes rather than pulling one record."
+          }
+        }
+      },
+      "lifecycle": {
+        "eyebrow": "The Lifecycle",
+        "title": "One lifecycle, from first contact to final response.",
+        "desc": "ECM+ CMS manages every piece of correspondence through a controlled and traceable lifecycle, ensuring accountability from registration to closure and archive.",
+        "items": {
+          "register": {
+            "title": "Register & Classify",
+            "desc": "Incoming and outgoing correspondence is registered with reference details, sender or recipient information, classification, and linked attachments."
+          },
+          "route": {
+            "title": "Route & Assign",
+            "desc": "Correspondence is routed to the responsible department or individual, with ownership, deadlines, priorities, and escalation rules applied according to policy."
+          },
+          "respond": {
+            "title": "Respond & Track",
+            "desc": "Replies, forwards, actions, and status changes are recorded against the original correspondence, maintaining a complete and traceable communication history."
+          },
+          "close": {
+            "title": "Close & Archive",
+            "desc": "Once resolved, correspondence is formally closed and retained as a searchable record, with related documents, decisions, and actions preserved together."
+          }
+        }
+      },
+      "features": {
+        "eyebrow": "Inside CMS",
+        "title": "Every tab, and exactly what it does",
+        "desc": "A closer look at how correspondence moves through the system, from setup to the finished record.",
+        "items": {
+          "settings": {
+            "title": "Correspondence Settings",
+            "desc": "Configure the types, statuses, and classifications your organization actually uses.",
+            "capabilities": {
+              "types": "Define correspondence types and required fields",
+              "statuses": "Set custom statuses to match your workflow",
+              "confidentiality": "Configure confidentiality and priority levels",
+              "receiving": "Manage how correspondence can be received"
+            }
+          },
+          "entities": {
+            "title": "External Entities",
+            "desc": "Keep a record of every organization and contact you correspond with.",
+            "capabilities": {
+              "add": "Add external entities with full contact details",
+              "contacts": "Store multiple contacts per entity",
+              "image": "Attach a logo or reference image",
+              "reuse": "Reuse entities across every future correspondence"
+            }
+          },
+          "inbox": {
+            "title": "Correspondence Inbox",
+            "desc": "Every incoming, outgoing, and drafted letter in one place.",
+            "capabilities": {
+              "views": "Separate views for incoming, outgoing, drafts, and completed",
+              "followUp": "Follow up on required actions directly from the inbox",
+              "actions": "Available actions adjust automatically to status and permissions"
+            }
+          },
+          "add": {
+            "title": "Add Correspondence",
+            "desc": "Register a new letter with everything it needs attached.",
+            "capabilities": {
+              "fields": "Type-specific fields entered automatically",
+              "attachments": "Attach files, documents, and email attachments together",
+              "drafts": "Save as a draft before it's finalized"
+            }
+          }
+        }
+      },
+      "benefits": {
+        "eyebrow": "The Transformation",
+        "title": "What changes once correspondence has a system",
+        "desc": "The shift is accountability that doesn't depend on memory — every letter has an owner from the moment it arrives.",
+        "items": {
+          "noDrops": {
+            "title": "No correspondence falls through the cracks",
+            "desc": "Every letter has an owner, a status, and a deadline the moment it's registered."
+          },
+          "accountability": {
+            "title": "Accountability is visible, not assumed",
+            "desc": "Anyone can see exactly who's holding up a response, and for how long."
+          },
+          "connected": {
+            "title": "Documents and decisions stay connected",
+            "desc": "A letter and the contract it approved live in the same record, not two disconnected files."
+          },
+          "fastAudits": {
+            "title": "Audits take hours, not weeks",
+            "desc": "A full communication history is one query away, not a search through years of inboxes."
+          }
+        }
+      },
+      "connections": {
+        "eyebrow": "How It Connects",
+        "title": "CMS doesn't work alone",
+        "desc": "Correspondence here is never an island — it's tied to the documents, meetings, and approvals it actually relates to.",
+        "items": {
+          "dms": {
+            "title": "Every attachment stays governed",
+            "desc": "A letter's attachments are DMS-controlled documents, not separate files — permissions and retention travel with them."
+          },
+          "mms": {
+            "title": "Correspondence discussed in meetings stays linked",
+            "desc": "A letter referenced in a meeting keeps its full CMS history connected to that discussion."
+          },
+          "bpm": {
+            "title": "Correspondence can trigger a workflow",
+            "desc": "An incoming letter needing approval can hand off directly into a BPM process instead of being tracked by hand."
+          }
+        }
       }
     },
 
@@ -390,6 +698,149 @@
         "desc": "ECM+ MMS brings meetings into a structured digital workflow, from agendas and participants to minutes, decisions, and follow-up actions.",
         "primary": "Explore ECM+",
         "secondary": "Request Architecture Demo"
+      },
+      "challenges": {
+        "eyebrow": "The Challenge",
+        "title": "A meeting without a system leaves no trace once it ends.",
+        "desc": "What gets decided in a room is only real if it's written down somewhere everyone can find later.",
+        "items": {
+          "scheduling": {
+            "title": "Meetings get booked by email, and double-booked anyway",
+            "desc": "Without a shared scheduling system, room and calendar conflicts get caught after invitations already went out — sometimes not at all."
+          },
+          "decisions": {
+            "title": "Decisions exist only in someone's memory of the meeting",
+            "desc": "Without a formal record, what a committee actually agreed to becomes a matter of whoever took the most complete notes."
+          },
+          "actions": {
+            "title": "Action items get mentioned, then forgotten",
+            "desc": "A task assigned verbally in a meeting has no owner, no deadline, and no way to be followed up on once everyone leaves the room."
+          },
+          "history": {
+            "title": "There's no record of what a committee has decided over time",
+            "desc": "Looking back at a committee's history means searching through old emails and hoping someone forwarded the right thread."
+          }
+        }
+      },
+      "lifecycle": {
+        "eyebrow": "The Lifecycle",
+        "title": "One lifecycle, from invitation to final follow-up.",
+        "desc": "ECM+ MMS governs the complete meeting lifecycle, connecting preparation, discussion, decisions, and follow-up actions within a single accountable record.",
+        "items": {
+          "schedule": {
+            "title": "Schedule & Prepare",
+            "desc": "Meetings are scheduled with participants, agendas, topics, and supporting documents organized in advance to ensure every session begins with the right context."
+          },
+          "convene": {
+            "title": "Convene & Discuss",
+            "desc": "Attendance, discussion points, notes, and topic progress are captured during the meeting, creating a structured record of what was discussed."
+          },
+          "decide": {
+            "title": "Decide & Record",
+            "desc": "Decisions are formally recorded against their originating topics, preserving the rationale and outcomes as part of the meeting record."
+          },
+          "followUp": {
+            "title": "Follow Up & Close",
+            "desc": "Action items are assigned with accountable owners and due dates, tracked through completion, and linked back to the meeting that created them."
+          }
+        }
+      },
+      "features": {
+        "eyebrow": "Inside MMS",
+        "title": "Every tab, and exactly what it does",
+        "desc": "A closer look at how a meeting is planned, run, and followed up on.",
+        "items": {
+          "indicators": {
+            "title": "Performance Indicators",
+            "desc": "A live view of every meeting and task across the organization.",
+            "capabilities": {
+              "stats": "Personal and organization-wide meeting statistics",
+              "breakdown": "Breakdown by upcoming, completed, cancelled, rescheduled",
+              "tasks": "Task counts by status, including overdue",
+              "calendar": "Quick access to this week's meetings and the calendar"
+            }
+          },
+          "settings": {
+            "title": "Meeting Settings",
+            "desc": "Set up the rooms, buildings, and series your meetings run on.",
+            "capabilities": {
+              "rooms": "Add meeting rooms with capacity details",
+              "buildings": "Link rooms to their building and location",
+              "series": "Group related meetings into a series"
+            }
+          },
+          "committees": {
+            "title": "Committees",
+            "desc": "Reuse the same group of people without rebuilding the list each time.",
+            "capabilities": {
+              "create": "Create committees with named members",
+              "invite": "Select an entire committee as attendees in one action",
+              "current": "Keep membership current as teams change"
+            }
+          },
+          "meetings": {
+            "title": "Meetings",
+            "desc": "From invitation to signed-off report, one continuous record.",
+            "capabilities": {
+              "type": "Physical or online, with rooms or auto-generated links",
+              "agenda": "Agendas with assigned presenters and time allocations",
+              "tasks": "Tasks created and assigned directly from the meeting",
+              "voting": "Voting, attendance confirmation, and a dedicated meeting chat",
+              "reports": "Exportable meeting reports with attendance signatures"
+            }
+          },
+          "taskInbox": {
+            "title": "Task Inbox",
+            "desc": "Every task from every meeting, tracked to completion.",
+            "capabilities": {
+              "list": "See all meeting-generated tasks in one list",
+              "own": "Update the status of your own tasks",
+              "view": "View, but not alter, tasks assigned to others"
+            }
+          }
+        }
+      },
+      "benefits": {
+        "eyebrow": "The Transformation",
+        "title": "What changes once meetings have a system",
+        "desc": "The shift is a record that outlasts the room — decisions and actions survive long after everyone's forgotten the details.",
+        "items": {
+          "decisions": {
+            "title": "Meetings produce decisions, not just discussion",
+            "desc": "Every outcome is captured the moment it's agreed on, not reconstructed afterward from memory."
+          },
+          "ownedTasks": {
+            "title": "Action items get done, not forgotten",
+            "desc": "Every task has a named owner and a deadline the moment it leaves the room."
+          },
+          "history": {
+            "title": "Committee history is one search away",
+            "desc": "What was decided six months ago is as easy to find as what was decided this morning."
+          },
+          "scheduling": {
+            "title": "Scheduling conflicts stop happening",
+            "desc": "Rooms, links, and calendars stay in sync automatically, before invitations even go out."
+          }
+        }
+      },
+      "connections": {
+        "eyebrow": "How It Connects",
+        "title": "MMS doesn't work alone",
+        "desc": "What happens in a meeting doesn't stay in the meeting — it flows straight into the rest of the platform.",
+        "items": {
+          "dms": {
+            "title": "Meeting files are archived, not lost",
+            "desc": "Documents attached to a meeting are stored under DMS's rules — searchable and retained after the meeting ends."
+          },
+          "cms": {
+            "title": "Decisions become correspondence",
+            "desc": "A meeting outcome that needs to go out as a formal letter can move directly into CMS without re-entering it."
+          },
+          "bpm": {
+            "title": "Action items become tracked processes",
+            "desc": "A task assigned in a meeting can escalate into a full BPM workflow when it needs more than one approval step."
+          }
+        }
       }
     },
 
@@ -402,7 +853,167 @@
         "desc": "ECM+ BPM enables organizations to design, automate, execute, and monitor business processes with structured workflows, approvals, task management, and complete process visibility.",
         "primary": "Explore ECM+",
         "secondary": "Request Architecture Demo"
+      },
+      "challenges": {
+        "eyebrow": "The Challenge",
+        "title": "A process without a system runs on whoever remembers the steps.",
+        "desc": "Approvals that move by memory and email don't scale, and they don't leave a record when something goes wrong.",
+        "items": {
+          "routing": {
+            "title": "Approvals move by email, one forward at a time",
+            "desc": "A request routed manually depends on each person remembering to pass it along — and stalls completely the moment someone is out of office."
+          },
+          "visibility": {
+            "title": "No one can see where a request actually is",
+            "desc": "Once something is submitted, tracking it down means asking around department by department until someone admits it's sitting in their inbox."
+          },
+          "consistency": {
+            "title": "The same process runs differently depending on who's handling it",
+            "desc": "Without a standardized workflow, two people submitting the same type of request can go through entirely different approval paths."
+          },
+          "bottlenecks": {
+            "title": "Bottlenecks only show up after they've caused delay",
+            "desc": "There's no visibility into where requests pile up, so a slow step in the process isn't discovered until someone complains."
+          }
+        }
+      },
+      "lifecycle": {
+        "eyebrow": "The Lifecycle",
+        "title": "One lifecycle, from design to continuous improvement.",
+        "desc": "ECM+ BPM carries every business process through a governed lifecycle, from workflow design and execution to monitoring, optimization, and controlled improvement.",
+        "items": {
+          "design": {
+            "title": "Design & Configure",
+            "desc": "Workflows, forms, business rules, and approval paths are configured visually and aligned with organizational policies before being published for execution."
+          },
+          "initiate": {
+            "title": "Initiate & Route",
+            "desc": "A request enters the process and is routed automatically according to defined rules, responsibilities, conditions, and organizational structures."
+          },
+          "execute": {
+            "title": "Approve & Execute",
+            "desc": "Tasks, approvals, decisions, and required actions are executed and recorded at every stage, with deadlines, escalations, and accountability enforced throughout the process."
+          },
+          "monitor": {
+            "title": "Monitor & Improve",
+            "desc": "Process performance, cycle times, bottlenecks, workload, and outcomes are monitored continuously, enabling process owners to identify improvements and refine workflows."
+          }
+        }
+      },
+      "features": {
+        "eyebrow": "Inside BPM",
+        "title": "Every tab, and exactly what it does",
+        "desc": "A closer look at how a process is designed, run, and monitored from end to end.",
+        "items": {
+          "inbox": {
+            "title": "Inbox",
+            "desc": "Every task assigned to you, and everything you're tracking for others.",
+            "capabilities": {
+              "tasks": "My tasks, delegated tasks, and completed tasks in one workspace",
+              "forms": "Open the exact form configured for each step",
+              "actions": "Assign, reject, withdraw, or return a task in one action",
+              "queue": "Claim unassigned work from a shared queue"
+            }
+          },
+          "services": {
+            "title": "Services",
+            "desc": "Start a process without needing to know how it works underneath.",
+            "capabilities": {
+              "catalog": "A catalog limited to what you're authorized to start",
+              "version": "Always runs the latest published version",
+              "start": "Required fields and attachments collected before the case begins"
+            }
+          },
+          "definitions": {
+            "title": "Definitions",
+            "desc": "Every process, every version, all governed in one place.",
+            "capabilities": {
+              "lifecycle": "Draft, published, and retired lifecycle states",
+              "versions": "Multiple versions maintained without breaking running cases",
+              "restore": "Retire and restore processes without losing history"
+            }
+          },
+          "studio": {
+            "title": "Studio",
+            "desc": "Design a process visually — no code required.",
+            "capabilities": {
+              "canvas": "Drag-and-drop canvas for steps, gateways, and events",
+              "assignment": "Nine assignment rule types, from a named employee to a role",
+              "automation": "Automated steps for email, WhatsApp, PDFs, and external services",
+              "simulation": "Simulate a process before it ever goes live",
+              "validation": "Validation catches errors before a broken process deploys"
+            }
+          },
+          "templates": {
+            "title": "Templates",
+            "desc": "Build a form once, reuse it everywhere it's needed.",
+            "capabilities": {
+              "builder": "Visual form builder with no hand-written code",
+              "shared": "One schema shared across task forms, notifications, and PDFs",
+              "dynamic": "Fields that pull data from services or the database live"
+            }
+          },
+          "monitoring": {
+            "title": "Monitoring",
+            "desc": "See exactly where every case stands, and why.",
+            "capabilities": {
+              "diagram": "Visual diagram of the process alongside its real execution trace",
+              "history": "Full history of every assignee, decision, and timestamp",
+              "admin": "Suspend, resume, or delete a case with a recorded reason"
+            }
+          }
+        }
+      },
+      "benefits": {
+        "eyebrow": "The Transformation",
+        "title": "What changes once processes have a system",
+        "desc": "The shift is a process that runs the same way regardless of who's handling it — and shows you exactly where it's stuck.",
+        "items": {
+          "speed": {
+            "title": "Approvals move in hours, not weeks",
+            "desc": "A request routes itself to the right person the moment the previous step finishes — no one has to remember to forward it."
+          },
+          "visibility": {
+            "title": "Nothing gets stuck without anyone noticing",
+            "desc": "Bottlenecks show up on a dashboard before they become a complaint."
+          },
+          "consistency": {
+            "title": "Every process runs the same way, every time",
+            "desc": "A workflow behaves identically no matter who submits it or who's handling it."
+          },
+          "record": {
+            "title": "A full record of every decision made",
+            "desc": "Every approval, rejection, and escalation is timestamped and attributable, automatically."
+          }
+        }
+      },
+      "connections": {
+        "eyebrow": "How It Connects",
+        "title": "BPM doesn't work alone",
+        "desc": "A process rarely starts or ends in isolation — it's usually the step that ties the other three modules together.",
+        "items": {
+          "dms": {
+            "title": "Every process ends with an archived record",
+            "desc": "A completed workflow step can write its output straight into DMS — repository archiving without manual filing."
+          },
+          "cms": {
+            "title": "Approvals can start from correspondence",
+            "desc": "An incoming letter needing sign-off can hand off into a BPM process rather than being tracked by hand."
+          },
+          "mms": {
+            "title": "Meeting decisions can launch a process",
+            "desc": "An action item from a meeting can become a formal, tracked BPM case the moment it needs more than one approval step."
+          }
+        }
       }
+    },
+
+    "nav": {
+      "eyebrow": "Explore the Platform",
+      "title": "Move to any module.",
+      "desc": "Each module stands on its own, and connects to the others when your organization needs it to.",
+      "current": "You're here",
+      "cta": "Explore module"
     }
   },
   "features": {

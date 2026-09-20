@@ -1,24 +1,33 @@
 import ModulePage from "../ModulePage";
 
-import bpmAR from "../../../assets/modules/bpm-ar.png";
-import bpmEN from "../../../assets/modules/bpm-en.png";
-import { useAppContext } from "../../../context/AppContext";
+import bpm from "../../../assets/modules/bpm.png";
+import {
+  moduleChallenges,
+  moduleLifecycle,
+  moduleFeatureSections,
+  moduleBenefits,
+  moduleConnections,
+} from "../../../data";
 
 const BPMPage = () => {
-  const { lang } = useAppContext();
-
   return (
     <div>
       <ModulePage
+        moduleId="bpm"
         eyebrow="modules.bpm.hero.eyebrow"
         title="modules.bpm.hero.title.mainTitle"
         desc="modules.bpm.hero.desc"
-        image={lang === "ar" ? bpmAR : bpmEN}
+        image={bpm}
         primaryBtn={{ labelKey: "modules.bpm.hero.primary", href: "/platform" }}
         secondaryBtn={{
           labelKey: "modules.bpm.hero.secondary",
           href: "/contact",
         }}
+        challenges={moduleChallenges.bpm}
+        lifecycle={moduleLifecycle.bpm}
+        features={moduleFeatureSections.bpm}
+        benefits={moduleBenefits.bpm}
+        connections={moduleConnections.bpm}
       />
     </div>
   );

@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import Button from "../../../../components/ui/Button";
 import { useAppContext } from "../../../../context/AppContext";
 import type { ModuleDetailItem } from "../../../../data/platform/ModuleDetailsData";
+import ScreenshotFrame from "../../../../components/ui/ScreenShotFrame";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -81,19 +82,10 @@ const ModuleDetails = ({ module }: ModuleDetailsProps) => {
 
         <div className={module.reverse ? "md:order-1" : ""}>
           <div className="overflow-hidden rounded-md border border-border bg-bg-main">
-            <div className="flex items-center gap-1.5 border-b border-border px-3 py-2.5">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              <span className="h-2 w-2 rounded-full bg-primary" />
-            </div>
-            <div className="w-full">
-              <img
-                src={lang === "ar" ? module.image.ar : module.image.en}
-                alt={t(`${base}.alt`)}
-                loading="lazy"
-                className="h-auto w-full "
-              />
-            </div>
+            <ScreenshotFrame
+              src={lang === "ar" ? module.image.ar : module.image.en}
+              alt={module.id}
+            />
           </div>
         </div>
       </div>
