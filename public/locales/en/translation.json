@@ -1370,29 +1370,29 @@
         "title": "Partnerships",
         "desc": "Integration, reseller, and implementation partnership inquiries.",
         "email": "partners@ecmplus.com"
-      },
-      "form": {
-        "badge": "Get in touch",
-        "title": "Talk to our team",
-        "desc": "Send us your company's details and we'll get back to you with pricing and next steps.",
-        "companyName": "Company name",
-        "companyNamePlaceholder": "Acme Inc.",
-        "companyEmail": "Company email",
-        "companyEmailPlaceholder": "you@company.com",
-        "contactName": "Your name",
-        "contactNamePlaceholder": "Jane Doe",
-        "phone": "Phone (optional)",
-        "phonePlaceholder": "+20 1xx xxx xxxx",
-        "message": "How can we help?",
-        "messagePlaceholder": "Tell us a bit about your organization and what you're looking for...",
-        "submit": "Send message",
-        "success": "Thanks — we'll be in touch shortly.",
-        "error": "Something went wrong. Please check the form and try again.",
-        "errors": {
-          "required": "This field is required",
-          "invalidEmail": "Enter a valid email address",
-          "messageTooShort": "Please write at least 10 characters"
-        }
+      }
+    },
+    "form": {
+      "badge": "Get in touch",
+      "title": "Talk to our team",
+      "desc": "Send us your company's details and we'll get back to you with pricing and next steps.",
+      "companyName": "Company name",
+      "companyNamePlaceholder": "Acme Inc.",
+      "companyEmail": "Company email",
+      "companyEmailPlaceholder": "you@company.com",
+      "contactName": "Your name",
+      "contactNamePlaceholder": "Jane Doe",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+20 1xx xxx xxxx",
+      "message": "How can we help?",
+      "messagePlaceholder": "Tell us a bit about your organization and what you're looking for...",
+      "submit": "Send message",
+      "success": "Thanks — we'll be in touch shortly.",
+      "error": "Something went wrong. Please check the form and try again.",
+      "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Enter a valid email address",
+        "messageTooShort": "Please write at least 10 characters"
       }
     }
   },
@@ -1425,5 +1425,12 @@
       "placeholder": "Your email address",
       "action": "Subscribe"
     }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "This page took a wrong turn.",
+    "desc": "The page you're looking for doesn't exist, was moved, or the link is broken. Let's get you back to something that connects.",
+    "primaryCta": "Back to Home",
+    "secondaryCta": "Contact Us"
   }
 }

@@ -356,7 +356,7 @@
           },
 
           "explorer": {
-            "title": "مستكشف الوثائق المؤرشفة",
+            "title": "متصفح الوثائق المؤرشفة",
             "desc": "تصفح الوثائق وإدارتها بأسلوب يشبه مستكشف الملفات، من خلال المجلدات والمجلدات الفرعية إلى جانب البحث.",
             "capabilities": {
               "folders": "إنشاء المجلدات والمجلدات الفرعية وإعادة تسميتها وتنظيمها",
@@ -1457,5 +1457,12 @@
       "placeholder": "البريد الإلكتروني",
       "action": "اشترك"
     }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "This page took a wrong turn.",
+    "desc": "The page you're looking for doesn't exist, was moved, or the link is broken. Let's get you back to something that connects.",
+    "primaryCta": "Back to Home",
+    "secondaryCta": "Contact Us"
   }
 }
