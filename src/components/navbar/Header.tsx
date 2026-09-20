@@ -12,6 +12,7 @@ type NavChild = { key: string; path: string };
 type NavItem = { key: string; path: string; children?: NavChild[] };
 
 const navLinksItems: NavItem[] = [
+  { key: "home", path: "/" },
   { key: "about", path: "/about" },
   { key: "platform", path: "/platform" },
   {
@@ -25,14 +26,14 @@ const navLinksItems: NavItem[] = [
     ],
   },
   { key: "customers", path: "/customers" },
-  {
-    key: "resources",
-    path: "/resources",
-    children: [
-      { key: "resourcesList.blog", path: "/resources/blog" },
-      { key: "resourcesList.faq", path: "/resources/faq" },
-    ],
-  },
+  // {
+  //   key: "resources",
+  //   path: "/resources",
+  //   children: [
+  //     { key: "resourcesList.blog", path: "/resources/blog" },
+  //     { key: "resourcesList.faq", path: "/resources/faq" },
+  //   ],
+  // },
 ];
 
 const ACRONYMS = ["dms", "mms", "cms", "bpm"];
