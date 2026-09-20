@@ -29,13 +29,13 @@ export const footerColumns: FooterColumn[] = [
       { labelKey: "footer.links.contact", href: "/contact" },
     ],
   },
-  {
-    titleKey: "footer.columns.resources",
-    links: [
-      { labelKey: "footer.links.blog", href: "/resources/blog" },
-      { labelKey: "footer.links.faq", href: "/resources/faq" },
-    ],
-  },
+  // {
+  //   titleKey: "footer.columns.resources",
+  //   links: [
+  //     { labelKey: "footer.links.blog", href: "/resources/blog" },
+  //     { labelKey: "footer.links.faq", href: "/resources/faq" },
+  //   ],
+  // },
 ];
 
 export const legalLinks: FooterLink[] = [

@@ -1335,26 +1335,65 @@
     "customerAlt": "Customer {{number}}"
   },
   "contact": {
-    "badge": "Get in touch",
-    "title": "Talk to our team",
-    "desc": "Send us your company's details and we'll get back to you with pricing and next steps.",
-    "companyName": "Company name",
-    "companyNamePlaceholder": "Acme Inc.",
-    "companyEmail": "Company email",
-    "companyEmailPlaceholder": "you@company.com",
-    "contactName": "Your name",
-    "contactNamePlaceholder": "Jane Doe",
-    "phone": "Phone (optional)",
-    "phonePlaceholder": "+20 1xx xxx xxxx",
-    "message": "How can we help?",
-    "messagePlaceholder": "Tell us a bit about your organization and what you're looking for...",
-    "submit": "Send message",
-    "success": "Thanks — we'll be in touch shortly.",
-    "error": "Something went wrong. Please check the form and try again.",
-    "errors": {
-      "required": "This field is required",
-      "invalidEmail": "Enter a valid email address",
-      "messageTooShort": "Please write at least 10 characters"
+    "hero": {
+      "eyebrow": "Contact Us",
+      "title": "Let's talk about your organization.",
+      "desc": "Tell us about your requirements and we'll route you to the right team — whether that's a live demo, a technical question, or a partnership conversation."
+    },
+    "info": {
+      "title": "Reach us directly",
+      "desc": "Prefer not to fill out a form? Use any of the channels below.",
+      "emailLabel": "Email",
+      "emailValue": "hello@ecmplus.com",
+      "phoneLabel": "Phone",
+      "phoneValue": "+20 100 969 9666",
+      "addressLabel": "Headquarters",
+      "addressValue": "CTC MENA, Zizinia, NewCairo, Egypt",
+      "hoursLabel": "Business Hours",
+      "hoursValue": "Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+2)"
+    },
+    "teams": {
+      "eyebrow": "Reach the Right Team",
+      "title": "Not sure who to ask? Start here.",
+      "desc": "Every inquiry reaches a real person on the team best equipped to answer it.",
+      "sales": {
+        "title": "Sales",
+        "desc": "Pricing, licensing, and live demos for organizations evaluating ECM+.",
+        "email": "sales@ecmplus.com"
+      },
+      "support": {
+        "title": "Support",
+        "desc": "Technical assistance for organizations already running ECM+.",
+        "email": "support@ecmplus.com"
+      },
+      "partnerships": {
+        "title": "Partnerships",
+        "desc": "Integration, reseller, and implementation partnership inquiries.",
+        "email": "partners@ecmplus.com"
+      },
+      "form": {
+        "badge": "Get in touch",
+        "title": "Talk to our team",
+        "desc": "Send us your company's details and we'll get back to you with pricing and next steps.",
+        "companyName": "Company name",
+        "companyNamePlaceholder": "Acme Inc.",
+        "companyEmail": "Company email",
+        "companyEmailPlaceholder": "you@company.com",
+        "contactName": "Your name",
+        "contactNamePlaceholder": "Jane Doe",
+        "phone": "Phone (optional)",
+        "phonePlaceholder": "+20 1xx xxx xxxx",
+        "message": "How can we help?",
+        "messagePlaceholder": "Tell us a bit about your organization and what you're looking for...",
+        "submit": "Send message",
+        "success": "Thanks — we'll be in touch shortly.",
+        "error": "Something went wrong. Please check the form and try again.",
+        "errors": {
+          "required": "This field is required",
+          "invalidEmail": "Enter a valid email address",
+          "messageTooShort": "Please write at least 10 characters"
+        }
+      }
     }
   },
   "footer": {
