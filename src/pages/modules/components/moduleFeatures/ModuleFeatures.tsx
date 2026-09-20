@@ -108,7 +108,10 @@ const ModuleFeatures = ({
                   </div>
 
                   <ScreenshotFrame
-                    src={feature.image ?? fallbackImage}
+                    src={
+                      (lang === "ar" ? feature.image?.ar : feature.image?.en) ??
+                      fallbackImage
+                    }
                     alt={t(feature.titleKey)}
                   />
                 </div>

@@ -11,6 +11,7 @@ import CMSPage from "../../pages/modules/cms/CMSPage";
 import BlogPage from "../../pages/blog/BlogPage";
 import FAQPage from "../../pages/faq/FAQPage";
 import ContactPage from "../../pages/contact/ContactPage";
+import NotFoundPage from "../../pages/notfound/NotFoundPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "about",
         element: <AboutPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
       {
         path: "modules",
