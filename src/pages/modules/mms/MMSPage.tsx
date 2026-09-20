@@ -1,24 +1,33 @@
 import ModulePage from "../ModulePage";
 
-import mmsAR from "../../../assets/modules/mms-ar.png";
-import mmsEN from "../../../assets/modules/mms-en.png";
-import { useAppContext } from "../../../context/AppContext";
+import mms from "../../../assets/modules/mms.png";
+import {
+  moduleChallenges,
+  moduleLifecycle,
+  moduleFeatureSections,
+  moduleBenefits,
+  moduleConnections,
+} from "../../../data";
 
 const MMSPage = () => {
-  const { lang } = useAppContext();
-
   return (
     <div>
       <ModulePage
+        moduleId="mms"
         eyebrow="modules.mms.hero.eyebrow"
         title="modules.mms.hero.title.mainTitle"
         desc="modules.mms.hero.desc"
-        image={lang === "ar" ? mmsAR : mmsEN}
+        image={mms}
         primaryBtn={{ labelKey: "modules.mms.hero.primary", href: "/platform" }}
         secondaryBtn={{
           labelKey: "modules.mms.hero.secondary",
           href: "/contact",
         }}
+        challenges={moduleChallenges.mms}
+        lifecycle={moduleLifecycle.mms}
+        features={moduleFeatureSections.mms}
+        benefits={moduleBenefits.mms}
+        connections={moduleConnections.mms}
       />
     </div>
   );

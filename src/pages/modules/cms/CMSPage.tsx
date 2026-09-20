@@ -1,24 +1,33 @@
 import ModulePage from "../ModulePage";
 
-import cmsAR from "../../../assets/modules/cms-ar.png";
-import cmsEN from "../../../assets/modules/cms-en.png";
-import { useAppContext } from "../../../context/AppContext";
+import cms from "../../../assets/modules/cms.png";
+import {
+  moduleChallenges,
+  moduleLifecycle,
+  moduleFeatureSections,
+  moduleBenefits,
+  moduleConnections,
+} from "../../../data";
 
 const CMSPage = () => {
-  const { lang } = useAppContext();
-
   return (
     <div>
       <ModulePage
+        moduleId="cms"
         eyebrow="modules.cms.hero.eyebrow"
         title="modules.cms.hero.title.mainTitle"
         desc="modules.cms.hero.desc"
-        image={lang === "ar" ? cmsAR : cmsEN}
+        image={cms}
         primaryBtn={{ labelKey: "modules.cms.hero.primary", href: "/platform" }}
         secondaryBtn={{
           labelKey: "modules.cms.hero.secondary",
           href: "/contact",
         }}
+        challenges={moduleChallenges.cms}
+        lifecycle={moduleLifecycle.cms}
+        features={moduleFeatureSections.cms}
+        benefits={moduleBenefits.cms}
+        connections={moduleConnections.cms}
       />
     </div>
   );
