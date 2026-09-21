@@ -67,9 +67,9 @@ const ModulePage = ({
         visual={image}
       />
       <ModuleChallenges {...challenges} />
+      <ModuleBenefits {...benefits} />
       <ModuleLifecycle {...lifecycle} />
       <ModuleFeatures {...features} fallbackImage={image} />
-      <ModuleBenefits {...benefits} />
       <ModuleConnections {...connections} moduleId={moduleId} />
       <ModulesNav currentId={moduleId} />
     </div>
