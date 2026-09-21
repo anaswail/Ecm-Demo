@@ -177,7 +177,7 @@ const Hero = ({
           {(primaryCta || secondaryCta) && (
             <motion.div
               variants={item}
-              className={`flex flex-wrap items-center ${visual ? "justify-start" : "justify-center mt-2 "} gap-4`}
+              className={`flex flex-wrap items-center ${visual ? "md:justify-start justify-center" : "justify-center mt-2 "} gap-4`}
             >
               {primaryCta && (
                 <Button

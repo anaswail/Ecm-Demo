@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../context/AppContext";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../../components/navbar/Header";
 import Footer from "../../components/footer/Footer";
 import CtaBanner from "../../components/CTA/CTABannar";
@@ -12,6 +12,11 @@ import { ArrowUp } from "lucide-react";
 const MainLayout = () => {
   const { i18n } = useTranslation();
   const { lang, setLang, mood } = useAppContext();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, [pathname]);
 
   const defaultLanguage = (localStorage.getItem("language") ?? "en") as
     | "ar"
