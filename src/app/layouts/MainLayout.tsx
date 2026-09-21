@@ -18,7 +18,7 @@ const MainLayout = () => {
     window.scrollTo({ top: 0, left: 0 });
   }, [pathname]);
 
-  const defaultLanguage = (localStorage.getItem("language") ?? "en") as
+  const defaultLanguage = (localStorage.getItem("language") ?? "ar") as
     | "ar"
     | "en";
 
