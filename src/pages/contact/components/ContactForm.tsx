@@ -95,7 +95,7 @@ const ContactForm = () => {
   const inputClasses = (hasError?: boolean) =>
     `w-full rounded-md border bg-bg-main px-4 py-3 text-[14px] text-ink outline-none transition-colors duration-200 placeholder:text-ink-muted focus:ring-2 ${
       hasError
-        ? "border-red/50 focus:border-red/50 focus:ring-red/20"
+        ? "border-red-600 focus:border-red-600/50 focus:ring-red-600/20"
         : "border-border focus:border-primary/50 focus:ring-primary/20"
     }`;
 
@@ -119,7 +119,7 @@ const ContactForm = () => {
             {...register("companyName")}
           />
           {errors.companyName && (
-            <span className={`text-[12.5px] text-red ${langClass}`}>
+            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
               {errors.companyName.message}
             </span>
           )}
@@ -139,7 +139,7 @@ const ContactForm = () => {
             {...register("companyEmail")}
           />
           {errors.companyEmail && (
-            <span className={`text-[12.5px] text-red ${langClass}`}>
+            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
               {errors.companyEmail.message}
             </span>
           )}
@@ -160,7 +160,7 @@ const ContactForm = () => {
             {...register("contactName")}
           />
           {errors.contactName && (
-            <span className={`text-[12.5px] text-red ${langClass}`}>
+            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
               {errors.contactName.message}
             </span>
           )}
@@ -180,7 +180,7 @@ const ContactForm = () => {
             {...register("phone")}
           />
           {errors.phone && (
-            <span className={`text-[12.5px] text-red ${langClass}`}>
+            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
               {errors.phone.message}
             </span>
           )}
@@ -200,7 +200,7 @@ const ContactForm = () => {
           {...register("message")}
         />
         {errors.message && (
-          <span className={`text-[12.5px] text-red ${langClass}`}>
+          <span className={`text-[12.5px] text-red-600 ${langClass}`}>
             {errors.message.message}
           </span>
         )}
@@ -209,7 +209,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={status === "loading"}
-        className={`mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-[13px] font-medium text-on-primary transition-colors duration-200 hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60 ${langClass}`}
+        className={`cursor-pointer mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-[13px] font-medium text-on-primary transition-colors duration-200 hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60 ${langClass}`}
       >
         {status === "loading" ? (
           <Loader2 size={16} className="animate-spin" />
@@ -237,7 +237,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
-              className={`flex items-center gap-2 text-[13.5px] text-red ${langClass}`}
+              className={`flex items-center gap-2 text-[13.5px] text-red-600 ${langClass}`}
             >
               <AlertCircle size={16} />
               {t("contact.form.error")}

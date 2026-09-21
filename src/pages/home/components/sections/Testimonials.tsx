@@ -1,18 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-import "../../testimonials-slider.css";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 import { useAppContext } from "../../../../context/AppContext";
 import { testimonials } from "../../../../data/home/TestimonialData";
 import TestimonialCard from "../ui/Testimonialcard";
 import Eyebrow from "../../../../components/ui/Eyebrow";
-
-import * as Slick from "react-slick";
-const Slider = (Slick as any).default?.default ?? (Slick as any).default;
-
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
   visible: {
@@ -52,31 +52,6 @@ const Testimonials = () => {
   const { lang } = useAppContext();
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
-  const settings = {
-    dots: true,
-    infinite: true,
-
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 600,
-    pauseOnHover: true,
-    arrows: false,
-    // prevArrow: <PrevArrow />,
-    // nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-    ],
-  };
-
   return (
     <section className="w-full bg-bg-primary px-5 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
@@ -104,13 +79,37 @@ const Testimonials = () => {
           variants={fadeUp}
           className="testimonial-slider"
         >
-          <Slider {...settings}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+            }}
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
             {testimonials.map((testimonial) => (
-              <div key={testimonial.roleKey}>
+              <SwiperSlide key={testimonial.roleKey}>
                 <TestimonialCard testimonial={testimonial} />
-              </div>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </motion.div>
       </div>
     </section>

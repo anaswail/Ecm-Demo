@@ -20,31 +20,34 @@ const ModulesDetails = () => {
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
   return (
-    <>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeUp}
-        className="  max-w-2xl mx-20 pt-20 sm:pt-24 "
-      >
-        <Eyebrow text="platform.moduleDetails.heading.eyebrow" />
-        <h2
-          className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${langClass}`}
+    <section className="w-full border-b border-border bg-bg-primary px-5 py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
+          className="mb-14 max-w-2xl"
         >
-          {t("platform.moduleDetails.heading.title")}
-        </h2>
-        <p
-          className={`mt-4 text-[17px] text-ink-muted ${lang === "ar" ? "leading-8" : "leading-relaxed"} ${langClass}`}
-        >
-          {t("platform.moduleDetails.heading.desc")}
-        </p>
-      </motion.div>
-
+          <Eyebrow text="platform.moduleDetails.heading.eyebrow" />
+          <h2
+            className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${langClass}`}
+          >
+            {t("platform.moduleDetails.heading.title")}
+          </h2>
+          <p
+            className={`mt-4 text-[17px] text-ink-muted ${
+              lang === "ar" ? "leading-8" : "leading-relaxed"
+            } ${langClass}`}
+          >
+            {t("platform.moduleDetails.heading.desc")}
+          </p>
+        </motion.div>
+      </div>
       {moduleDetails.map((module) => (
         <ModuleDetails key={module.id} module={module} />
       ))}
-    </>
+    </section>
   );
 };
 
