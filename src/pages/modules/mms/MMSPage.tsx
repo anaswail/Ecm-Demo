@@ -2,7 +2,6 @@ import ModulePage from "../ModulePage";
 
 import mms from "../../../assets/modules/mms.png";
 import {
-  moduleChallenges,
   moduleLifecycle,
   moduleFeatureSections,
   moduleBenefits,
@@ -23,7 +22,6 @@ const MMSPage = () => {
           labelKey: "modules.mms.hero.secondary",
           href: "/contact",
         }}
-        challenges={moduleChallenges.mms}
         lifecycle={moduleLifecycle.mms}
         features={moduleFeatureSections.mms}
         benefits={moduleBenefits.mms}

@@ -36,11 +36,7 @@ const navLinksItems: NavItem[] = [
   // },
 ];
 
-const ACRONYMS = ["dms", "mms", "cms", "bpm"];
-const formatSegment = (seg: string) =>
-  ACRONYMS.includes(seg)
-    ? seg.toUpperCase()
-    : seg.charAt(0).toUpperCase() + seg.slice(1);
+// const ACRONYMS = ["dms", "mms", "cms", "bpm"];
 
 const Header = () => {
   const { t } = useTranslation();
@@ -102,7 +98,14 @@ const Header = () => {
             {pathSegments.map((seg, idx) => (
               <span key={idx} className="flex items-center gap-1.5">
                 <span className="opacity-40">/</span>
-                <span>{formatSegment(seg)}</span>
+                <span>
+                  {seg === "dms" ||
+                  seg === "bpm" ||
+                  seg === "mms" ||
+                  seg === "cms"
+                    ? t(`header.modulesList.${seg}.desc`)
+                    : t(`header.${seg}`)}
+                </span>
               </span>
             ))}
           </div>

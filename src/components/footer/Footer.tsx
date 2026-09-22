@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -6,20 +5,12 @@ import { Mail } from "lucide-react";
 import ecm from "../../assets/ecm-logo.png";
 
 import { useAppContext } from "../../context/AppContext";
-import Button from "../ui/Button";
 import { footerColumns, legalLinks } from "../../data/footer/FooterData";
 
 const Footer = () => {
   const { t } = useTranslation();
   const { lang } = useAppContext();
   const langClass = lang !== "en" ? "ar-font" : "en-font";
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = () => {
-    // Wire to the newsletter endpoint once available.
-    if (!email) return;
-    setEmail("");
-  };
 
   return (
     <footer className="w-full border-t border-border bg-bg-primary px-5 pb-8 pt-16 sm:pt-20">
@@ -75,7 +66,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="flex flex-col gap-4 border-t border-border pt-10 md:flex-row md:items-center md:justify-between">
+        {/* <div className="flex flex-col gap-4 border-t border-border pt-10 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">
             <h3 className={`text-[15px] font-semibold text-ink ${langClass}`}>
               {t("footer.newsletter.title")}
@@ -103,7 +94,7 @@ const Footer = () => {
               {t("footer.newsletter.action")}
             </Button>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center gap-4 border-t border-border pt-6 md:flex-row md:justify-between">

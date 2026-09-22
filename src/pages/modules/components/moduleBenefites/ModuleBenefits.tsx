@@ -27,7 +27,7 @@ const ModuleBenefits = ({
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
   return (
-    <section className="w-full border-b border-border bg-bg-primary px-5 py-20 sm:py-24">
+    <section className="w-full border-y border-border bg-bg-main px-5 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial="hidden"

@@ -2,7 +2,6 @@ import ModulePage from "../ModulePage";
 
 import dms from "../../../assets/modules/dms.png";
 import {
-  moduleChallenges,
   moduleLifecycle,
   moduleFeatureSections,
   moduleBenefits,
@@ -23,7 +22,6 @@ const DMSPage = () => {
           labelKey: "modules.dms.hero.secondary",
           href: "/contact",
         }}
-        challenges={moduleChallenges.dms}
         lifecycle={moduleLifecycle.dms}
         features={moduleFeatureSections.dms}
         benefits={moduleBenefits.dms}

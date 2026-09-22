@@ -14,8 +14,7 @@ const PlatformPage = () => {
           mainTitle: "platform.hero.title",
         }}
         descKey="platform.hero.desc"
-        primaryCta={{ labelKey: "platform.hero.primary", href: "/platform" }}
-        secondaryCta={{ labelKey: "platform.hero.secondary", href: "/contact" }}
+        primaryCta={{ labelKey: "platform.hero.secondary", href: "/contact" }}
         backgroundImage={platformImage}
       />
       <Modules />

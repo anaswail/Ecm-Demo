@@ -78,8 +78,10 @@ const Hero = ({
       ref={sectionRef}
       id={id}
       className={`relative flex w-full flex-col items-center justify-center overflow-hidden px-5 ${
-        onImage ? "min-h-[85vh] md:min-h-screen" : "py-24 md:py-28"
-      } ${onImage ? "" : "bg-bg-primary"}`}
+        onImage
+          ? "min-h-[85vh] md:min-h-screen mt-14"
+          : " bg-bg-primary h-screen"
+      } `}
     >
       {onImage && (
         <>

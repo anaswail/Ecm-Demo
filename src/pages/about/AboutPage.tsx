@@ -1,9 +1,9 @@
 import Hero from "../../components/hero/Hero";
 import Stats from "../home/components/sections/Stats";
 import AboutStory from "./components/AboutStory";
-import AboutPrinciples from "./components/AboutPrinciples";
 import AboutLeadership from "./components/AboutLeadership";
 import AboutPartners from "./components/AboutPartners";
+import aboutImage from "../../assets/about-ecm.png";
 
 const AboutPage = () => {
   return (
@@ -12,10 +12,11 @@ const AboutPage = () => {
         eyebrowKey="about.hero.eyebrow"
         titleKey={{ mainTitle: "about.hero.title" }}
         descKey="about.hero.desc"
-        primaryCta={{ labelKey: "about.hero.cta", href: "/contact" }}
+        primaryCta={{ labelKey: "platform.hero.primary", href: "/platform" }}
+        secondaryCta={{ labelKey: "platform.hero.secondary", href: "/contact" }}
+        backgroundImage={aboutImage}
       />
       <AboutStory />
-      <AboutPrinciples />
       <AboutLeadership />
       <Stats />
       <AboutPartners />

@@ -2,7 +2,6 @@ import ModulePage from "../ModulePage";
 
 import cms from "../../../assets/modules/cms.png";
 import {
-  moduleChallenges,
   moduleLifecycle,
   moduleFeatureSections,
   moduleBenefits,
@@ -23,7 +22,6 @@ const CMSPage = () => {
           labelKey: "modules.cms.hero.secondary",
           href: "/contact",
         }}
-        challenges={moduleChallenges.cms}
         lifecycle={moduleLifecycle.cms}
         features={moduleFeatureSections.cms}
         benefits={moduleBenefits.cms}

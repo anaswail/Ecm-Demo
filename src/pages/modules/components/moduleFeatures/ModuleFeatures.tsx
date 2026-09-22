@@ -34,7 +34,7 @@ const ModuleFeatures = ({
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   return (
-    <section className="w-full bg-bg-primary px-5 py-20 sm:py-24">
+    <section className="w-full bg-bg-main px-5 pt-20 pb-10 sm:pt-24 ">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
@@ -45,7 +45,7 @@ const ModuleFeatures = ({
         >
           <Eyebrow text={t(`${eyebrowKey}`)} />
           <h2
-            className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${langClass}`}
+            className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"} ${langClass}`}
           >
             {t(titleKey)}
           </h2>
@@ -80,7 +80,7 @@ const ModuleFeatures = ({
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3
-                      className={`mt-4 text-[22px] font-semibold leading-snug text-ink ${langClass}`}
+                      className={`mt-4 text-[22px] font-semibold leading-snug text-ink ${lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"} ${langClass}`}
                     >
                       {t(feature.titleKey)}
                     </h3>

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 import { useAppContext } from "../../../context/AppContext";
 
@@ -7,7 +7,7 @@ const rows = [
   { icon: Mail, key: "email", ltr: true },
   { icon: Phone, key: "phone", ltr: true },
   { icon: MapPin, key: "address", ltr: false },
-  { icon: Clock, key: "hours", ltr: false },
+  // { icon: Clock, key: "hours", ltr: false },
 ] as const;
 
 const ContactInfoPanel = () => {
