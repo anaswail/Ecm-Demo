@@ -62,7 +62,7 @@ const ModuleBenefits = ({
               i,
             ) => {
               const isRightCol = i % 2 === 1;
-              const isBottomRow = i >= items.length - 2;
+              // const isBottomRow = i >= items.length - 2;
               return (
                 <div
                   key={itemTitleKey}
