@@ -66,13 +66,10 @@ const ModuleBenefits = ({
               return (
                 <div
                   key={itemTitleKey}
-                  className={`flex flex-col gap-4 bg-bg-primary p-8 ${
+                  className={`flex flex-col gap-4 border-b border-border bg-bg-primary p-8 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 ${
                     isRightCol ? "" : "sm:border-e sm:border-border"
-                  } ${isBottomRow ? "" : "border-b border-border"}`}
+                  }`}
                 >
-                  {/* The one place teal is used as a fill, not a line — a light
-                    tint, not a solid block, so it reads as an accent rather
-                    than a second primary color. */}
                   <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-accent/20 bg-accent/10 text-accent">
                     <Icon size={18} strokeWidth={1.75} />
                   </span>
