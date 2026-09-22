@@ -38,13 +38,13 @@ import bpmInboxEN from "../../assets/system/bpm-inbox-en.jpeg";
 import createProcessAR from "../../assets/system/bpm-sutdio-ar.jpeg";
 import createProcessEN from "../../assets/system/bpm-studio-en.jpeg";
 import bpmTemplatesAR from "../../assets/system/bpm-templates-ar.jpeg";
-import bpmTemplatesEN from "../../assets/system/bpm-templates-ar.jpeg";
+import bpmTemplatesEN from "../../assets/system/bpm-templates-en.png";
 
 // mms
 import kpisAR from "../../assets/system/mms-overview-ar.png";
 import kpisEN from "../../assets/system/mms-overview-en.png";
-import followupEN from "../../assets/system/mms-meetings-ar.png";
-import followupAR from "../../assets/system/mms-meetings-en.png";
+import followupEN from "../../assets/system/mms-meetings-en.png";
+import followupAR from "../../assets/system/mms-meetings-ar.png";
 import mmsSettingsAR from "../../assets/system/mms-settings-ar.png";
 import mmsSettingsEN from "../../assets/system/mms-settings-en.png";
 import commitesAR from "../../assets/system/mms-committees-ar.png";
