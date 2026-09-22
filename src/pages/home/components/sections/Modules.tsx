@@ -37,7 +37,7 @@ const Modules = () => {
             {t("home.solution.title")}
           </h2>
           <p
-            className={`mt-4 text-[17px] text-ink-muted ${lang === "ar" ? "leading-8" : "leading-relaxed "} ${langClass}`}
+            className={`mt-4 text-[17px] text-ink-muted ${lang === "ar" ? "md:leading-[1.3]" : "md:leading-[1.05]"} ${langClass}`}
           >
             {t("home.solution.desc")}
           </p>

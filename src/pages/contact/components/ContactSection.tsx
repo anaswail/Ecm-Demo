@@ -34,16 +34,14 @@ const ContactSection = () => {
           variants={fadeUp}
           className="mb-14 max-w-2xl"
         >
-          <Eyebrow text={t("contact.form.badge")} />
+          <Eyebrow text="contact.form.badge" />
           <h2
             className={`mt-4 text-[32px] font-semibold leading-tight tracking-tight text-ink sm:text-[36px] ${langClass}`}
           >
             {t("contact.form.title")}
           </h2>
           <p
-            className={`mt-4 text-[17px] text-ink-muted ${
-              isRtl ? "leading-8" : "leading-relaxed"
-            } ${langClass}`}
+            className={`mt-4 text-[17px] text-ink-muted ${isRtl ? "leading-8" : "leading-relaxed"} ${langClass}`}
           >
             {t("contact.form.desc")}
           </p>
@@ -54,7 +52,7 @@ const ContactSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeUp}
-          className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px] lg:gap-10"
+          className="grid gap-8 lg:grid-cols-[1fr_360px] lg:gap-12"
         >
           <ContactForm />
           <ContactInfoPanel />

@@ -20,14 +20,14 @@ const ModulesDetails = () => {
   const langClass = lang !== "en" ? "ar-font" : "en-font";
 
   return (
-    <section className="w-full border-b border-border bg-bg-primary px-5 py-20 sm:py-24">
+    <section className="w-full bg-bg-primary px-5 pt-20 sm:pt-24 ">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
-          className="mb-14 max-w-2xl"
+          className="mb-6 max-w-2xl"
         >
           <Eyebrow text="platform.moduleDetails.heading.eyebrow" />
           <h2

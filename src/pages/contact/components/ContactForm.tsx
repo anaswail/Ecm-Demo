@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useAppContext } from "../../../context/AppContext";
+import Button from "../../../components/ui/Button";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -16,14 +17,29 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+if (
+  import.meta.env.DEV &&
+  (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY)
+) {
+  // Dev-only warning — a missing env var otherwise fails silently in the
+  // try/catch below and every visitor just sees a generic error message
+  // with no trail back to "the config is wrong."
+  console.warn(
+    "[ContactForm] One or more VITE_EMAILJS_* env vars are missing — form submissions will fail.",
+  );
+}
+
+// Loose international check, not strict — good enough to make the existing
+// error-message UI for this field actually reachable, without trying to
+// solve full phone-format validation.
+const phonePattern = /^[+\d][\d\s()-]{6,}$/;
+
 const ContactForm = () => {
   const { t } = useTranslation();
   const { lang } = useAppContext();
   const langClass = lang !== "en" ? "ar-font" : "en-font";
   const [status, setStatus] = useState<Status>("idle");
 
-  // Built with `t` so error copy follows the language toggle, same as
-  // every other string on the site.
   const contactSchema = useMemo(
     () =>
       z.object({
@@ -40,7 +56,13 @@ const ContactForm = () => {
           .string()
           .trim()
           .min(1, t("contact.form.errors.required")),
-        phone: z.string().trim().optional(),
+        phone: z
+          .string()
+          .trim()
+          .optional()
+          .refine((val) => !val || phonePattern.test(val), {
+            message: t("contact.form.errors.invalidPhone"),
+          }),
         message: z
           .string()
           .trim()
@@ -90,12 +112,10 @@ const ContactForm = () => {
     }
   };
 
-  // red/green are semantic (validation error / success), not brand color —
-  // kept separate from the single primary accent used everywhere else.
   const inputClasses = (hasError?: boolean) =>
     `w-full rounded-md border bg-bg-main px-4 py-3 text-[14px] text-ink outline-none transition-colors duration-200 placeholder:text-ink-muted focus:ring-2 ${
       hasError
-        ? "border-red-600 focus:border-red-600/50 focus:ring-red-600/20"
+        ? "border-danger focus:border-danger/50 focus:ring-danger/20"
         : "border-border focus:border-primary/50 focus:ring-primary/20"
     }`;
 
@@ -119,7 +139,7 @@ const ContactForm = () => {
             {...register("companyName")}
           />
           {errors.companyName && (
-            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
+            <span className={`text-[12.5px] text-danger ${langClass}`}>
               {errors.companyName.message}
             </span>
           )}
@@ -139,7 +159,7 @@ const ContactForm = () => {
             {...register("companyEmail")}
           />
           {errors.companyEmail && (
-            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
+            <span className={`text-[12.5px] text-danger ${langClass}`}>
               {errors.companyEmail.message}
             </span>
           )}
@@ -160,7 +180,7 @@ const ContactForm = () => {
             {...register("contactName")}
           />
           {errors.contactName && (
-            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
+            <span className={`text-[12.5px] text-danger ${langClass}`}>
               {errors.contactName.message}
             </span>
           )}
@@ -180,7 +200,7 @@ const ContactForm = () => {
             {...register("phone")}
           />
           {errors.phone && (
-            <span className={`text-[12.5px] text-red-600 ${langClass}`}>
+            <span className={`text-[12.5px] text-danger ${langClass}`}>
               {errors.phone.message}
             </span>
           )}
@@ -200,16 +220,17 @@ const ContactForm = () => {
           {...register("message")}
         />
         {errors.message && (
-          <span className={`text-[12.5px] text-red-600 ${langClass}`}>
+          <span className={`text-[12.5px] text-danger ${langClass}`}>
             {errors.message.message}
           </span>
         )}
       </div>
 
-      <button
+      <Button
         type="submit"
+        variant="primary"
         disabled={status === "loading"}
-        className={`cursor-pointer mt-2 flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-[13px] font-medium text-on-primary transition-colors duration-200 hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60 ${langClass}`}
+        className={`mt-2 justify-center ${langClass}`}
       >
         {status === "loading" ? (
           <Loader2 size={16} className="animate-spin" />
@@ -217,7 +238,7 @@ const ContactForm = () => {
           <Send size={14} />
         )}
         {t("contact.form.submit")}
-      </button>
+      </Button>
 
       <div role="status" aria-live="polite">
         <AnimatePresence mode="wait">
@@ -226,7 +247,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
-              className={`flex items-center gap-2 text-[13.5px] text-green ${langClass}`}
+              className={`flex items-center gap-2 text-[13.5px] text-success ${langClass}`}
             >
               <CheckCircle2 size={16} />
               {t("contact.form.success")}
@@ -237,7 +258,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
-              className={`flex items-center gap-2 text-[13.5px] text-red-600 ${langClass}`}
+              className={`flex items-center gap-2 text-[13.5px] text-danger ${langClass}`}
             >
               <AlertCircle size={16} />
               {t("contact.form.error")}

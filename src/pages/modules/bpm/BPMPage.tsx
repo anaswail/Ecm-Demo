@@ -2,7 +2,6 @@ import ModulePage from "../ModulePage";
 
 import bpm from "../../../assets/modules/bpm.png";
 import {
-  moduleChallenges,
   moduleLifecycle,
   moduleFeatureSections,
   moduleBenefits,
@@ -23,7 +22,6 @@ const BPMPage = () => {
           labelKey: "modules.bpm.hero.secondary",
           href: "/contact",
         }}
-        challenges={moduleChallenges.bpm}
         lifecycle={moduleLifecycle.bpm}
         features={moduleFeatureSections.bpm}
         benefits={moduleBenefits.bpm}

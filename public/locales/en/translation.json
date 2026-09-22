@@ -6,15 +6,15 @@
     "modulesList": {
       "dms": {
         "name": "DMS",
-        "desc": "Document Management System"
+        "desc": "Archived Document Management"
       },
       "cms": {
         "name": "CMS",
-        "desc": "Correspondence Management System"
+        "desc": "Correspondence Management"
       },
       "mms": {
         "name": "MMS",
-        "desc": "Meeting Management System"
+        "desc": "Meeting Management"
       },
       "bpm": {
         "name": "BPM",
@@ -27,7 +27,7 @@
     "resourcesList": {
       "blog": {
         "name": "Blog",
-        "desc": "Read our latest articles and insights"
+        "desc": "Read our latest articles and news"
       },
       "faq": {
         "name": "FAQ",
@@ -46,27 +46,46 @@
         "mainTitle": "Transform the way your",
         "accentWord": " organization works"
       },
-      "desc": "ECM+ brings documents, meetings, business processes, and digital content together in one connected enterprise platform",
+      "desc": "Toward a new era of digital transformation, ECM+ unifies archived document management, correspondence, process automation, and media management within one integrated enterprise-wide platform",
       "primary": "Explore ECM+",
-      "secondary": "Request Architecture Demo"
+      "secondary": "Request a Demo",
+
+      "features": {
+        "dms": {
+          "title": "Document Management System",
+          "desc": "Manage and organize archived documents and correspondence in one place through DMS"
+        },
+        "mms": {
+          "title": "Meeting Management System",
+          "desc": "Plan, document, and follow up on meetings efficiently through MMS"
+        },
+        "bpm": {
+          "title": "Business Process Management",
+          "desc": "Automate, streamline, and track the execution of business processes through BPM"
+        },
+        "cms": {
+          "title": "Correspondence Management System",
+          "desc": "Manage, route, track, and organize correspondence through CMS"
+        }
+      }
     },
 
     "about": {
       "eyebrow": "About Us",
-      "title": "We are here to manage your contents with experience.",
+      "title": "We manage your resources with the experience we bring.",
       "desc": "At ECM+ Company, we are passionate about transforming the way industries manage energy. Our innovative solutions are designed to enhance efficiency and promote sustainability. By reducing energy costs and minimizing environmental impact, we empower businesses to thrive in a greener future. Together, let’s light the path to a more sustainable world.",
-      "quote": "Built for organizations where complexity is part of the workflow",
+      "quote": "Designed for organizations where complexity is part of the workflow.",
       "tags": {
-        "enterprise": "Enterprise",
-        "government": "Government",
-        "informationIntensive": "Information-Intensive"
+        "enterprise": "Large Enterprises",
+        "government": "Government Entities",
+        "informationIntensive": "Information-Intensive Organizations"
       }
     },
 
     "solution": {
       "eyebrow": "The Platform",
-      "title": "One platform. Four connected modules.",
-      "desc": "ECM+ brings documents, correspondence, meetings, and business processes into a single system — each module stands on its own, but the value comes from how they connect.",
+      "title": "Four connected modules to manage your work from one place.",
+      "desc": "ECM+ brings document, correspondence, meeting, and business process management together in one platform, with the modules interconnected to exchange information and support the workflow between them.",
       "moduleLink": "Learn more",
       "modules": {
         "dms": {
@@ -135,10 +154,10 @@
   "platform": {
     "hero": {
       "eyebrow": "The Platform",
-      "title": "One platform — Four connected systems",
+      "title": "One Platform, Four Connected Modules",
       "desc": "ECM+ brings documents, correspondence, meetings, and business processes together in one connected platform — giving organizations a unified way to manage information, work, and decisions",
       "primary": "Explore Modules",
-      "secondary": "Request Architecture Demo"
+      "secondary": "Request a Platform Demo"
     },
     "modules": {
       "dms": {
@@ -159,10 +178,10 @@
       }
     },
     "connected": {
-      "eyebrow": "How it connects",
-      "title": "One process. Four connected systems.",
-      "desc": "A single business request can move across correspondence, documents, workflows, and meetings — without losing context along the way.",
-      "scenario": "Example journey: document review and approval",
+      "eyebrow": "How the Systems Connect",
+      "title": "Four Modules, One Workflow",
+      "desc": "Information moves between correspondence, documents, meetings, and business processes within a single flow, with every step remaining connected to its related information and processes.",
+      "scenario": "Example: document review and approval",
       "note": "This order is one example, not a fixed path. Any module can start a process and any module can be called into one: a committee decision can open a new workflow, a workflow can generate outgoing correspondence, and every step writes back to the same record.",
       "steps": {
         "receive": {
@@ -216,13 +235,13 @@
     "moduleDetails": {
       "heading": {
         "eyebrow": "System Modules",
-        "title": "Four modules. One connected system.",
-        "desc": "Each module works fully on its own, but the real value is in how they connect — a document isn't just archived, it's the same record moving through correspondence, meetings, and approvals without ever being duplicated."
+        "title": "Four Modules, One System for Managing Information and Processes",
+        "desc": "ECM+ brings document, correspondence, meeting, and business process management together into one system. Each module operates within its own scope, and connects with the other modules to exchange information and link processes from start to finish."
       },
       "dms": {
-        "tag": "Document Management System (DMS)",
-        "title": "A controlled home for every document.",
-        "desc": "Centralize, organize, and govern your organization's documents with controlled access, structured retention, and fast retrieval.",
+        "tag": "Archived Document Management (DMS)",
+        "title": "Controlled management for every document.",
+        "desc": "DMS brings your organization's documents together in one place, organizing them and making them easy to access and manage according to approved permissions and policies.",
         "capabilities": {
           "archiving": "Document archiving",
           "search": "Search and retrieval",
@@ -291,8 +310,8 @@
     "story": {
       "eyebrow": "Why We Built This",
       "title": "One connected record, not disconnected pieces",
-      "paragraph1": "In large organizations, information rarely stays in one place. Documents live in one system, correspondence in another, meeting records somewhere else, while approvals and follow-ups move across teams. The result is not necessarily a lack of tools — it is the gap between them.",
-      "paragraph2": "ECM+ was built around a simpler approach: documents, decisions, correspondence, meetings, and the processes around them should remain connected. Instead of adding another isolated system, ECM+ provides one platform where these records can move together through the organization."
+      "paragraph1": "Over more than twenty years, ECM+ has built extensive experience managing organizations' information and processes across a wide range of sectors.",
+      "paragraph2": "That experience shaped the ECM+ platform: a system that connects documents, correspondence, meetings, and business processes together in one scalable, customizable environment."
     },
     "principles": {
       "eyebrow": "How We Work",
@@ -300,15 +319,15 @@
       "items": {
         "scale": {
           "title": "Built for scale, not for spectacle",
-          "desc": "We design for the operational reality of large organizations — from high document volumes to complex structures and multiple departments."
+          "desc": "We build ECM+ to handle the volume of information and complexity of processes in large organizations, with the ability to scale as your organization's needs grow."
         },
         "oneSystem": {
-          "title": "One system, not disconnected modules",
-          "desc": "Each module is designed to work as part of the same platform, sharing the records, context, and workflows that connect the organization."
+          "title": "One platform, connected modules",
+          "desc": "Each module operates as part of one system, so documents, correspondence, meetings, and business processes can connect and exchange information with one another."
         },
         "governance": {
-          "title": "Governance from the foundation",
-          "desc": "Access control, retention, permissions, and accountability are considered as part of the system's architecture — not added as an afterthought."
+          "title": "Security and governance from the start",
+          "desc": "We build access rights, permission management, information retention, and action tracking into the platform's design from the start, to keep information managed in an organized and accountable way."
         }
       }
     },
@@ -328,15 +347,15 @@
       "hero": {
         "eyebrow": "Document Management System (DMS)",
         "title": {
-          "mainTitle": "Every document. Organized, governed, and within reach."
+          "mainTitle": "Manage your organization's documents from one place."
         },
-        "desc": "ECM+ DMS provides a secure, centralized environment to capture, organize, find, share, govern, and retain enterprise documents throughout their lifecycle.",
+        "desc": "ECM+ DMS organizes and stores your organization's documents, and makes them searchable, accessible, and shareable, while managing permissions and retention policies throughout the document's lifecycle.",
         "primary": "Explore ECM+",
-        "secondary": "Request Architecture Demo"
+        "secondary": "Request a Platform Demo"
       },
       "challenges": {
         "eyebrow": "The Challenge",
-        "title": "Before a document has a system, it has no home.",
+        "title": "Before a document has a system, it has no reliable home.",
         "desc": "Most organizations don't lack documents — they lack a reliable way to find, control, and keep them.",
         "items": {
           "finding": {
@@ -358,9 +377,9 @@
         }
       },
       "lifecycle": {
-        "eyebrow": "The Lifecycle",
-        "title": "One lifecycle, from capture to final disposition.",
-        "desc": "ECM+ DMS governs every document through a controlled lifecycle, ensuring information remains organized, accessible, secure, and compliant from creation to disposition.",
+        "eyebrow": "The Document Lifecycle",
+        "title": "From document intake to archiving or disposal.",
+        "desc": "DMS manages the complete document lifecycle — from intake and organization, through access and use, to archiving or disposal according to organizational policy.",
         "items": {
           "capture": {
             "title": "Capture & Classify",
@@ -468,9 +487,9 @@
         }
       },
       "benefits": {
-        "eyebrow": "The Transformation",
-        "title": "What changes once documents have a system",
-        "desc": "The shift isn't just fewer lost files — it's an organization that can answer 'where is it' and 'who touched it' without asking around.",
+        "eyebrow": "Why Document Management?",
+        "title": "As documents multiply, your organization needs a clear way to manage them.",
+        "desc": "With multiple files, departments, and users, document management helps organize information and make it easier to access, with greater clarity around permissions, versions, and retention policies.",
         "items": {
           "retrieval": {
             "title": "Every document, found in seconds",
@@ -515,11 +534,11 @@
       "hero": {
         "eyebrow": "Correspondence Management System (CMS)",
         "title": {
-          "mainTitle": "Every correspondence. Tracked, routed, and accountable."
+          "mainTitle": "Manage your organization's correspondence from one place."
         },
-        "desc": "ECM+ CMS centralizes incoming and outgoing correspondence, enabling organizations to register, route, track, and manage communications with full visibility and accountability.",
+        "desc": "ECM+ CMS organizes incoming and outgoing correspondence in one place — registering, classifying, routing, and tracking the actions related to it.",
         "primary": "Explore ECM+",
-        "secondary": "Request Architecture Demo"
+        "secondary": "Request a Platform Demo"
       },
       "challenges": {
         "eyebrow": "The Challenge",
@@ -545,9 +564,9 @@
         }
       },
       "lifecycle": {
-        "eyebrow": "The Lifecycle",
-        "title": "One lifecycle, from first contact to final response.",
-        "desc": "ECM+ CMS manages every piece of correspondence through a controlled and traceable lifecycle, ensuring accountability from registration to closure and archive.",
+        "eyebrow": "The Correspondence Lifecycle",
+        "title": "From registering correspondence to responding and closing it.",
+        "desc": "CMS manages the complete correspondence lifecycle — from registration and classification, through routing and tracking related actions, to closing and archiving.",
         "items": {
           "register": {
             "title": "Register & Classify",
@@ -613,9 +632,9 @@
         }
       },
       "benefits": {
-        "eyebrow": "The Transformation",
-        "title": "What changes once correspondence has a system",
-        "desc": "The shift is accountability that doesn't depend on memory — every letter has an owner from the moment it arrives.",
+        "eyebrow": "Why Correspondence Management?",
+        "title": "Clearer correspondence management, and more precise tracking of its actions.",
+        "desc": "CMS helps organize correspondence and clarify the responsibilities and actions related to it, making it easy to refer back to each correspondence's record and its outcomes.",
         "items": {
           "noDrops": {
             "title": "No correspondence falls through the cracks",
@@ -660,11 +679,11 @@
       "hero": {
         "eyebrow": "Meeting Management System (MMS)",
         "title": {
-          "mainTitle": "Every meeting. Structured, documented, and actionable."
+          "mainTitle": "Manage meetings from agenda to follow-up."
         },
-        "desc": "ECM+ MMS brings meetings into a structured digital workflow, from agendas and participants to minutes, decisions, and follow-up actions.",
+        "desc": "ECM+ MMS organizes your organization's meetings — from preparing the agenda and inviting participants, to documenting minutes and decisions, to tracking the actions that result from each meeting.",
         "primary": "Explore ECM+",
-        "secondary": "Request Architecture Demo"
+        "secondary": "Request a Platform Demo"
       },
       "challenges": {
         "eyebrow": "The Challenge",
@@ -690,9 +709,9 @@
         }
       },
       "lifecycle": {
-        "eyebrow": "The Lifecycle",
-        "title": "One lifecycle, from invitation to final follow-up.",
-        "desc": "ECM+ MMS governs the complete meeting lifecycle, connecting preparation, discussion, decisions, and follow-up actions within a single accountable record.",
+        "eyebrow": "The Meeting Lifecycle",
+        "title": "From scheduling the meeting to following up on its decisions and actions.",
+        "desc": "MMS manages the complete meeting lifecycle — from preparation and convening, through documenting decisions, to tracking the resulting actions and tasks.",
         "items": {
           "schedule": {
             "title": "Schedule & Prepare",
@@ -768,25 +787,25 @@
         }
       },
       "benefits": {
-        "eyebrow": "The Transformation",
-        "title": "What changes once meetings have a system",
-        "desc": "The shift is a record that outlasts the room — decisions and actions survive long after everyone's forgotten the details.",
+        "eyebrow": "More Effective Meeting Management",
+        "title": "Turn meeting outcomes into trackable information and actions.",
+        "desc": "MMS brings meeting details, decisions, and follow-up actions together in one record, making it easy to look back at what was agreed and track what happens after the meeting ends.",
         "items": {
           "decisions": {
-            "title": "Meetings produce decisions, not just discussion",
-            "desc": "Every outcome is captured the moment it's agreed on, not reconstructed afterward from memory."
+            "title": "Organized meetings from the start",
+            "desc": "Meeting schedules, participants, agendas, and related resources are managed through an organized process before the meeting takes place."
           },
           "ownedTasks": {
-            "title": "Action items get done, not forgotten",
-            "desc": "Every task has a named owner and a deadline the moment it leaves the room."
+            "title": "Clear documentation of meeting decisions",
+            "desc": "Decisions are recorded in the meeting minutes, becoming a clear reference instead of relying on personal notes or memory."
           },
           "history": {
-            "title": "Committee history is one search away",
-            "desc": "What was decided six months ago is as easy to find as what was decided this morning."
+            "title": "Tracking tasks and responsibilities",
+            "desc": "Action items from the meeting are linked to their owners and due dates, making follow-up part of the workflow after the meeting ends."
           },
           "scheduling": {
-            "title": "Scheduling conflicts stop happening",
-            "desc": "Rooms, links, and calendars stay in sync automatically, before invitations even go out."
+            "title": "A unified record of meetings and decisions",
+            "desc": "Meeting minutes, decisions, and actions stay preserved in an organized record, making it easy to look back at meeting history and track what was previously decided."
           }
         }
       },
@@ -815,11 +834,11 @@
       "hero": {
         "eyebrow": "Business Process Management (BPM)",
         "title": {
-          "mainTitle": "Every process. Designed, automated, and in control."
+          "mainTitle": "From process design to execution and monitoring."
         },
-        "desc": "ECM+ BPM enables organizations to design, automate, execute, and monitor business processes with structured workflows, approvals, task management, and complete process visibility.",
+        "desc": "ECM+ BPM lets you design, automate, execute, and monitor business processes through clear workflows — distributing tasks, managing approvals, and tracking the progress of each process.",
         "primary": "Explore ECM+",
-        "secondary": "Request Architecture Demo"
+        "secondary": "Request a Platform Demo"
       },
       "challenges": {
         "eyebrow": "The Challenge",
@@ -845,9 +864,9 @@
         }
       },
       "lifecycle": {
-        "eyebrow": "The Lifecycle",
-        "title": "One lifecycle, from design to continuous improvement.",
-        "desc": "ECM+ BPM carries every business process through a governed lifecycle, from workflow design and execution to monitoring, optimization, and controlled improvement.",
+        "eyebrow": "The Process Lifecycle",
+        "title": "From process design to performance tracking and improvement.",
+        "desc": "BPM manages the complete process lifecycle — from designing the workflow and its rules, through executing tasks and approvals, to monitoring performance and identifying improvement opportunities.",
         "items": {
           "design": {
             "title": "Design & Configure",
@@ -932,25 +951,25 @@
         }
       },
       "benefits": {
-        "eyebrow": "The Transformation",
-        "title": "What changes once processes have a system",
-        "desc": "The shift is a process that runs the same way regardless of who's handling it — and shows you exactly where it's stuck.",
+        "eyebrow": "Why Business Process Management?",
+        "title": "More organized processes, and clearer visibility into every stage.",
+        "desc": "BPM helps standardize workflows, clarify responsibilities, and track process progress, while keeping a clear record of actions and decisions at every stage.",
         "items": {
           "speed": {
-            "title": "Approvals move in hours, not weeks",
-            "desc": "A request routes itself to the right person the moment the previous step finishes — no one has to remember to forward it."
+            "title": "Smoother process execution",
+            "desc": "Tasks and requests move to the next responsible person according to the defined workflow, reducing reliance on manual routing and follow-up."
           },
           "visibility": {
-            "title": "Nothing gets stuck without anyone noticing",
-            "desc": "Bottlenecks show up on a dashboard before they become a complaint."
+            "title": "Processes that run by clear rules",
+            "desc": "The status of a process can be tracked at any time, showing the current stage, remaining tasks, and where delays are occurring."
           },
           "consistency": {
-            "title": "Every process runs the same way, every time",
-            "desc": "A workflow behaves identically no matter who submits it or who's handling it."
+            "title": "Consistent application of procedures",
+            "desc": "Processes are executed according to predefined paths and rules, helping standardize how requests and recurring procedures are handled."
           },
           "record": {
-            "title": "A full record of every decision made",
-            "desc": "Every approval, rejection, and escalation is timestamped and attributable, automatically."
+            "title": "A clear record of actions and decisions",
+            "desc": "Actions, approvals, and decisions related to the process are preserved, making it easy to review what was done and identify responsibilities at each stage."
           }
         }
       },
@@ -1344,11 +1363,11 @@
       "title": "Reach us directly",
       "desc": "Prefer not to fill out a form? Use any of the channels below.",
       "emailLabel": "Email",
-      "emailValue": "hello@ecmplus.com",
+      "emailValue": "info@ecmplus.com",
       "phoneLabel": "Phone",
       "phoneValue": "+20 100 969 9666",
       "addressLabel": "Headquarters",
-      "addressValue": "CTC MENA, Zizinia, NewCairo, Egypt",
+      "addressValue": "Toronto, Canada",
       "hoursLabel": "Business Hours",
       "hoursValue": "Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+2)"
     },

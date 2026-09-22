@@ -1,14 +1,12 @@
 import Hero from "../../components/hero/Hero";
 
 import type {
-  ModuleChallenges as ModuleChallengesData,
   ModuleLifecycle as ModuleLifecycleData,
   ModuleFeaturesSection,
   ModuleBenefitsSection,
   IModulesConnection,
   ModuleId,
 } from "../../data";
-import ModuleChallenges from "./components/challanges/ModuleChallenges";
 import ModuleBenefits from "./components/moduleBenefites/ModuleBenefits";
 import ModuleFeatures from "./components/moduleFeatures/ModuleFeatures";
 import ModuleLifecycle from "./components/modulesLifeCycle/ModuleLifeCycle";
@@ -30,7 +28,6 @@ interface IModulePageProps {
   primaryBtn: HeroCta;
   secondaryBtn: HeroCta;
   /** Centralized per-module data — see data/index.ts and data/modules/* */
-  challenges: ModuleChallengesData;
   lifecycle: ModuleLifecycleData;
   features: ModuleFeaturesSection;
   benefits: ModuleBenefitsSection;
@@ -45,7 +42,6 @@ const ModulePage = ({
   image,
   primaryBtn,
   secondaryBtn,
-  challenges,
   lifecycle,
   features,
   benefits,
@@ -66,7 +62,7 @@ const ModulePage = ({
         }}
         visual={image}
       />
-      <ModuleChallenges {...challenges} />
+      {/* <ModuleChallenges {...challenges} /> */}
       <ModuleBenefits {...benefits} />
       <ModuleLifecycle {...lifecycle} />
       <ModuleFeatures {...features} fallbackImage={image} />

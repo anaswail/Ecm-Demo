@@ -46,7 +46,7 @@ const MainLayout = () => {
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       <Header />
-      <div className=" mt-20">
+      <div className="">
         <Outlet />
       </div>
       <CtaBanner />
