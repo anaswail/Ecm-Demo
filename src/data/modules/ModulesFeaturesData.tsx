@@ -3,28 +3,28 @@ import type { ModuleId } from "..";
 // dms
 import archiveAR from "../../assets/system/dms-archive-ar.png";
 import archiveEN from "../../assets/system/dms-archive-en.jpeg";
-import archiveTypesAR from "../../assets/system/dms-types-ar.jpeg";
-import archiveTypesEN from "../../assets/system/dms-types-en.jpeg";
+import archiveTypesAR from "../../assets/system/dms-types-ar.png";
+import archiveTypesEN from "../../assets/system/dms-types-en.png";
 import searchAR from "../../assets/system/dms-search-ar.png";
 import searchEN from "../../assets/system/dms-search-en.png";
 import explorerAR from "../../assets/system/dms-explorer-ar.jpeg";
 import explorerEN from "../../assets/system/dms-explorer-en.jpeg";
-import aclAR from "../../assets/system/dms-acl-ar.jpeg";
-import aclEN from "../../assets/system/dms-acl-en.jpeg";
-import retentionAR from "../../assets/system/dms-retention-ar.jpeg";
-import retentionEN from "../../assets/system/dms-retention-en.jpeg";
-import sharedAR from "../../assets/system/dms-shared-ar.jpeg";
-import sharedEN from "../../assets/system/dms-shared-en.jpeg";
+import aclAR from "../../assets/system/dms-acl-ar.png";
+import aclEN from "../../assets/system/dms-acl-en.png";
+import retentionAR from "../../assets/system/dms-retention-ar.png";
+import retentionEN from "../../assets/system/dms-retention-en.png";
+import sharedAR from "../../assets/system/dms-shared-ar.png";
+import sharedEN from "../../assets/system/dms-shared-en.png";
 import recycleAR from "../../assets/system/dms-recycle-ar.jpeg";
 import recycleEN from "../../assets/system/dms-recycle-en.jpeg";
 
 // cms
 import addCMSAR from "../../assets/system/cms-add-ar.jpeg";
 import addCMSEN from "../../assets/system/cms-add-en.jpeg";
-import cmsInboxAR from "../../assets/system/cms-inbox-ar.jpeg";
-import cmsInboxEN from "../../assets/system/cms-inbox-en.jpeg";
-import partiesAR from "../../assets/system/cms-parties-ar.jpeg";
-import partiesEN from "../../assets/system/cms-parties-en.jpeg";
+import cmsInboxAR from "../../assets/system/cms-inbox-ar.png";
+import cmsInboxEN from "../../assets/system/cms-inbox-en.png";
+import partiesAR from "../../assets/system/cms-parties-ar.png";
+import partiesEN from "../../assets/system/cms-parties-en.png";
 import cmsSettingsAR from "../../assets/system/cms-settings-ar.png";
 import cmsSettingsEN from "../../assets/system/cms-settings-en.png";
 
@@ -38,18 +38,18 @@ import bpmInboxEN from "../../assets/system/bpm-inbox-en.jpeg";
 import createProcessAR from "../../assets/system/bpm-sutdio-ar.jpeg";
 import createProcessEN from "../../assets/system/bpm-studio-en.jpeg";
 import bpmTemplatesAR from "../../assets/system/bpm-templates-ar.jpeg";
-import bpmTemplatesEN from "../../assets/system/bpm-templates-ar.jpeg";
+import bpmTemplatesEN from "../../assets/system/bpm-templates-en.png";
 
 // mms
-import kpisAR from "../../assets/system/mms-overview-ar.jpeg";
-import kpisEN from "../../assets/system/mms-overview-en.jpeg";
-import followupEN from "../../assets/system/mms-followup-en.png";
-import followupAR from "../../assets/system/mms-followup-ar.png";
+import kpisAR from "../../assets/system/mms-overview-ar.png";
+import kpisEN from "../../assets/system/mms-overview-en.png";
+import followupEN from "../../assets/system/mms-meetings-en.png";
+import followupAR from "../../assets/system/mms-meetings-ar.png";
 import mmsSettingsAR from "../../assets/system/mms-settings-ar.png";
 import mmsSettingsEN from "../../assets/system/mms-settings-en.png";
-import commitesAR from "../../assets/system/mms-committes-ar.png";
-import commitesEN from "../../assets/system/mms-committee-en.png";
-import mmsTasksAR from "../../assets/system/mms-tasks-ar.jpeg";
+import commitesAR from "../../assets/system/mms-committees-ar.png";
+import commitesEN from "../../assets/system/mms-committees-en.png";
+import mmsTasksAR from "../../assets/system/mms-tasks-ar.png";
 import mmsTasksEN from "../../assets/system/mms-tasks-en.png";
 
 export interface ModuleFeatureItem {
